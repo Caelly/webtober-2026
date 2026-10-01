@@ -29,6 +29,7 @@ inktober/
 │   ├── src/
 │   └── README.md
 ├── index.html
+├── days.js
 ├── package.json
 ├── pnpm-lock.yaml
 └── vite.config.js
@@ -36,8 +37,12 @@ inktober/
 
 La configuration et les dépendances sont partagées à la racine. Chaque jour possède son dossier numéroté et son point d’entrée HTML. Vite détecte ces dossiers au démarrage et les compile ensemble dans `dist/`, en conservant les chemins `/1/`, `/2/`, etc.
 
+`days.js` contient les 31 thèmes en français et leur disponibilité dans le menu Webtober. Passez `unlocked` à `true` lorsqu’une page est prête à publier. Seul le jour 1 est actuellement accessible.
+
+La page du jour 1 tient dans la hauteur de l’écran sans défilement. Le bouton Vertical / Horizontal change la disposition des outils et mémorise le choix. Sur les écrans en paysage de faible hauteur, les outils passent à côté de la scène. Les recettes et le menu peuvent défiler à l’intérieur de leur panneau si nécessaire.
+
 ## Jour 1 — Pomme
 
-Une pomme 3D à peindre et à transformer avec des ustensiles : quartiers, pomme cuite, tarte, apple pie, compote, cidre, pommes séchées, beignet et sauce. Un post-it ouvre la recette de la préparation affichée. Voir [les interactions du jour 1](1/README.md).
+Une pomme 3D à peindre et à transformer avec des ustensiles : quartiers, pomme cuite, tarte, apple pie, compote, jus en brique, cidre en bouteille, pommes séchées, beignet, sauce et boudin aux pommes. Le pressoir donne le jus ; la fermentation le transforme en cidre. Un post-it ouvre la recette de la préparation affichée. Voir [les interactions du jour 1](1/README.md).
 
 Les illustrations sont générées en code avec Three.js. Les polices Cormorant Garamond et DM Sans sont chargées depuis Google Fonts, avec des polices système de remplacement.

@@ -19,7 +19,7 @@ test('la pâte exige une découpe, puis deux ajouts donnent les deux tartes', ()
 test('le four, le mixeur et le pressoir ont chacun leur résultat', () => {
   assert.equal(useTool(initialState(), 'oven').type, 'baked');
   assert.equal(useTool(initialState(), 'blender').type, 'compote');
-  assert.equal(useTool(initialState(), 'press').type, 'cider');
+  assert.equal(useTool(initialState(), 'press').type, 'juice');
   assert.equal(useTool(useTool(initialState(), 'oven'), 'blender').type, 'compote');
 });
 
@@ -29,17 +29,36 @@ test('la couleur suit la découpe, les résultats finis ne sont pas repeints', (
   assert.equal(canUse(initialState(), 'red'), false);
   assert.deepEqual(useTool(greenQuarter, 'red'), { type: 'quarter', color: 'red' });
   assert.deepEqual(useTool(useTool(initialState(), 'yellow'), 'red'), initialState());
-  const cider = useTool(greenQuarter, 'press');
-  assert.strictEqual(useTool(cider, 'yellow'), cider);
+  const juice = useTool(greenQuarter, 'press');
+  assert.strictEqual(useTool(juice, 'yellow'), juice);
 });
 
 test('les créations terminées et les outils inconnus ne relancent pas de recette', () => {
   const american = useTool(useTool(useTool(initialState(), 'knife'), 'pastry'), 'pastry');
-  const finished = [american, useTool(initialState(), 'press'), useTool(initialState(), 'dehydrator'), useTool(initialState(), 'fryer'), useTool(initialState(), 'saucepan')];
+  const cider = useTool(useTool(initialState(), 'press'), 'fermentation');
+  const finished = [american, cider, useTool(initialState(), 'dehydrator'), useTool(initialState(), 'fryer'), useTool(initialState(), 'saucepan')];
   for (const state of finished) {
-    for (const tool of ['knife', 'oven', 'pastry', 'blender', 'press', 'dehydrator', 'fryer', 'saucepan', 'unknown']) {
+    for (const tool of ['knife', 'oven', 'pastry', 'blender', 'press', 'fermentation', 'dehydrator', 'fryer', 'saucepan', 'unknown']) {
       assert.strictEqual(useTool(state, tool), state);
     }
+  }
+});
+
+test('le cidre exige du jus pressé et une fermentation, sans raccourci depuis la pomme', () => {
+  const apple = initialState();
+  const quarter = useTool(apple, 'knife');
+  for (const state of [apple, quarter, useTool(apple, 'oven')]) {
+    assert.equal(canUse(state, 'fermentation'), false);
+    assert.strictEqual(useTool(state, 'fermentation'), state);
+  }
+  for (const state of [apple, quarter]) {
+    const juice = useTool(state, 'press');
+    assert.equal(juice.type, 'juice');
+    assert.equal(canUse(juice, 'press'), false);
+    assert.equal(canUse(juice, 'fermentation'), true);
+    const cider = useTool(juice, 'fermentation');
+    assert.equal(cider.type, 'cider');
+    assert.strictEqual(useTool(cider, 'fermentation'), cider);
   }
 });
 
@@ -49,6 +68,21 @@ test('les nouveaux ustensiles fonctionnent sur la pomme et les quartiers', () =>
     assert.equal(useTool(useTool(initialState(), 'knife'), tool).type, type);
   }
   assert.equal(useTool(useTool(initialState(), 'blender'), 'saucepan').type, 'sauce');
+});
+
+test('la viande accompagne les pommes, sans transformer les desserts et les boissons', () => {
+  const apple = initialState();
+  for (const state of [apple, useTool(apple, 'knife'), useTool(apple, 'oven'), useTool(apple, 'blender')]) {
+    const boudin = useTool(state, 'meat');
+    assert.equal(boudin.type, 'boudin');
+    assert.strictEqual(useTool(boudin, 'meat'), boudin);
+    assert.strictEqual(useTool(boudin, 'pastry'), boudin);
+    assert.strictEqual(useTool(boudin, 'green'), boudin);
+  }
+  for (const state of [useTool(apple, 'press'), useTool(useTool(apple, 'knife'), 'pastry'), useTool(apple, 'fryer')]) {
+    assert.equal(canUse(state, 'meat'), false);
+    assert.strictEqual(useTool(state, 'meat'), state);
+  }
 });
 
 test('chaque création possède une recette complète affichable', () => {

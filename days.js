@@ -1,0 +1,14 @@
+const themes = [
+  'Pomme', 'Relique', 'Miniature', 'Cactus', 'Gifle', 'Ogre', 'Panique',
+  'Puant', 'Bélier', 'Mystique', 'Sauvetage', 'Lancer', 'Fragile', 'Dame',
+  'Hourra', 'Dégingandé', 'Bidule', 'Sans ailes', 'Confus', 'Salon', 'Héros',
+  'Balise', 'Chic', 'Cuire', 'Fracture', 'Fermeture éclair', 'Stupide',
+  'Trophée', 'Défense', 'Biscuit', 'Flexion',
+];
+
+// Unlock a day when its numbered page is ready to publish.
+export const days = themes.map((theme, index) => ({
+  number: index + 1,
+  theme,
+  unlocked: index === 0,
+}));

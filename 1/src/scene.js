@@ -262,7 +262,7 @@ export function createAppleScene(container) {
       }
       for (const [type, model] of models) model.visible = type === state.type;
       if (activeType !== state.type) {
-        targetX = ['quarter', 'tart', 'american', 'compote', 'dried', 'fritter', 'sauce'].includes(state.type) ? .65 : 0;
+        targetX = ['quarter', 'tart', 'american', 'compote', 'dried', 'fritter', 'sauce', 'boudin'].includes(state.type) ? .65 : 0;
         targetY = state.type === 'cider' ? 0 : -.32;
         if (!reducedMotion.matches) apple.scale.setScalar(.98);
       }

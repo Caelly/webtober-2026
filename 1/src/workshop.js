@@ -5,10 +5,12 @@ export const recipes = {
   oven: { label: 'Cuire au four', from: ['apple'], to: 'baked' },
   pastry: { label: 'Ajouter une pâte feuilletée', from: ['quarter', 'tart'], to: { quarter: 'tart', tart: 'american' } },
   blender: { label: 'Mixer en compote', from: ['apple', 'quarter', 'baked'], to: 'compote' },
-  press: { label: 'Presser en cidre', from: ['apple', 'quarter'], to: 'cider' },
+  press: { label: 'Presser en jus de pomme', from: ['apple', 'quarter'], to: 'juice' },
+  fermentation: { label: 'Fermenter le jus en cidre', from: ['juice'], to: 'cider' },
   dehydrator: { label: 'Déshydrater en pommes séchées', from: ['apple', 'quarter'], to: 'dried' },
   fryer: { label: 'Frire en beignet', from: ['apple', 'quarter'], to: 'fritter' },
   saucepan: { label: 'Préparer une sauce aux pommes', from: ['apple', 'quarter', 'baked', 'compote'], to: 'sauce' },
+  meat: { label: 'Ajouter de la viande', from: ['apple', 'quarter', 'baked', 'compote'], to: 'boudin' },
 };
 
 export function canUse(state, tool) {
@@ -25,24 +27,16 @@ export function useTool(state, tool) {
 }
 
 export const results = {
-  apple: { word: 'pomme.', name: 'Rouge à croquer', note: 'Une couleur, une découpe, une nouvelle saveur.' },
-  quarter: { word: 'quartiers.', pronoun: 'vos', name: 'Quatre quartiers à croquer', note: 'Ajoutez une pâte pour préparer une tarte aux pommes.' },
-  baked: { word: 'pomme cuite.', name: 'Tout juste sortie du four', note: 'Encore tiède… et si vous la mixiez en compote ?' },
-  tart: { word: 'tarte.', name: 'Tarte aux pommes', note: 'Une seconde pâte ? Place à la tarte américaine.' },
-  american: { word: 'apple pie.', name: 'Tarte aux pommes à l’américaine', note: 'Une croûte dorée, des pommes fondantes. À table !' },
-  compote: { word: 'compote.', name: 'Compote maison', note: 'La douceur à la petite cuillère. Réinitialisez pour une nouvelle recette.' },
-  cider: { word: 'cidre.', name: 'Une bouteille de cidre', note: 'La pomme se met en bouteille. Réinitialisez pour une nouvelle recette.' },
-  dried: { word: 'pommes séchées.', pronoun: 'vos', name: 'Des pommes séchées à grignoter', note: 'De fines rondelles, doucement séchées.' },
-  fritter: { word: 'beignet.', name: 'Un beignet aux pommes', note: 'Une croûte dorée, une pomme fondante.' },
-  sauce: { word: 'sauce.', name: 'Sauce aux pommes', note: 'Une touche fruitée pour accompagner votre plat.' },
+  apple: { word: 'pomme.', name: 'Rouge à croquer' },
+  quarter: { word: 'quartiers.', pronoun: 'vos', name: 'Quatre quartiers à croquer' },
+  baked: { word: 'pomme cuite.', name: 'Tout juste sortie du four' },
+  tart: { word: 'tarte.', name: 'Tarte aux pommes' },
+  american: { word: 'apple pie.', name: 'Tarte aux pommes à l’américaine' },
+  compote: { word: 'compote.', name: 'Compote maison' },
+  juice: { word: 'jus de pomme.', name: 'Pur jus de pomme en brique' },
+  cider: { word: 'cidre.', name: 'Une bouteille de cidre' },
+  dried: { word: 'pommes séchées.', pronoun: 'vos', name: 'Des pommes séchées à grignoter' },
+  fritter: { word: 'beignet.', name: 'Un beignet aux pommes' },
+  sauce: { word: 'sauce.', name: 'Sauce aux pommes' },
+  boudin: { word: 'boudin aux pommes.', name: 'Boudin noir aux pommes dorées' },
 };
-
-export function toolHint(state, tool) {
-  if (tool === 'pastry') {
-    if (state.type === 'quarter') return 'Ajouter une pâte : tarte aux pommes';
-    if (state.type === 'tart') return 'Ajouter une seconde pâte : tarte à l’américaine';
-    return state.type === 'american' ? 'Les deux pâtes sont déjà ajoutées' : 'Découpez d’abord la pomme en quartier';
-  }
-  if (canUse(state, tool)) return recipes[tool]?.label ?? `Peindre en ${{ red: 'rouge', green: 'vert', yellow: 'jaune' }[tool]}`;
-  return 'Réinitialisez la pomme pour utiliser cet outil';
-}

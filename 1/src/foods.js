@@ -1,5 +1,7 @@
 import * as THREE from 'three';
 import { foodTexture } from './textures.js';
+import { appleJuice, cider } from './packaging.js';
+import { americanPie } from './american-pie.js';
 
 const textureCache = new Map();
 function textureFor(kind) {
@@ -67,12 +69,7 @@ function quarterGeometry(skin) {
     const seed = mesh(new THREE.SphereGeometry(1, 20, 16), new THREE.MeshStandardMaterial({ color: '#4e2c17', roughness: .4 }), [.21, y, .027]);
     seed.scale.set(.047, .084, .021); seed.rotation.z = -.4; group.add(seed);
   }
-  group.position.set(-.5, .05, .4);
-  const presentation = new THREE.Group(); presentation.add(group);
-  presentation.rotation.z = -.65;
-  presentation.rotation.y = -.45;
-  presentation.scale.setScalar(1.12);
-  return presentation;
+  return group;
 }
 
 function bakedApple(geometry, skinMap) {
@@ -103,19 +100,26 @@ function bakedApple(geometry, skinMap) {
 function appleQuarters(skin) {
   const group = new THREE.Group();
   const template = quarterGeometry(skin);
-  const arrangement = [[-.6, -.65, -.4, -.4], [.6, -.65, -.4, .45], [-.6, -.65, .4, -.25], [.6, -.65, .4, .25]];
-  for (const [x, y, z, yaw] of arrangement) {
+  // Uneven spacing and small overlaps, with each wedge resting on a cut face.
+  const arrangement = [
+    { x: -.43, z: .43, yaw: -.42, scale: .56, lift: 0 },
+    { x: .35, z: .50, yaw: .12, scale: .53, lift: .07 },
+    { x: .30, z: -.26, yaw: .78, scale: .58, lift: 0 },
+    { x: -.47, z: -.30, yaw: -.82, scale: .54, lift: .025 },
+  ];
+  for (const { x, z, yaw, scale, lift } of arrangement) {
     const quarter = template.clone();
-    quarter.scale.setScalar(.59);
-    quarter.position.set(x, y, z);
-    quarter.rotation.set(-Math.PI / 2, yaw, 0);
+    quarter.scale.setScalar(scale);
+    quarter.position.set(x, -.665 + lift, z);
+    quarter.rotation.set(0, yaw, Math.PI / 2);
     group.add(quarter);
   }
-  group.add(plate(1.4, -1.02));
+  group.add(plate(1.4, -.7));
+  group.position.y = .4;
   return group;
 }
 
-function appleTart(american = false) {
+function appleTart() {
   const group = new THREE.Group();
   group.add(plate(1.34, -.62));
   group.add(mesh(new THREE.CylinderGeometry(1.12, 1.02, .28, 96), dough(), [0, -.42, 0]));
@@ -154,30 +158,6 @@ function appleTart(american = false) {
       group.add(petal);
     }
   }
-  if (american) {
-    for (let axis = 0; axis < 2; axis++) {
-      for (let band = -3; band <= 3; band++) {
-        const offset = band * .27, limit = Math.sqrt(1.02 ** 2 - offset ** 2);
-        const vertices = [], indices = [];
-        for (let segment = 0; segment <= 32; segment++) {
-          const along = -limit + segment / 32 * limit * 2;
-          for (const side of [-1, 1]) {
-            const cross = offset + side * .075;
-            const x = axis ? cross : along, z = axis ? along : cross;
-            const y = -.03 + .17 * Math.max(0, 1 - (x * x + z * z)) + axis * .022;
-            vertices.push(x, y, z);
-          }
-          if (segment < 32) { const a = segment * 2; indices.push(a, a + 1, a + 2, a + 1, a + 3, a + 2); }
-        }
-        const geometry = new THREE.BufferGeometry();
-        geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-        geometry.setAttribute('uv', new THREE.Float32BufferAttribute(vertices.flatMap((_, i) => i % 3 === 0 ? [(vertices[i] + 1) / 2, (vertices[i + 2] + 1) / 2] : []), 2));
-        geometry.setIndex(indices); geometry.computeVertexNormals();
-        const pastry = dough(); pastry.side = THREE.DoubleSide;
-        group.add(mesh(geometry, pastry));
-      }
-    }
-  }
   group.position.y = .1;
   group.scale.setScalar(1.13);
   return group;
@@ -203,37 +183,6 @@ function compote() {
   const handle = mesh(new THREE.TubeGeometry(handleCurve, 32, .027, 10, false), silver); group.add(handle);
   group.scale.setScalar(1.3);
   group.position.y = -.06;
-  return group;
-}
-
-function cider() {
-  const group = new THREE.Group();
-  const glass = new THREE.MeshPhysicalMaterial({ color: '#9ba663', roughness: .1, metalness: 0, transparent: true, opacity: .25, depthWrite: false, side: THREE.DoubleSide });
-  const amber = new THREE.MeshPhysicalMaterial({ color: '#9e5d08', roughness: .22, clearcoat: .5 });
-  const bottlePoints = [[0, -1], [.36, -1], [.43, -.94], [.44, -.75], [.44, .47], [.4, .61], [.2, .82], [.16, .94], [.16, 1.28], [.18, 1.3], [.18, 1.36], [.135, 1.36], [.135, .96], [.18, .8], [.36, .58], [.395, .43], [.395, -.91], [0, -.94]].map(([x, y]) => new THREE.Vector2(x, y));
-  const bottle = mesh(new THREE.LatheGeometry(bottlePoints, 80), glass, [-.43, 0, 0]); group.add(bottle);
-  group.add(mesh(new THREE.CylinderGeometry(.386, .386, 1.39, 64), amber, [-.43, -.23, 0]));
-  group.add(mesh(new THREE.CylinderGeometry(.146, .146, .17, 24), new THREE.MeshStandardMaterial({ color: '#987044', roughness: 1 }), [-.43, 1.39, 0]));
-  const labelCanvas = document.createElement('canvas'); labelCanvas.width = 1024; labelCanvas.height = 512;
-  const ctx = labelCanvas.getContext('2d');
-  ctx.fillStyle = '#f0ead6'; ctx.fillRect(0, 0, 1024, 512);
-  ctx.textAlign = 'center'; ctx.fillStyle = '#3c5034';
-  ctx.font = '600 84px Georgia'; ctx.fillText('pomme.', 768, 206);
-  ctx.font = '26px sans-serif'; ctx.fillText('CIDRE', 768, 286);
-  ctx.strokeStyle = '#a8b290'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(666, 322); ctx.lineTo(870, 322); ctx.stroke();
-  const labelTexture = new THREE.CanvasTexture(labelCanvas); labelTexture.colorSpace = THREE.SRGBColorSpace;
-  const label = mesh(new THREE.CylinderGeometry(.449, .449, .68, 80, 1, true), new THREE.MeshStandardMaterial({ map: labelTexture, roughness: .9 }), [-.43, -.22, 0]);
-  label.rotation.y = Math.PI / 2;
-  group.add(label);
-  const clearGlass = glass.clone(); clearGlass.color.set('#f1f0d8'); clearGlass.opacity = .24;
-  const glassPoints = [[0, -.98], [.32, -.98], [.36, -.94], [.385, .05], [.365, .065], [.34, -.86], [0, -.89]].map(([x, y]) => new THREE.Vector2(x, y));
-  group.add(mesh(new THREE.LatheGeometry(glassPoints, 64), clearGlass, [.65, 0, .35]));
-  group.add(mesh(new THREE.CylinderGeometry(.347, .31, .68, 64), amber, [.65, -.53, .35]));
-  for (let i = 0; i < 18; i++) {
-    const angle = i * 2.4, radius = .08 + (i % 5) * .045;
-    group.add(mesh(new THREE.SphereGeometry(.011 + (i % 3) * .004, 8, 6), new THREE.MeshBasicMaterial({ color: '#f5d889', transparent: true, opacity: .7 }), [.65 + Math.cos(angle) * radius, -.84 + (i % 7) * .095, .35 + Math.sin(angle) * radius]));
-  }
-  group.position.y = .04;
   return group;
 }
 
@@ -318,27 +267,82 @@ function appleSauce() {
   return group;
 }
 
+function boudinApples() {
+  const group = new THREE.Group();
+  group.add(plate(1.4, -.57));
+  const casing = new THREE.MeshPhysicalMaterial({ map: textureFor('boudin'), bumpMap: textureFor('grain'), bumpScale: .008, roughness: .48, clearcoat: .3 });
+  const filling = new THREE.MeshStandardMaterial({ map: textureFor('cutBoudin'), bumpMap: textureFor('grain'), bumpScale: .025, roughness: .95 });
+  const curve = new THREE.CatmullRomCurve3([
+    new THREE.Vector3(-.69, -.30, -.68), new THREE.Vector3(-.86, -.30, -.31),
+    new THREE.Vector3(-.77, -.30, .12), new THREE.Vector3(-.47, -.30, .43),
+  ]);
+  const sausageGeometry = new THREE.TubeGeometry(curve, 80, .215, 32, false);
+  const p = sausageGeometry.attributes.position;
+  for (let i = 0; i < p.count; i++) {
+    const x = p.getX(i), y = p.getY(i), z = p.getZ(i);
+    p.setY(i, y + .003 * Math.sin(x * 63 + z * 34));
+  }
+  sausageGeometry.computeVertexNormals();
+  group.add(mesh(sausageGeometry, casing));
+  const capGeometry = new THREE.CircleGeometry(.213, 48);
+  const endPosition = curve.getPoint(1), endDirection = curve.getTangent(1);
+  const end = mesh(capGeometry, filling, endPosition.toArray());
+  end.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), endDirection); group.add(end);
+  const tip = mesh(new THREE.SphereGeometry(.215, 32, 20), casing, curve.getPoint(0).toArray());
+  tip.scale.set(1, .98, .72); group.add(tip);
+  for (const [x, z, yaw] of [[-.33, .73, -.3], [-.05, .86, .18]]) {
+    const slice = mesh(new THREE.CylinderGeometry(.216, .215, .095, 48), [casing, filling, filling], [x, -.4, z]);
+    slice.rotation.set(.12, yaw, .05); group.add(slice);
+  }
+  const shape = new THREE.Shape();
+  shape.moveTo(-.42, 0); shape.quadraticCurveTo(0, .48, .42, 0); shape.quadraticCurveTo(.05, .17, -.42, 0);
+  const wedgeGeometry = new THREE.ExtrudeGeometry(shape, { depth: .11, bevelEnabled: true, bevelSize: .028, bevelThickness: .027, bevelSegments: 3, curveSegments: 32 });
+  const golden = ['#d6a251', '#e0b468', '#c89143'].map(color => new THREE.MeshPhysicalMaterial({ color, map: textureFor('flesh'), bumpMap: textureFor('grain'), bumpScale: .006, roughness: .53, clearcoat: .2 }));
+  const peelCurve = new THREE.QuadraticBezierCurve3(new THREE.Vector3(-.42, 0, .115), new THREE.Vector3(0, .48, .115), new THREE.Vector3(.42, 0, .115));
+  const peel = new THREE.TubeGeometry(peelCurve, 40, .018, 8, false);
+  const caramel = new THREE.MeshStandardMaterial({ color: '#8b4825', roughness: .6 });
+  const arrangement = [[.32, -.58, -.2], [.68, -.24, -.75], [.62, .2, -.9], [.48, .50, -1.1], [.12, .33, -.5]];
+  arrangement.forEach(([x, z, yaw], i) => {
+    const wedge = new THREE.Group();
+    wedge.add(mesh(wedgeGeometry, golden[i % golden.length]), mesh(peel, caramel));
+    wedge.rotation.set(-Math.PI / 2, 0, yaw);
+    wedge.position.set(x, -.455 + (i % 2) * .035, z); group.add(wedge);
+  });
+  const herb = new THREE.MeshStandardMaterial({ color: '#77875c', roughness: .9, side: THREE.DoubleSide });
+  for (let i = 0; i < 3; i++) {
+    const leaf = mesh(new THREE.SphereGeometry(1, 24, 16), herb, [.35 + i * .09, -.27 + i * .025, -.1 - i * .07]);
+    leaf.scale.set(.08, .008, .2); leaf.rotation.y = -.5 + i * .65; group.add(leaf);
+  }
+  group.position.y = .23;
+  return group;
+}
+
 export function createFood(type, { appleGeometry, skinMaterial, skinMap }) {
   switch (type) {
     case 'quarter': return appleQuarters(skinMaterial);
     case 'baked': return bakedApple(appleGeometry, skinMap);
     case 'tart': return appleTart();
-    case 'american': return appleTart(true);
+    case 'american': return americanPie();
     case 'compote': return compote();
+    case 'juice': return appleJuice();
     case 'cider': return cider();
     case 'dried': return driedApples();
     case 'fritter': return appleFritter();
     case 'sauce': return appleSauce();
+    case 'boudin': return boudinApples();
     default: throw new Error(`Unknown food: ${type}`);
   }
 }
 
 export function foodFallback(type) {
   const frame = (body) => `<svg viewBox="0 0 260 260" aria-hidden="true">${body}</svg>`;
+  if (type === 'boudin') return frame('<ellipse cx="130" cy="153" rx="116" ry="69" fill="#e8e5d7"/><ellipse cx="130" cy="146" rx="101" ry="55" fill="#f4f0e2"/><path d="M91 104c-42 20-42 59 5 72" fill="none" stroke="#302421" stroke-width="32" stroke-linecap="round"/><path d="M89 102c-31 19-36 48-4 63" fill="none" stroke="#62514a" stroke-width="3"/><g fill="#ddb069" stroke="#a96930" stroke-width="2"><path d="M129 94q59 1 69 33-33-16-69-33Z"/><path d="M139 118q65 0 67 30-38-13-67-30Z"/><path d="M132 147q64 3 66 32-31-10-66-32Z"/></g><ellipse cx="109" cy="189" rx="17" ry="10" fill="#302421"/><ellipse cx="109" cy="186" rx="16" ry="8" fill="#514038"/><path d="M139 155q-19-14-21-3 9 11 21 3Z" fill="#7b8d5e"/>');
   if (type === 'quarter') return frame('<path d="M55 45C220 34 245 199 89 221Z" fill="#c7462e"/><path d="M55 45C201 46 222 185 89 208Z" fill="#f2dfa5"/><ellipse cx="91" cy="120" rx="6" ry="11" fill="#58371c"/>');
-  if (type === 'tart' || type === 'american') return frame(`<ellipse cx="130" cy="171" rx="110" ry="40" fill="#e4e5d4"/><ellipse cx="130" cy="139" rx="102" ry="57" fill="#c58c41"/><ellipse cx="130" cy="128" rx="89" ry="43" fill="#dfb66d"/>${type === 'american' ? '<path d="m63 104 126 39m-141-21 126 39m-64-72 93 31m-118 31 74-65m-43 79 74-65m-11 64 51-45" stroke="#ae732b" stroke-width="12"/>' : '<path d="M61 128q30-42 50 0m-3 0q30-42 50 0m-3 0q30-42 50 0" fill="#f2d08d"/>'}`);
+  if (type === 'tart') return frame('<ellipse cx="130" cy="171" rx="110" ry="40" fill="#e4e5d4"/><ellipse cx="130" cy="139" rx="102" ry="57" fill="#c58c41"/><ellipse cx="130" cy="128" rx="89" ry="43" fill="#dfb66d"/><path d="M61 128q30-42 50 0m-3 0q30-42 50 0m-3 0q30-42 50 0" fill="#f2d08d"/>');
+  if (type === 'american') return frame('<ellipse cx="130" cy="183" rx="117" ry="44" fill="#cd5547"/><ellipse cx="130" cy="149" rx="102" ry="59" fill="#aa6528"/><ellipse cx="130" cy="133" rx="102" ry="56" fill="#e8c189"/><path d="m48 119 148 39m-153-15 137 40m-95-91 128 34m-153 37 87-79m-48 93 92-85m-45 87 69-63" stroke="#ce9240" stroke-width="13"/><path d="m130 133-18 71 65-9Z" fill="#cd5547"/><path d="m139 157-17 54 57-8v-15Z" fill="#ad6c2d"/><path d="m139 153-17 44 57-9Z" fill="#dfaa5e"/><path d="m134 168 25 4m-28 9 37-5" stroke="#f2d6a0" stroke-width="8"/>');
   if (type === 'compote') return frame('<path d="M28 116h204c-10 87-194 87-204 0" fill="#e6e6d4"/><ellipse cx="130" cy="116" rx="100" ry="35" fill="#d9b06b"/><path d="M76 119q50-35 97 0" fill="none" stroke="#ebcd96" stroke-width="8"/>');
-  if (type === 'cider') return frame('<path d="M86 33h32v44l22 24v125H64V101l22-24Z" fill="#8f9e55"/><rect x="68" y="130" width="68" height="57" rx="3" fill="#f0ead6"/><text x="102" y="163" text-anchor="middle" fill="#3c5034" font-family="Georgia" font-size="15">cidre.</text><path d="M171 140h52l-5 85h-43Z" fill="#d4a13f"/>');
+  if (type === 'juice') return frame('<path d="m185 41 16 8v179l-16 5Z" fill="#dddfd0"/><rect x="76" y="37" width="111" height="196" rx="6" fill="#f9f9f1"/><g fill="#db2430"><circle cx="89" cy="52" r="5"/><circle cx="173" cy="64" r="5"/><circle cx="86" cy="109" r="5"/><circle cx="171" cy="130" r="5"/><circle cx="87" cy="178" r="5"/><circle cx="171" cy="185" r="5"/></g><g fill="#62a75b"><ellipse cx="104" cy="76" rx="4" ry="7"/><ellipse cx="174" cy="99" rx="4" ry="7"/><ellipse cx="91" cy="153" rx="4" ry="7"/></g><circle cx="131" cy="84" r="25" fill="#009447"/><text x="131" y="88" text-anchor="middle" fill="white" font-family="Georgia" font-size="11">pomme.</text><path d="M130 132c-39-20-43 56-2 49 41 14 47-65 2-49Z" fill="#bb3c2b"/><path d="m133 131 2-15" stroke="#795332" stroke-width="3"/><rect x="76" y="197" width="111" height="36" fill="#50b35a"/><text x="131" y="213" text-anchor="middle" fill="white" font-size="9">PUR JUS DE POMME</text><text x="131" y="226" text-anchor="middle" fill="#e5e842" font-size="8">100 % pur fruit pressé</text>');
+  if (type === 'cider') return frame('<path d="M120 28h22v53c0 29 25 42 25 72v74q0 13-12 13h-49q-12 0-12-13v-74c0-30 26-43 26-72Z" fill="#24420f"/><path d="M124 60v37c0 24-20 43-20 70" stroke="#789954" stroke-width="4" opacity=".6"/><rect x="117" y="34" width="28" height="12" fill="#172319"/><rect x="121" y="21" width="21" height="16" rx="3" fill="#b99158"/><path d="m121 22-5 27h30l-5-27" fill="none" stroke="#879080"/><circle cx="131" cy="110" r="10" fill="#a73837"/><rect x="99" y="164" width="63" height="68" rx="3" fill="#f8f5e8"/><text x="130" y="192" text-anchor="middle" fill="#2d3626" font-family="Georgia" font-style="italic" font-size="20">Cidre</text><text x="130" y="211" text-anchor="middle" fill="#2d3626" font-family="Georgia" font-size="8">DE NOS VERGERS</text><text x="130" y="224" text-anchor="middle" fill="#2d3626" font-size="9">BRUT</text>');
   if (type === 'dried') return frame('<ellipse cx="90" cy="135" rx="62" ry="42" fill="#c49b62"/><ellipse cx="90" cy="135" rx="12" ry="8" fill="#f5f4ec"/><ellipse cx="161" cy="160" rx="66" ry="43" fill="#d1ad77"/><ellipse cx="161" cy="160" rx="12" ry="8" fill="#f5f4ec"/>');
   if (type === 'fritter') return frame('<ellipse cx="130" cy="153" rx="104" ry="47" fill="#e6e6d4"/><ellipse cx="130" cy="134" rx="89" ry="57" fill="#b07b35"/><ellipse cx="130" cy="126" rx="83" ry="47" fill="#d5a65e"/><ellipse cx="130" cy="125" rx="27" ry="16" fill="#f5f4ec"/>');
   if (type === 'sauce') return frame('<path d="M19 108h199l-17 65c-39 45-119 28-150-9Z" fill="#e6e6d4"/><ellipse cx="123" cy="110" rx="86" ry="27" fill="#c5954f"/><path d="M210 108c60-30 47 86-15 44" fill="none" stroke="#e6e6d4" stroke-width="12"/>');

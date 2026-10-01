@@ -1,4 +1,9 @@
 export const recipeBook = {
+  boudin: {
+    title: 'Boudin noir aux pommes', time: '25 min', servings: '2 personnes',
+    ingredients: ['2 boudins noirs', '3 pommes', '20 g de beurre', 'Quelques feuilles de sauge', 'Sel & poivre'],
+    steps: ['Pelez les pommes, retirez le cœur et coupez-les en quartiers.', 'Faites fondre la moitié du beurre dans une poêle. Ajoutez les pommes et laissez-les dorer à feu moyen 12 à 15 min, en les retournant délicatement.', 'Dans une autre poêle, faites cuire les boudins doucement avec le reste du beurre pendant 10 à 12 min, en les retournant à mi-cuisson.', 'Assaisonnez les pommes et servez avec le boudin et quelques feuilles de sauge.'],
+  },
   apple: {
     title: 'Pomme fraîche au miel', time: '5 min', servings: '2 personnes',
     ingredients: ['2 pommes', '½ citron', '1 c. à café de miel', 'Quelques noix'],
@@ -28,6 +33,11 @@ export const recipeBook = {
     title: 'Compote maison sans sucre ajouté', time: '25 min', servings: '4 personnes',
     ingredients: ['4 pommes', '5 cl d’eau', 'Vanille ou cannelle'],
     steps: ['Pelez, épépinez et coupez les pommes en morceaux.', 'Placez-les dans une casserole avec l’eau et la vanille ou la cannelle.', 'Couvrez et laissez cuire à feu doux environ 20 min, en remuant de temps en temps.', 'Mixez pour une compote lisse ou écrasez à la fourchette pour garder des morceaux.'],
+  },
+  juice: {
+    title: 'Jus de pomme fraîchement pressé', time: '15 min', servings: '4 verres',
+    ingredients: ['6 pommes', 'Un peu de jus de citron, au choix'],
+    steps: ['Lavez les pommes, retirez les parties abîmées et coupez-les en morceaux.', 'Passez les morceaux au pressoir et recueillez le jus dans un récipient propre.', 'Filtrez selon votre goût, ajoutez un peu de citron si vous le souhaitez et dégustez frais.'],
   },
   cider: {
     title: 'Cidre chaud aux épices', time: '10 min', servings: '2 personnes',

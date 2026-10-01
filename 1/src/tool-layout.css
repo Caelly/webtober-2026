@@ -1,0 +1,56 @@
+.toolbox-caption { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 19px; color: #71815b; }
+.tool-layout-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 5px; flex-shrink: 0; min-height: 28px; padding: 4px 8px; border: 1px solid #dce1d1; border-radius: 8px; font-size: 9px; color: #6c7d56; }
+.tool-layout-toggle:hover { background: #edf1e4; }
+.tool-layout-toggle svg { width: 14px; height: 14px; transition: transform .2s; }
+.tool-layout-toggle[aria-pressed='true'] svg { transform: rotate(90deg); }
+.kitchen-heading { align-items: center; }
+
+.apple-workshop.tools-vertical { grid-template-columns: minmax(0, 1fr) 136px; grid-template-rows: auto minmax(0, 1fr); column-gap: 16px; }
+.tools-vertical .workshop-topline { grid-column: 1; grid-row: 1; }
+.tools-vertical .scene-wrap { grid-column: 1; grid-row: 2; }
+.tools-vertical .kitchen-toolbox { grid-column: 2; grid-row: 1 / -1; align-self: stretch; align-items: stretch; display: grid; grid-template-rows: auto minmax(0, 1fr); row-gap: 6px; margin: 0; padding: 10px 8px; }
+.tools-vertical .kitchen-heading { display: flex; flex-direction: column; gap: 7px; margin-bottom: 10px; }
+.tools-vertical .toolbox-caption { font-size: 14px; text-align: center; }
+.tools-vertical .kitchen-tools { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-auto-rows: minmax(0, 1fr); gap: 2px; min-height: 0; }
+.tools-vertical .tool-button { flex-direction: row; justify-content: flex-start; min-height: 0; gap: 8px; padding: 0 5px; }
+.tools-vertical .tool-button svg { width: 23px; height: min(29px, 100%); flex-shrink: 0; }
+.tools-vertical .tool-label { font-size: 9px; }
+.tools-vertical .recipe-postit { max-width: 100%; }
+.tools-vertical .scene-scribble { right: 0; }
+
+@media (max-width: 760px) {
+  .toolbox-caption { font-size: 15px; }
+  .kitchen-heading { gap: 5px; }
+  .tool-layout-toggle { min-height: 26px; padding: 3px 5px; font-size: 8px; gap: 3px; }
+  .tool-layout-toggle svg { width: 12px; height: 12px; }
+  .apple-workshop.tools-vertical { grid-template-columns: minmax(0, 1fr) 105px; column-gap: 10px; }
+  .tools-vertical .kitchen-toolbox { padding: 7px 5px; }
+  .tools-vertical .toolbox-eyebrow { font-size: 6px; letter-spacing: .8px; }
+  .tools-vertical .toolbox-caption { font-size: 12px; }
+  .tools-vertical .kitchen-heading { gap: 5px; margin-bottom: 7px; }
+  .tools-vertical .tool-button { gap: 5px; padding: 0 2px; }
+  .tools-vertical .tool-button svg { width: 19px; height: min(25px, 100%); }
+  .tools-vertical .tool-label { font-size: 7px; }
+  .tools-vertical .workshop-topline { padding: 7px 3px 8px; }
+  .tools-vertical .recipe-postit { width: 100%; padding: 11px 10px 8px; }
+  .tools-vertical .postit-title { font-size: 18px; }
+  .tools-vertical .scene-scribble > span { font-size: 11px; }
+  .tools-vertical .scene-scribble svg { width: 35px; height: 32px; }
+}
+@media (max-height: 700px) and (max-width: 760px) {
+  .toolbox-caption { font-size: 12px; }
+  .tools-vertical .toolbox-caption { font-size: 11px; }
+  .tools-vertical .postit-title { font-size: 16px; }
+  .tools-vertical .tool-button svg { width: 17px; height: min(21px, 100%); }
+}
+@media (min-width: 600px) and (max-height: 500px) {
+  .kitchen-heading { display: flex; flex-wrap: wrap; }
+  .toolbox-caption { order: 3; width: 100%; font-size: 13px; }
+  .apple-workshop.tools-vertical { grid-template-columns: minmax(0, 1fr) 112px; }
+  .tools-vertical .kitchen-heading { flex-wrap: nowrap; gap: 3px; margin-bottom: 5px; }
+  .tools-vertical .toolbox-caption { font-size: 11px; order: 0; }
+  .tools-vertical .kitchen-toolbox { padding: 5px; }
+  .tools-vertical .tool-button { gap: 5px; padding: 0 2px; }
+  .tools-vertical .tool-button svg { width: 15px; height: min(18px, 100%); }
+  .tools-vertical .tool-label { font-size: 7px; }
+}

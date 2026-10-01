@@ -49,7 +49,7 @@ export function foodTexture(kind = 'crust') {
   const canvas = document.createElement('canvas'); canvas.width = canvas.height = size;
   const ctx = canvas.getContext('2d');
   const data = ctx.createImageData(size, size);
-  const base = { crust: [153, 99, 37], flesh: [238, 218, 173], crumb: [158, 105, 46], puree: [184, 143, 78], dried: [189, 142, 70], sauce: [188, 137, 61], bark: [83, 46, 24], grain: [185, 185, 185] }[kind];
+  const base = { cutBoudin: [58, 40, 35], boudin: [31, 24, 22], pastry: [191, 118, 39], crust: [153, 99, 37], flesh: [238, 218, 173], crumb: [158, 105, 46], puree: [184, 143, 78], dried: [189, 142, 70], sauce: [188, 137, 61], bark: [83, 46, 24], grain: [185, 185, 185] }[kind];
   for (let y = 0; y < size; y++) {
     for (let x = 0; x < size; x++) {
       const i = (y * size + x) * 4;
@@ -60,16 +60,31 @@ export function foodTexture(kind = 'crust') {
     }
   }
   ctx.putImageData(data, 0, 0);
+  if (kind === 'cutBoudin') {
+    for (let i = 0; i < 3600; i++) {
+      ctx.fillStyle = i % 4 === 0 ? 'rgba(208,180,135,.55)' : 'rgba(113,77,58,.6)';
+      ctx.beginPath(); ctx.ellipse(random() * size, random() * size, .6 + random() * 2, .6 + random() * 1.5, random() * Math.PI, 0, Math.PI * 2); ctx.fill();
+    }
+  }
   if (kind === 'flesh') {
     for (let i = 0; i < 150; i++) {
       ctx.fillStyle = `rgba(137,73,23,${random() * .18})`;
       ctx.beginPath(); ctx.ellipse(random() * size, random() * size, 2 + random() * 14, 2 + random() * 7, random(), 0, Math.PI * 2); ctx.fill();
     }
   }
-  if (kind === 'crust' || kind === 'crumb') {
+  if (kind === 'crust' || kind === 'crumb' || kind === 'pastry') {
     for (let i = 0; i < 9500; i++) {
       ctx.fillStyle = random() > .5 ? 'rgba(255,211,125,.35)' : 'rgba(55,26,9,.3)';
       ctx.beginPath(); ctx.arc(random() * size, random() * size, .5 + random() * 1.7, 0, Math.PI * 2); ctx.fill();
+    }
+  }
+  if (kind === 'pastry') {
+    for (let i = 0; i < 180; i++) {
+      const x = random() * size, y = random() * size;
+      ctx.fillStyle = 'rgba(113,54,10,.12)';
+      ctx.beginPath(); ctx.ellipse(x, y, 5 + random() * 24, 2 + random() * 8, random() * 3, 0, Math.PI * 2); ctx.fill();
+      ctx.strokeStyle = 'rgba(255,227,169,.5)'; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x + 5 + random() * 18, y + random() * 3); ctx.stroke();
     }
   }
   return canvasTexture(canvas);
