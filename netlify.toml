@@ -1,0 +1,18 @@
+[build]
+  command = "pnpm build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[redirects]]
+  from = "/1"
+  to = "/1/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/1/"
+  to = "/1/index.html"
+  status = 200
+  force = true

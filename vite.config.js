@@ -7,9 +7,23 @@ const root = dirname(fileURLToPath(import.meta.url));
 const days = readdirSync(root, { withFileTypes: true })
   .filter((entry) => entry.isDirectory() && /^\d+$/.test(entry.name) && existsSync(resolve(root, entry.name, 'index.html')));
 
+function dayRoutes() {
+  const apply = (server) => {
+    server.middlewares.use((request, response, next) => {
+      const [path, query = ''] = String(request.url || '').split('?');
+      if (!/^\/\d+$/.test(path)) return next();
+      response.statusCode = 302;
+      response.setHeader('Location', `${path}/${query ? `?${query}` : ''}`);
+      response.end();
+    });
+  };
+  return { name: 'day-routes', configureServer: apply, configurePreviewServer: apply };
+}
+
 export default defineConfig({
   root,
   publicDir: resolve(root, '1/public'),
+  plugins: [dayRoutes()],
   server: { host: '127.0.0.1', port: 5173, strictPort: true },
   build: {
     rollupOptions: {

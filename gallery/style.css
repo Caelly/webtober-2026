@@ -1,0 +1,88 @@
+:root { font-family: 'DM Sans', sans-serif; color: #304b33; background: #f5f4ec; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+a:focus-visible { outline: 2px solid #71834f; outline-offset: 5px; }
+svg { display: block; }
+::selection { background: #d7e0bd; }
+.gallery-shell { width: min(1280px, 88%); margin: 0 auto; }
+.gallery-header { display: flex; justify-content: space-between; align-items: center; height: 100px; border-bottom: 1px solid #dce0d1; }
+.gallery-brand { display: inline-flex; align-items: center; gap: 12px; }
+.gallery-brand svg { width: 27px; height: 27px; color: #71834f; }
+.gallery-brand > span { font-size: 29px; font-weight: 650; letter-spacing: -1.4px; }
+.brand-dot { color: #87966a; }
+.edition-badge { border: 1px solid #d8dccd; border-radius: 30px; font-size: 11px; padding: 10px 17px; color: #6d795e; }
+.gallery-intro { padding: 68px 0 58px; display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; }
+.intro-eyebrow, .progress-label { font-size: 9px; font-weight: 500; letter-spacing: 1.6px; color: #7a856e; margin: 0 0 22px; }
+h1 { font: 500 clamp(54px, 5.8vw, 84px)/.96 'Cormorant Garamond', Georgia, serif; letter-spacing: -.045em; margin: 0; }
+h1 em { font-weight: 500; color: #71834f; }
+.intro-description { font-size: 12px; line-height: 1.9; color: #818576; margin: 24px 0 0; }
+.collection-progress { width: 238px; flex-shrink: 0; border-left: 1px solid #dce0d1; padding-left: 30px; margin-bottom: 2px; }
+.progress-label { font-size: 7px; letter-spacing: 1.4px; }
+.collection-progress p { display: flex; align-items: baseline; gap: 12px; margin: 8px 0 14px; }
+.collection-progress strong { font: 500 64px/.9 'Cormorant Garamond', Georgia, serif; letter-spacing: -2px; font-variant-numeric: lining-nums; }
+.collection-progress p > span { font-size: 12px; color: #a1a693; }
+.progress-dots { display: grid; grid-template-columns: repeat(16, 5px); gap: 7px; margin-bottom: 14px; }
+.progress-dots i { width: 5px; height: 5px; border-radius: 50%; background: #d9ddce; }
+.progress-dots .is-filled { background: #71834f; }
+.progress-caption { font-size: 9px; color: #8a907f; }
+.collection-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; gap: 16px; }
+.collection-heading h2 { font: 500 30px/1.2 'Cormorant Garamond', Georgia, serif; margin: 0; letter-spacing: -.5px; }
+.collection-note { display: flex; align-items: center; gap: 7px; font-size: 9px; color: #8a927c; }
+.collection-note i, .available-badge i { width: 5px; height: 5px; background: #71834f; border-radius: 50%; }
+.calendar { display: grid; gap: 8px; }
+.calendar-weekdays, .calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; }
+.calendar-weekdays span { text-align: center; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #7a856e; }
+.calendar-grid { list-style: none; padding: 0; margin: 0; }
+.cal-cell { min-width: 0; }
+.cal-day { display: flex; flex-direction: column; height: 100%; border: 1px solid #dde0d2; border-radius: 12px; overflow: hidden; background: #fafaf4; }
+.cal-frame, .cal-sketch { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #f3f2e8; }
+.cal-frame iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 800px; border: 0; transform: scale(var(--preview-scale, .12)); transform-origin: top left; pointer-events: none; opacity: 0; background: #f5f4ec; }
+.cal-frame.is-ready iframe { opacity: 1; transition: opacity .35s ease; }
+.cal-sketch { display: grid; place-items: center; color: #8d977c; }
+.theme-sketch { width: 42%; height: auto; }
+.cal-meta { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 6px; min-height: 42px; padding: 7px 8px 8px; }
+.cal-num { font: 500 22px/1 'Cormorant Garamond', Georgia, serif; letter-spacing: -.4px; font-variant-numeric: lining-nums; }
+.cal-theme { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; color: #506446; }
+.card-arrow { width: 24px; height: 24px; border: 1px solid #d8ddca; border-radius: 50%; display: grid; place-items: center; color: #6d7e53; }
+.card-arrow svg { width: 12px; height: 12px; }
+.locked-label { display: flex; color: #989d8d; }
+.locked-label svg { width: 12px; height: 12px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.is-locked .cal-sketch { filter: grayscale(1); opacity: .72; }
+.is-locked .cal-theme { color: #969c8b; }
+.is-available { border-color: #bdc7a8; transition: transform .2s, box-shadow .2s; }
+.is-available:hover { transform: translateY(-3px); box-shadow: 0 12px 30px #304b3314; }
+.is-today { box-shadow: inset 0 0 0 1px #71834f; }
+.gallery-footer { display: flex; justify-content: space-between; gap: 20px; align-items: center; margin-top: 56px; padding: 27px 0; border-top: 1px solid #dce0d1; color: #969d88; font-size: 9px; }
+.gallery-footer > span:first-child { font-size: 7px; letter-spacing: 1.4px; }
+@media (max-width: 1050px) {
+  .calendar-weekdays, .calendar-grid { gap: 6px; }
+  .cal-theme { font-size: 11px; }
+  .cal-num { font-size: 20px; }
+}
+@media (max-width: 760px) {
+  .gallery-shell { width: min(100% - 28px, 760px); }
+  .gallery-header { height: 76px; }
+  .gallery-brand { gap: 8px; }
+  .gallery-brand > span { font-size: 25px; }
+  .gallery-brand svg { width: 22px; height: 22px; }
+  .edition-badge { font-size: 8px; padding: 8px 10px; }
+  .gallery-intro { padding: 42px 0 28px; flex-direction: column; align-items: flex-start; }
+  h1 { font-size: clamp(46px, 12vw, 66px); }
+  .intro-eyebrow { font-size: 7px; letter-spacing: 1.2px; margin-bottom: 18px; }
+  .intro-description { font-size: 11px; margin-top: 18px; }
+  .collection-progress { width: auto; border-left: 0; padding-left: 0; }
+  .calendar { overflow-x: auto; padding-bottom: 8px; }
+  .calendar-weekdays, .calendar-grid { min-width: 720px; }
+  .collection-heading h2 { font-size: 27px; }
+  .collection-note { font-size: 7px; }
+  .gallery-footer { margin-top: 36px; font-size: 7px; line-height: 1.6; }
+  .gallery-footer > span:first-child { font-size: 6px; }
+}
+@media (max-width: 400px) { .intro-description br { display: none; } .edition-badge { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .is-available { transition: none; }
+  .is-available:hover { transform: none; }
+  .cal-frame.is-ready iframe { transition: none; }
+}

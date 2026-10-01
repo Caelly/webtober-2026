@@ -11,7 +11,7 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Le jour 1 est accessible sur `http://127.0.0.1:5173/1`. La racine ouvre ce premier jour.
+La page d’accueil est le calendrier d’octobre. Le jour 1 est accessible sur `http://127.0.0.1:5173/1`.
 
 ```sh
 pnpm test
@@ -28,8 +28,10 @@ inktober/
 │   ├── public/
 │   ├── src/
 │   └── README.md
+├── gallery/
 ├── index.html
 ├── days.js
+├── netlify.toml
 ├── package.json
 ├── pnpm-lock.yaml
 └── vite.config.js
@@ -37,7 +39,11 @@ inktober/
 
 La configuration et les dépendances sont partagées à la racine. Chaque jour possède son dossier numéroté et son point d’entrée HTML. Vite détecte ces dossiers au démarrage et les compile ensemble dans `dist/`, en conservant les chemins `/1/`, `/2/`, etc.
 
-`days.js` contient les 31 thèmes en français et leur disponibilité dans le menu Webtober. Passez `unlocked` à `true` lorsqu’une page est prête à publier. Seul le jour 1 est actuellement accessible.
+`days.js` contient les 31 thèmes en français et leur disponibilité dans le calendrier. Passez `unlocked` à `true` lorsqu’une page est prête à publier : la case du jour affiche alors un aperçu en direct de l’expérience. Seul le jour 1 est actuellement accessible.
+
+## Netlify
+
+Le dépôt se publie tel quel : `pnpm build` produit `dist`. La racine sert le calendrier, et `/1` sert le jour 1.
 
 La page du jour 1 tient dans la hauteur de l’écran sans défilement. Le bouton Vertical / Horizontal change la disposition des outils et mémorise le choix. Sur les écrans en paysage de faible hauteur, les outils passent à côté de la scène. Les recettes et le menu peuvent défiler à l’intérieur de leur panneau si nécessaire.
 

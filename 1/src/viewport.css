@@ -21,6 +21,7 @@ html, body, #app { height: 100%; overflow: hidden; }
 .hero-copy[data-result='juice'] .apple-word { font-size: .9em; }
 .hero-copy[data-result='boudin'] .apple-word { font-size: .8em; }
 #result-word { transition: color .4s; }
+.gallery-menu-link { display: flex; justify-content: space-between; padding: 8px 10px 12px; margin-bottom: 9px; border-bottom: 1px solid #dce0d1; font-size: 11px; color: #506446; }
 .recipe-hint[hidden] { display: none; }
 .apple-workshop {
   min-height: 0;
@@ -189,3 +190,19 @@ dialog { max-height: calc(100dvh - 32px); overflow-y: auto; }
   .scene-scribble svg { width: 30px; height: 28px; }
   .variety-tag { font-size: 7px; padding: 3px 6px; bottom: 0; }
 }
+
+/* Compact scene used as the calendar thumbnail. */
+html.is-apercu .site-header,
+html.is-apercu .hero-copy,
+html.is-apercu .site-footer,
+html.is-apercu .workshop-topline,
+html.is-apercu .toolbox,
+html.is-apercu .scene-scribble,
+html.is-apercu .variety-tag,
+html.is-apercu dialog { display: none !important; }
+html.is-apercu .page-shell { display: block; height: 100%; max-width: none; padding: 0; }
+html.is-apercu .hero,
+html.is-apercu .apple-workshop,
+html.is-apercu .scene-wrap { display: block; height: 100%; min-height: 0; margin: 0; padding: 0; }
+html.is-apercu .scene-wrap::before,
+html.is-apercu .scene-wrap::after { display: none; }
