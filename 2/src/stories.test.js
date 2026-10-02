@@ -35,8 +35,8 @@ test('le tirage couvre toutes les histoires sans répétition',()=>{
 });
 
 test('les deux catégories sont présentes et seules les histoires vraies révèlent une identité sourcée',()=>{
-  assert.equal(stories.filter(story=>story.isTrue).length,3);
-  assert.equal(stories.filter(story=>!story.isTrue).length,3);
+  assert.ok(stories.length>=12);
+  assert.equal(stories.filter(story=>story.isTrue).length,stories.filter(story=>!story.isTrue).length);
   for(const story of stories) {
     assert.equal(typeof story.isTrue,'boolean');
     assert.ok(story.explanation);

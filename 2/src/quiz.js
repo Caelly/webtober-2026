@@ -4,7 +4,7 @@ export function verdictFor(story, choice) {
     explanation: story.explanation, sources: story.isTrue ? story.sources : [] };
 }
 
-export function createQuiz(panel, next) {
+export function createQuiz(panel, next, onAnswer = () => {}) {
   const waiting = panel.querySelector('.quiz-waiting');
   const choices = panel.querySelector('.quiz-choices');
   const result = panel.querySelector('.quiz-result');
@@ -58,6 +58,7 @@ export function createQuiz(panel, next) {
     const body = panel.closest('.parchment').querySelector('.story-body');
     body.scrollTop = body.scrollHeight;
     heading.focus({preventScroll:true});
+    onAnswer(verdict);
   }));
   nextButton.addEventListener('click', () => { if (answered) next(); });
   return { start, finish };

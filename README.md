@@ -53,6 +53,6 @@ Une pomme 3D à peindre et à transformer avec des ustensiles : quartiers, pomme
 
 ## Jour 2 — Relique
 
-Un reliquaire religieux en 3D ouvre un parchemin avec une histoire de mort improbable. Six narrations françaises de moins d’une minute accompagnent l’apparition du texte, mot par mot. Le visiteur choisit à la fin si l’histoire est vraie ou inventée. Les histoires vraies révèlent la personne, ses dates et leurs sources. Le son peut être mis en pause, repris ou coupé. Voir [le jour 2](2/README.md).
+Un reliquaire religieux en 3D ouvre un parchemin avec une histoire de mort improbable. Douze narrations françaises de moins d’une minute accompagnent l’apparition du texte, mot par mot. Le visiteur choisit à la fin si l’histoire est vraie ou inventée. Les histoires vraies révèlent la personne, ses dates et leurs sources. Une bonne réponse fait apparaître un fantôme discret. Le parchemin se referme dix secondes après le verdict. Le son peut être mis en pause, repris ou coupé ; un mode sans voix permet de lire à son rythme. Voir [le jour 2](2/README.md).
 
 Les illustrations sont générées en code avec Three.js. Les polices Cormorant Garamond et DM Sans sont chargées depuis Google Fonts, avec des polices système de remplacement.

@@ -5,8 +5,14 @@ import repetition from '../audio/repetition.wav?url';
 import bibliotheque from '../audio/bibliotheque.wav?url';
 import fantome from '../audio/fantome.wav?url';
 import pari from '../audio/pari.wav?url';
+import curedent from '../audio/curedent.wav?url';
+import parachute from '../audio/parachute.wav?url';
+import train from '../audio/train.wav?url';
+import miroir from '../audio/miroir.wav?url';
+import fromage from '../audio/fromage.wav?url';
+import meteo from '../audio/meteo.wav?url';
 
-const files = { cloche, soupe, repetition, bibliotheque, fantome, pari };
+const files = { cloche, soupe, repetition, bibliotheque, fantome, pari, curedent, parachute, train, miroir, fromage, meteo };
 
 export function createNarrator({ body, button, modeButton, mute, status, time, progress, onComplete = () => {} }) {
   const audio = new Audio(); audio.preload = 'metadata'; audio.hidden = true; audio.id = 'story-audio'; body.closest('dialog').appendChild(audio);
