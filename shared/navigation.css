@@ -1,0 +1,38 @@
+.site-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #dce0d1; }
+.brand { display: inline-flex; align-items: center; gap: 11px; }
+.brand > svg { width: 26px; height: 31px; }
+.brand > span { font-weight: 650; font-size: 31px; letter-spacing: -1.8px; }
+.brand-dot { color: #87966a; }
+.header-nav { display: flex; align-items: center; gap: 29px; }
+.concept-link { font-size: 13px; padding: 8px 0; }
+.concept-link span { margin-left: 10px; font-size: 17px; }
+.header-divider { width: 1px; height: 20px; background: #dce0d1; }
+.challenge-badge { display: flex; gap: 9px; align-items: center; font-size: 12px; font-weight: 500; padding: 9px 14px; border: 1px solid #d8dccd; border-radius: 30px; }
+.status-dot { display: inline-block; width: 6px; height: 6px; background: #728750; border-radius: 50%; }
+.day-picker { position: relative; z-index: 10; }
+.day-picker summary { cursor: pointer; list-style: none; user-select: none; }
+.day-picker summary::-webkit-details-marker { display: none; }
+.picker-chevron { width: 14px; height: 14px; margin-left: 2px; color: #71815b; transition: transform .2s; }
+.day-picker[open] .picker-chevron { transform: rotate(180deg); }
+.day-menu { position: absolute; top: calc(100% + 12px); right: 0; width: 340px; max-width: calc(100vw - 28px); max-height: calc(100dvh - 100px); overflow-y: auto; overscroll-behavior: contain; padding: 16px; border: 1px solid #d8dccd; border-radius: 14px; background: #fafaf4; box-shadow: 0 12px 40px #304d351a; }
+.gallery-menu-link { display: flex; justify-content: space-between; padding: 8px 10px 12px; margin-bottom: 9px; border-bottom: 1px solid #dce0d1; font-size: 11px; color: #506446; }
+.day-menu-heading { display: block; font-size: 8px; letter-spacing: 1.4px; color: #7c876f; margin-bottom: 12px; }
+.day-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px 8px; }
+.day-list a, .day-list button { width: 100%; display: flex; align-items: center; gap: 9px; text-align: left; padding: 8px; border-radius: 6px; font-size: 11px; }
+.day-list a { color: #506b3f; background: #e9eedf; }
+.day-list a:hover { background: #dfe7d2; }
+.day-list a[aria-current='page'] { box-shadow: inset 0 0 0 1px #c5cfb4; }
+.day-list button:disabled { color: #a2a69b; cursor: not-allowed; }
+.day-number { font-size: 9px; font-variant-numeric: tabular-nums; }
+.day-mark, .day-lock { margin-left: auto; }
+.day-lock { width: 12px; height: 12px; opacity: .65; }
+@media (max-width: 760px) {
+  .brand { gap: 7px; }
+  .brand > span { font-size: 26px; }
+  .brand > svg { width: 22px; height: 26px; }
+  .header-nav { gap: 14px; }
+  .concept-link { font-size: 9px; }
+  .concept-link span { margin-left: 5px; font-size: 14px; }
+  .header-divider { display: none; }
+  .challenge-badge { font-size: 10px; padding: 8px 10px; gap: 7px; }
+}

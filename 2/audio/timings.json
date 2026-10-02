@@ -1,0 +1,2703 @@
+﻿{
+    "cloche":  {
+                   "duration":  37.69,
+                   "bodyOffset":  31,
+                   "words":  [
+                                 {
+                                     "position":  0,
+                                     "length":  2,
+                                     "time":  0.099999999999999992
+                                 },
+                                 {
+                                     "position":  3,
+                                     "length":  4,
+                                     "time":  0.32
+                                 },
+                                 {
+                                     "position":  8,
+                                     "length":  3,
+                                     "time":  0.65499999999999992
+                                 },
+                                 {
+                                     "position":  12,
+                                     "length":  7,
+                                     "time":  0.80999999999999994
+                                 },
+                                 {
+                                     "position":  20,
+                                     "length":  4,
+                                     "time":  1.155
+                                 },
+                                 {
+                                     "position":  25,
+                                     "length":  4,
+                                     "time":  1.42
+                                 },
+                                 {
+                                     "position":  31,
+                                     "length":  2,
+                                     "time":  2.85
+                                 },
+                                 {
+                                     "position":  34,
+                                     "length":  11,
+                                     "time":  3
+                                 },
+                                 {
+                                     "position":  46,
+                                     "length":  6,
+                                     "time":  3.795
+                                 },
+                                 {
+                                     "position":  53,
+                                     "length":  3,
+                                     "time":  4.225
+                                 },
+                                 {
+                                     "position":  57,
+                                     "length":  5,
+                                     "time":  4.3599999999999994
+                                 },
+                                 {
+                                     "position":  63,
+                                     "length":  4,
+                                     "time":  4.6499999999999995
+                                 },
+                                 {
+                                     "position":  68,
+                                     "length":  8,
+                                     "time":  4.8599999999999994
+                                 },
+                                 {
+                                     "position":  77,
+                                     "length":  2,
+                                     "time":  5.385
+                                 },
+                                 {
+                                     "position":  80,
+                                     "length":  8,
+                                     "time":  5.515
+                                 },
+                                 {
+                                     "position":  89,
+                                     "length":  2,
+                                     "time":  6
+                                 },
+                                 {
+                                     "position":  92,
+                                     "length":  3,
+                                     "time":  6.1099999999999994
+                                 },
+                                 {
+                                     "position":  96,
+                                     "length":  3,
+                                     "time":  6.3249999999999993
+                                 },
+                                 {
+                                     "position":  101,
+                                     "length":  1,
+                                     "time":  7.545
+                                 },
+                                 {
+                                     "position":  103,
+                                     "length":  5,
+                                     "time":  7.67
+                                 },
+                                 {
+                                     "position":  109,
+                                     "length":  6,
+                                     "time":  7.8999999999999995
+                                 },
+                                 {
+                                     "position":  117,
+                                     "length":  2,
+                                     "time":  8.6399999999999988
+                                 },
+                                 {
+                                     "position":  120,
+                                     "length":  2,
+                                     "time":  8.73
+                                 },
+                                 {
+                                     "position":  123,
+                                     "length":  7,
+                                     "time":  8.86
+                                 },
+                                 {
+                                     "position":  131,
+                                     "length":  3,
+                                     "time":  9.275
+                                 },
+                                 {
+                                     "position":  135,
+                                     "length":  3,
+                                     "time":  9.45
+                                 },
+                                 {
+                                     "position":  139,
+                                     "length":  6,
+                                     "time":  9.6749999999999989
+                                 },
+                                 {
+                                     "position":  146,
+                                     "length":  8,
+                                     "time":  10.08
+                                 },
+                                 {
+                                     "position":  157,
+                                     "length":  2,
+                                     "time":  10.815
+                                 },
+                                 {
+                                     "position":  160,
+                                     "length":  6,
+                                     "time":  10.93
+                                 },
+                                 {
+                                     "position":  167,
+                                     "length":  2,
+                                     "time":  11.275
+                                 },
+                                 {
+                                     "position":  170,
+                                     "length":  3,
+                                     "time":  11.385
+                                 },
+                                 {
+                                     "position":  174,
+                                     "length":  4,
+                                     "time":  11.68
+                                 },
+                                 {
+                                     "position":  179,
+                                     "length":  2,
+                                     "time":  11.959999999999999
+                                 },
+                                 {
+                                     "position":  182,
+                                     "length":  5,
+                                     "time":  12.075
+                                 },
+                                 {
+                                     "position":  188,
+                                     "length":  5,
+                                     "time":  12.299999999999999
+                                 },
+                                 {
+                                     "position":  194,
+                                     "length":  4,
+                                     "time":  12.709999999999999
+                                 },
+                                 {
+                                     "position":  199,
+                                     "length":  7,
+                                     "time":  12.915
+                                 },
+                                 {
+                                     "position":  207,
+                                     "length":  2,
+                                     "time":  13.305
+                                 },
+                                 {
+                                     "position":  210,
+                                     "length":  5,
+                                     "time":  13.42
+                                 },
+                                 {
+                                     "position":  217,
+                                     "length":  4,
+                                     "time":  14.85
+                                 },
+                                 {
+                                     "position":  222,
+                                     "length":  3,
+                                     "time":  15.065
+                                 },
+                                 {
+                                     "position":  226,
+                                     "length":  12,
+                                     "time":  15.245
+                                 },
+                                 {
+                                     "position":  240,
+                                     "length":  2,
+                                     "time":  16.415
+                                 },
+                                 {
+                                     "position":  243,
+                                     "length":  4,
+                                     "time":  16.564999999999998
+                                 },
+                                 {
+                                     "position":  248,
+                                     "length":  6,
+                                     "time":  16.895
+                                 },
+                                 {
+                                     "position":  255,
+                                     "length":  3,
+                                     "time":  17.259999999999998
+                                 },
+                                 {
+                                     "position":  259,
+                                     "length":  6,
+                                     "time":  17.47
+                                 },
+                                 {
+                                     "position":  266,
+                                     "length":  4,
+                                     "time":  17.875
+                                 },
+                                 {
+                                     "position":  272,
+                                     "length":  2,
+                                     "time":  19.16
+                                 },
+                                 {
+                                     "position":  275,
+                                     "length":  8,
+                                     "time":  19.355
+                                 },
+                                 {
+                                     "position":  284,
+                                     "length":  9,
+                                     "time":  19.805
+                                 },
+                                 {
+                                     "position":  295,
+                                     "length":  4,
+                                     "time":  20.75
+                                 },
+                                 {
+                                     "position":  300,
+                                     "length":  2,
+                                     "time":  21.035
+                                 },
+                                 {
+                                     "position":  303,
+                                     "length":  8,
+                                     "time":  21.165
+                                 },
+                                 {
+                                     "position":  312,
+                                     "length":  9,
+                                     "time":  21.724999999999998
+                                 },
+                                 {
+                                     "position":  322,
+                                     "length":  8,
+                                     "time":  22.25
+                                 },
+                                 {
+                                     "position":  331,
+                                     "length":  8,
+                                     "time":  22.61
+                                 },
+                                 {
+                                     "position":  340,
+                                     "length":  4,
+                                     "time":  23.05
+                                 },
+                                 {
+                                     "position":  345,
+                                     "length":  4,
+                                     "time":  23.265
+                                 },
+                                 {
+                                     "position":  351,
+                                     "length":  2,
+                                     "time":  24.634999999999998
+                                 },
+                                 {
+                                     "position":  354,
+                                     "length":  7,
+                                     "time":  24.845
+                                 },
+                                 {
+                                     "position":  362,
+                                     "length":  6,
+                                     "time":  25.365
+                                 },
+                                 {
+                                     "position":  369,
+                                     "length":  9,
+                                     "time":  25.665
+                                 },
+                                 {
+                                     "position":  379,
+                                     "length":  2,
+                                     "time":  26.244999999999997
+                                 },
+                                 {
+                                     "position":  382,
+                                     "length":  4,
+                                     "time":  26.36
+                                 },
+                                 {
+                                     "position":  387,
+                                     "length":  7,
+                                     "time":  26.74
+                                 },
+                                 {
+                                     "position":  395,
+                                     "length":  5,
+                                     "time":  27.205
+                                 },
+                                 {
+                                     "position":  401,
+                                     "length":  9,
+                                     "time":  27.549999999999997
+                                 },
+                                 {
+                                     "position":  412,
+                                     "length":  2,
+                                     "time":  28.97
+                                 },
+                                 {
+                                     "position":  415,
+                                     "length":  4,
+                                     "time":  29.134999999999998
+                                 },
+                                 {
+                                     "position":  420,
+                                     "length":  10,
+                                     "time":  29.439999999999998
+                                 },
+                                 {
+                                     "position":  431,
+                                     "length":  5,
+                                     "time":  30.025
+                                 },
+                                 {
+                                     "position":  437,
+                                     "length":  2,
+                                     "time":  30.375
+                                 },
+                                 {
+                                     "position":  440,
+                                     "length":  3,
+                                     "time":  30.5
+                                 },
+                                 {
+                                     "position":  444,
+                                     "length":  1,
+                                     "time":  30.724999999999998
+                                 },
+                                 {
+                                     "position":  446,
+                                     "length":  5,
+                                     "time":  30.84
+                                 },
+                                 {
+                                     "position":  452,
+                                     "length":  3,
+                                     "time":  31.31
+                                 },
+                                 {
+                                     "position":  456,
+                                     "length":  2,
+                                     "time":  31.485
+                                 },
+                                 {
+                                     "position":  459,
+                                     "length":  9,
+                                     "time":  31.599999999999998
+                                 },
+                                 {
+                                     "position":  470,
+                                     "length":  3,
+                                     "time":  33.065
+                                 },
+                                 {
+                                     "position":  474,
+                                     "length":  6,
+                                     "time":  33.265
+                                 },
+                                 {
+                                     "position":  481,
+                                     "length":  2,
+                                     "time":  33.684999999999995
+                                 },
+                                 {
+                                     "position":  484,
+                                     "length":  4,
+                                     "time":  33.805
+                                 },
+                                 {
+                                     "position":  490,
+                                     "length":  2,
+                                     "time":  34.35
+                                 },
+                                 {
+                                     "position":  493,
+                                     "length":  2,
+                                     "time":  34.425
+                                 },
+                                 {
+                                     "position":  496,
+                                     "length":  8,
+                                     "time":  34.545
+                                 },
+                                 {
+                                     "position":  505,
+                                     "length":  4,
+                                     "time":  35.19
+                                 },
+                                 {
+                                     "position":  510,
+                                     "length":  14,
+                                     "time":  35.449999999999996
+                                 },
+                                 {
+                                     "position":  525,
+                                     "length":  2,
+                                     "time":  36.3
+                                 },
+                                 {
+                                     "position":  528,
+                                     "length":  6,
+                                     "time":  36.449999999999996
+                                 }
+                             ]
+               },
+    "soupe":  {
+                  "duration":  38.95,
+                  "bodyOffset":  27,
+                  "words":  [
+                                {
+                                    "position":  0,
+                                    "length":  2,
+                                    "time":  0.099999999999999992
+                                },
+                                {
+                                    "position":  3,
+                                    "length":  5,
+                                    "time":  0.3
+                                },
+                                {
+                                    "position":  9,
+                                    "length":  2,
+                                    "time":  0.615
+                                },
+                                {
+                                    "position":  12,
+                                    "length":  13,
+                                    "time":  0.735
+                                },
+                                {
+                                    "position":  27,
+                                    "length":  6,
+                                    "time":  2.56
+                                },
+                                {
+                                    "position":  34,
+                                    "length":  7,
+                                    "time":  3.005
+                                },
+                                {
+                                    "position":  42,
+                                    "length":  3,
+                                    "time":  3.335
+                                },
+                                {
+                                    "position":  46,
+                                    "length":  5,
+                                    "time":  3.505
+                                },
+                                {
+                                    "position":  52,
+                                    "length":  6,
+                                    "time":  3.79
+                                },
+                                {
+                                    "position":  59,
+                                    "length":  6,
+                                    "time":  4.265
+                                },
+                                {
+                                    "position":  66,
+                                    "length":  8,
+                                    "time":  4.6049999999999995
+                                },
+                                {
+                                    "position":  76,
+                                    "length":  1,
+                                    "time":  6.225
+                                },
+                                {
+                                    "position":  78,
+                                    "length":  4,
+                                    "time":  6.345
+                                },
+                                {
+                                    "position":  83,
+                                    "length":  4,
+                                    "time":  6.59
+                                },
+                                {
+                                    "position":  88,
+                                    "length":  3,
+                                    "time":  6.8249999999999993
+                                },
+                                {
+                                    "position":  93,
+                                    "length":  4,
+                                    "time":  7.2799999999999994
+                                },
+                                {
+                                    "position":  98,
+                                    "length":  11,
+                                    "time":  7.4399999999999995
+                                },
+                                {
+                                    "position":  110,
+                                    "length":  3,
+                                    "time":  8.1399999999999988
+                                },
+                                {
+                                    "position":  114,
+                                    "length":  8,
+                                    "time":  8.32
+                                },
+                                {
+                                    "position":  123,
+                                    "length":  8,
+                                    "time":  8.6749999999999989
+                                },
+                                {
+                                    "position":  132,
+                                    "length":  10,
+                                    "time":  9.115
+                                },
+                                {
+                                    "position":  144,
+                                    "length":  2,
+                                    "time":  10.875
+                                },
+                                {
+                                    "position":  147,
+                                    "length":  4,
+                                    "time":  11.025
+                                },
+                                {
+                                    "position":  153,
+                                    "length":  4,
+                                    "time":  11.74
+                                },
+                                {
+                                    "position":  158,
+                                    "length":  5,
+                                    "time":  11.905
+                                },
+                                {
+                                    "position":  164,
+                                    "length":  2,
+                                    "time":  12.235
+                                },
+                                {
+                                    "position":  167,
+                                    "length":  8,
+                                    "time":  12.354999999999999
+                                },
+                                {
+                                    "position":  177,
+                                    "length":  7,
+                                    "time":  12.979999999999999
+                                },
+                                {
+                                    "position":  185,
+                                    "length":  5,
+                                    "time":  13.569999999999999
+                                },
+                                {
+                                    "position":  191,
+                                    "length":  8,
+                                    "time":  13.819999999999999
+                                },
+                                {
+                                    "position":  200,
+                                    "length":  2,
+                                    "time":  14.209999999999999
+                                },
+                                {
+                                    "position":  203,
+                                    "length":  3,
+                                    "time":  14.33
+                                },
+                                {
+                                    "position":  207,
+                                    "length":  2,
+                                    "time":  14.629999999999999
+                                },
+                                {
+                                    "position":  210,
+                                    "length":  6,
+                                    "time":  14.705
+                                },
+                                {
+                                    "position":  217,
+                                    "length":  4,
+                                    "time":  15.04
+                                },
+                                {
+                                    "position":  222,
+                                    "length":  3,
+                                    "time":  15.18
+                                },
+                                {
+                                    "position":  226,
+                                    "length":  8,
+                                    "time":  15.379999999999999
+                                },
+                                {
+                                    "position":  236,
+                                    "length":  3,
+                                    "time":  16.9
+                                },
+                                {
+                                    "position":  240,
+                                    "length":  5,
+                                    "time":  17.125
+                                },
+                                {
+                                    "position":  246,
+                                    "length":  9,
+                                    "time":  17.445
+                                },
+                                {
+                                    "position":  256,
+                                    "length":  5,
+                                    "time":  18
+                                },
+                                {
+                                    "position":  262,
+                                    "length":  3,
+                                    "time":  18.335
+                                },
+                                {
+                                    "position":  266,
+                                    "length":  5,
+                                    "time":  18.529999999999998
+                                },
+                                {
+                                    "position":  272,
+                                    "length":  6,
+                                    "time":  18.845
+                                },
+                                {
+                                    "position":  281,
+                                    "length":  6,
+                                    "time":  19.595
+                                },
+                                {
+                                    "position":  288,
+                                    "length":  7,
+                                    "time":  19.97
+                                },
+                                {
+                                    "position":  296,
+                                    "length":  6,
+                                    "time":  20.305
+                                },
+                                {
+                                    "position":  303,
+                                    "length":  5,
+                                    "time":  20.645
+                                },
+                                {
+                                    "position":  309,
+                                    "length":  2,
+                                    "time":  20.994999999999997
+                                },
+                                {
+                                    "position":  312,
+                                    "length":  6,
+                                    "time":  21.169999999999998
+                                },
+                                {
+                                    "position":  319,
+                                    "length":  5,
+                                    "time":  21.595
+                                },
+                                {
+                                    "position":  326,
+                                    "length":  4,
+                                    "time":  22.919999999999998
+                                },
+                                {
+                                    "position":  331,
+                                    "length":  9,
+                                    "time":  23.13
+                                },
+                                {
+                                    "position":  341,
+                                    "length":  3,
+                                    "time":  23.65
+                                },
+                                {
+                                    "position":  345,
+                                    "length":  6,
+                                    "time":  23.765
+                                },
+                                {
+                                    "position":  353,
+                                    "length":  1,
+                                    "time":  25.125
+                                },
+                                {
+                                    "position":  355,
+                                    "length":  3,
+                                    "time":  25.244999999999997
+                                },
+                                {
+                                    "position":  359,
+                                    "length":  11,
+                                    "time":  25.415
+                                },
+                                {
+                                    "position":  372,
+                                    "length":  4,
+                                    "time":  26.34
+                                },
+                                {
+                                    "position":  377,
+                                    "length":  3,
+                                    "time":  26.494999999999997
+                                },
+                                {
+                                    "position":  381,
+                                    "length":  7,
+                                    "time":  26.61
+                                },
+                                {
+                                    "position":  389,
+                                    "length":  9,
+                                    "time":  27.014999999999997
+                                },
+                                {
+                                    "position":  399,
+                                    "length":  2,
+                                    "time":  27.625
+                                },
+                                {
+                                    "position":  402,
+                                    "length":  13,
+                                    "time":  27.74
+                                },
+                                {
+                                    "position":  417,
+                                    "length":  2,
+                                    "time":  29.365
+                                },
+                                {
+                                    "position":  420,
+                                    "length":  5,
+                                    "time":  29.575
+                                },
+                                {
+                                    "position":  426,
+                                    "length":  4,
+                                    "time":  29.919999999999998
+                                },
+                                {
+                                    "position":  431,
+                                    "length":  8,
+                                    "time":  30.09
+                                },
+                                {
+                                    "position":  440,
+                                    "length":  3,
+                                    "time":  30.619999999999997
+                                },
+                                {
+                                    "position":  444,
+                                    "length":  13,
+                                    "time":  30.764999999999997
+                                },
+                                {
+                                    "position":  458,
+                                    "length":  7,
+                                    "time":  31.634999999999998
+                                },
+                                {
+                                    "position":  466,
+                                    "length":  7,
+                                    "time":  31.994999999999997
+                                },
+                                {
+                                    "position":  474,
+                                    "length":  2,
+                                    "time":  32.47
+                                },
+                                {
+                                    "position":  477,
+                                    "length":  3,
+                                    "time":  32.615
+                                },
+                                {
+                                    "position":  481,
+                                    "length":  2,
+                                    "time":  32.8
+                                },
+                                {
+                                    "position":  484,
+                                    "length":  5,
+                                    "time":  32.92
+                                },
+                                {
+                                    "position":  491,
+                                    "length":  5,
+                                    "time":  34.12
+                                },
+                                {
+                                    "position":  497,
+                                    "length":  11,
+                                    "time":  34.495
+                                },
+                                {
+                                    "position":  509,
+                                    "length":  3,
+                                    "time":  35.1
+                                },
+                                {
+                                    "position":  513,
+                                    "length":  8,
+                                    "time":  35.23
+                                },
+                                {
+                                    "position":  522,
+                                    "length":  7,
+                                    "time":  35.65
+                                },
+                                {
+                                    "position":  531,
+                                    "length":  3,
+                                    "time":  37.125
+                                },
+                                {
+                                    "position":  535,
+                                    "length":  10,
+                                    "time":  37.405
+                                }
+                            ]
+              },
+    "repetition":  {
+                       "duration":  38.86,
+                       "bodyOffset":  35,
+                       "words":  [
+                                     {
+                                         "position":  0,
+                                         "length":  2,
+                                         "time":  0.099999999999999992
+                                     },
+                                     {
+                                         "position":  3,
+                                         "length":  6,
+                                         "time":  0.33499999999999996
+                                     },
+                                     {
+                                         "position":  10,
+                                         "length":  7,
+                                         "time":  0.67999999999999994
+                                     },
+                                     {
+                                         "position":  18,
+                                         "length":  4,
+                                         "time":  1.03
+                                     },
+                                     {
+                                         "position":  23,
+                                         "length":  10,
+                                         "time":  1.2349999999999999
+                                     },
+                                     {
+                                         "position":  35,
+                                         "length":  2,
+                                         "time":  3.025
+                                     },
+                                     {
+                                         "position":  38,
+                                         "length":  6,
+                                         "time":  3.1399999999999997
+                                     },
+                                     {
+                                         "position":  45,
+                                         "length":  4,
+                                         "time":  3.61
+                                     },
+                                     {
+                                         "position":  50,
+                                         "length":  2,
+                                         "time":  3.79
+                                     },
+                                     {
+                                         "position":  53,
+                                         "length":  4,
+                                         "time":  3.92
+                                     },
+                                     {
+                                         "position":  58,
+                                         "length":  4,
+                                         "time":  4.1899999999999995
+                                     },
+                                     {
+                                         "position":  63,
+                                         "length":  5,
+                                         "time":  4.34
+                                     },
+                                     {
+                                         "position":  69,
+                                         "length":  8,
+                                         "time":  4.6049999999999995
+                                     },
+                                     {
+                                         "position":  78,
+                                         "length":  6,
+                                         "time":  5.22
+                                     },
+                                     {
+                                         "position":  85,
+                                         "length":  6,
+                                         "time":  5.54
+                                     },
+                                     {
+                                         "position":  93,
+                                         "length":  2,
+                                         "time":  6.9799999999999995
+                                     },
+                                     {
+                                         "position":  96,
+                                         "length":  10,
+                                         "time":  7.185
+                                     },
+                                     {
+                                         "position":  107,
+                                         "length":  2,
+                                         "time":  7.835
+                                     },
+                                     {
+                                         "position":  110,
+                                         "length":  5,
+                                         "time":  8
+                                     },
+                                     {
+                                         "position":  116,
+                                         "length":  3,
+                                         "time":  8.365
+                                     },
+                                     {
+                                         "position":  120,
+                                         "length":  8,
+                                         "time":  8.49
+                                     },
+                                     {
+                                         "position":  130,
+                                         "length":  9,
+                                         "time":  9.2
+                                     },
+                                     {
+                                         "position":  140,
+                                         "length":  3,
+                                         "time":  9.83
+                                     },
+                                     {
+                                         "position":  144,
+                                         "length":  11,
+                                         "time":  9.945
+                                     },
+                                     {
+                                         "position":  156,
+                                         "length":  2,
+                                         "time":  10.535
+                                     },
+                                     {
+                                         "position":  159,
+                                         "length":  4,
+                                         "time":  10.719999999999999
+                                     },
+                                     {
+                                         "position":  164,
+                                         "length":  4,
+                                         "time":  10.915
+                                     },
+                                     {
+                                         "position":  169,
+                                         "length":  5,
+                                         "time":  11.18
+                                     },
+                                     {
+                                         "position":  175,
+                                         "length":  2,
+                                         "time":  11.415
+                                     },
+                                     {
+                                         "position":  178,
+                                         "length":  5,
+                                         "time":  11.545
+                                     },
+                                     {
+                                         "position":  185,
+                                         "length":  4,
+                                         "time":  12.93
+                                     },
+                                     {
+                                         "position":  190,
+                                         "length":  7,
+                                         "time":  13.12
+                                     },
+                                     {
+                                         "position":  198,
+                                         "length":  2,
+                                         "time":  13.43
+                                     },
+                                     {
+                                         "position":  201,
+                                         "length":  9,
+                                         "time":  13.54
+                                     },
+                                     {
+                                         "position":  211,
+                                         "length":  14,
+                                         "time":  14.149999999999999
+                                     },
+                                     {
+                                         "position":  227,
+                                         "length":  5,
+                                         "time":  15.385
+                                     },
+                                     {
+                                         "position":  233,
+                                         "length":  2,
+                                         "time":  15.594999999999999
+                                     },
+                                     {
+                                         "position":  236,
+                                         "length":  8,
+                                         "time":  15.709999999999999
+                                     },
+                                     {
+                                         "position":  245,
+                                         "length":  8,
+                                         "time":  16.255
+                                     },
+                                     {
+                                         "position":  254,
+                                         "length":  3,
+                                         "time":  16.75
+                                     },
+                                     {
+                                         "position":  258,
+                                         "length":  3,
+                                         "time":  16.939999999999998
+                                     },
+                                     {
+                                         "position":  262,
+                                         "length":  4,
+                                         "time":  17.02
+                                     },
+                                     {
+                                         "position":  267,
+                                         "length":  4,
+                                         "time":  17.275
+                                     },
+                                     {
+                                         "position":  272,
+                                         "length":  7,
+                                         "time":  17.415
+                                     },
+                                     {
+                                         "position":  281,
+                                         "length":  2,
+                                         "time":  18.869999999999997
+                                     },
+                                     {
+                                         "position":  284,
+                                         "length":  7,
+                                         "time":  19.055
+                                     },
+                                     {
+                                         "position":  292,
+                                         "length":  2,
+                                         "time":  19.54
+                                     },
+                                     {
+                                         "position":  295,
+                                         "length":  5,
+                                         "time":  19.665
+                                     },
+                                     {
+                                         "position":  302,
+                                         "length":  4,
+                                         "time":  20.425
+                                     },
+                                     {
+                                         "position":  307,
+                                         "length":  2,
+                                         "time":  20.709999999999997
+                                     },
+                                     {
+                                         "position":  310,
+                                         "length":  2,
+                                         "time":  20.9
+                                     },
+                                     {
+                                         "position":  313,
+                                         "length":  6,
+                                         "time":  21.025
+                                     },
+                                     {
+                                         "position":  320,
+                                         "length":  4,
+                                         "time":  21.435
+                                     },
+                                     {
+                                         "position":  325,
+                                         "length":  3,
+                                         "time":  21.615
+                                     },
+                                     {
+                                         "position":  330,
+                                         "length":  2,
+                                         "time":  22.805
+                                     },
+                                     {
+                                         "position":  333,
+                                         "length":  5,
+                                         "time":  23.005
+                                     },
+                                     {
+                                         "position":  339,
+                                         "length":  4,
+                                         "time":  23.24
+                                     },
+                                     {
+                                         "position":  344,
+                                         "length":  2,
+                                         "time":  23.369999999999997
+                                     },
+                                     {
+                                         "position":  347,
+                                         "length":  6,
+                                         "time":  23.485
+                                     },
+                                     {
+                                         "position":  355,
+                                         "length":  13,
+                                         "time":  24.875
+                                     },
+                                     {
+                                         "position":  369,
+                                         "length":  1,
+                                         "time":  25.619999999999997
+                                     },
+                                     {
+                                         "position":  371,
+                                         "length":  2,
+                                         "time":  25.744999999999997
+                                     },
+                                     {
+                                         "position":  374,
+                                         "length":  3,
+                                         "time":  25.91
+                                     },
+                                     {
+                                         "position":  378,
+                                         "length":  7,
+                                         "time":  26.095
+                                     },
+                                     {
+                                         "position":  386,
+                                         "length":  2,
+                                         "time":  26.59
+                                     },
+                                     {
+                                         "position":  389,
+                                         "length":  7,
+                                         "time":  26.72
+                                     },
+                                     {
+                                         "position":  398,
+                                         "length":  2,
+                                         "time":  27.445
+                                     },
+                                     {
+                                         "position":  401,
+                                         "length":  5,
+                                         "time":  27.59
+                                     },
+                                     {
+                                         "position":  407,
+                                         "length":  3,
+                                         "time":  27.74
+                                     },
+                                     {
+                                         "position":  411,
+                                         "length":  4,
+                                         "time":  27.915
+                                     },
+                                     {
+                                         "position":  416,
+                                         "length":  3,
+                                         "time":  28.165
+                                     },
+                                     {
+                                         "position":  420,
+                                         "length":  5,
+                                         "time":  28.404999999999998
+                                     },
+                                     {
+                                         "position":  427,
+                                         "length":  2,
+                                         "time":  29.764999999999997
+                                     },
+                                     {
+                                         "position":  430,
+                                         "length":  7,
+                                         "time":  29.994999999999997
+                                     },
+                                     {
+                                         "position":  439,
+                                         "length":  8,
+                                         "time":  30.729999999999997
+                                     },
+                                     {
+                                         "position":  449,
+                                         "length":  2,
+                                         "time":  31.445
+                                     },
+                                     {
+                                         "position":  452,
+                                         "length":  7,
+                                         "time":  31.604999999999997
+                                     },
+                                     {
+                                         "position":  460,
+                                         "length":  5,
+                                         "time":  32.245
+                                     },
+                                     {
+                                         "position":  466,
+                                         "length":  6,
+                                         "time":  32.485
+                                     },
+                                     {
+                                         "position":  473,
+                                         "length":  2,
+                                         "time":  32.934999999999995
+                                     },
+                                     {
+                                         "position":  476,
+                                         "length":  4,
+                                         "time":  33.065
+                                     },
+                                     {
+                                         "position":  481,
+                                         "length":  16,
+                                         "time":  33.345
+                                     },
+                                     {
+                                         "position":  498,
+                                         "length":  8,
+                                         "time":  34.26
+                                     },
+                                     {
+                                         "position":  509,
+                                         "length":  5,
+                                         "time":  35.074999999999996
+                                     },
+                                     {
+                                         "position":  515,
+                                         "length":  2,
+                                         "time":  35.504999999999995
+                                     },
+                                     {
+                                         "position":  518,
+                                         "length":  6,
+                                         "time":  35.635
+                                     },
+                                     {
+                                         "position":  525,
+                                         "length":  3,
+                                         "time":  36
+                                     },
+                                     {
+                                         "position":  529,
+                                         "length":  8,
+                                         "time":  36.14
+                                     },
+                                     {
+                                         "position":  538,
+                                         "length":  2,
+                                         "time":  36.67
+                                     },
+                                     {
+                                         "position":  541,
+                                         "length":  6,
+                                         "time":  36.79
+                                     },
+                                     {
+                                         "position":  548,
+                                         "length":  7,
+                                         "time":  37.074999999999996
+                                     },
+                                     {
+                                         "position":  556,
+                                         "length":  2,
+                                         "time":  37.46
+                                     },
+                                     {
+                                         "position":  559,
+                                         "length":  7,
+                                         "time":  37.525
+                                     }
+                                 ]
+                   },
+    "bibliotheque":  {
+                         "duration":  37.71,
+                         "bodyOffset":  24,
+                         "words":  [
+                                       {
+                                           "position":  0,
+                                           "length":  2,
+                                           "time":  0.099999999999999992
+                                       },
+                                       {
+                                           "position":  3,
+                                           "length":  5,
+                                           "time":  0.32
+                                       },
+                                       {
+                                           "position":  9,
+                                           "length":  5,
+                                           "time":  0.7
+                                       },
+                                       {
+                                           "position":  15,
+                                           "length":  1,
+                                           "time":  1.07
+                                       },
+                                       {
+                                           "position":  17,
+                                           "length":  5,
+                                           "time":  1.175
+                                       },
+                                       {
+                                           "position":  24,
+                                           "length":  7,
+                                           "time":  2.375
+                                       },
+                                       {
+                                           "position":  32,
+                                           "length":  5,
+                                           "time":  2.8049999999999997
+                                       },
+                                       {
+                                           "position":  38,
+                                           "length":  8,
+                                           "time":  3.0149999999999997
+                                       },
+                                       {
+                                           "position":  47,
+                                           "length":  2,
+                                           "time":  3.6149999999999998
+                                       },
+                                       {
+                                           "position":  50,
+                                           "length":  5,
+                                           "time":  3.7399999999999998
+                                       },
+                                       {
+                                           "position":  56,
+                                           "length":  2,
+                                           "time":  4.125
+                                       },
+                                       {
+                                           "position":  59,
+                                           "length":  12,
+                                           "time":  4.245
+                                       },
+                                       {
+                                           "position":  72,
+                                           "length":  7,
+                                           "time":  5
+                                       },
+                                       {
+                                           "position":  80,
+                                           "length":  12,
+                                           "time":  5.3599999999999994
+                                       },
+                                       {
+                                           "position":  93,
+                                           "length":  3,
+                                           "time":  6.135
+                                       },
+                                       {
+                                           "position":  98,
+                                           "length":  1,
+                                           "time":  7.29
+                                       },
+                                       {
+                                           "position":  100,
+                                           "length":  18,
+                                           "time":  7.415
+                                       },
+                                       {
+                                           "position":  119,
+                                           "length":  3,
+                                           "time":  8.26
+                                       },
+                                       {
+                                           "position":  124,
+                                           "length":  4,
+                                           "time":  8.61
+                                       },
+                                       {
+                                           "position":  129,
+                                           "length":  2,
+                                           "time":  8.75
+                                       },
+                                       {
+                                           "position":  132,
+                                           "length":  8,
+                                           "time":  8.905
+                                       },
+                                       {
+                                           "position":  141,
+                                           "length":  5,
+                                           "time":  9.455
+                                       },
+                                       {
+                                           "position":  148,
+                                           "length":  9,
+                                           "time":  10.12
+                                       },
+                                       {
+                                           "position":  158,
+                                           "length":  14,
+                                           "time":  10.709999999999999
+                                       },
+                                       {
+                                           "position":  173,
+                                           "length":  3,
+                                           "time":  11.37
+                                       },
+                                       {
+                                           "position":  177,
+                                           "length":  6,
+                                           "time":  11.495
+                                       },
+                                       {
+                                           "position":  184,
+                                           "length":  2,
+                                           "time":  11.885
+                                       },
+                                       {
+                                           "position":  187,
+                                           "length":  10,
+                                           "time":  12.07
+                                       },
+                                       {
+                                           "position":  198,
+                                           "length":  4,
+                                           "time":  12.709999999999999
+                                       },
+                                       {
+                                           "position":  203,
+                                           "length":  8,
+                                           "time":  12.93
+                                       },
+                                       {
+                                           "position":  212,
+                                           "length":  4,
+                                           "time":  13.315
+                                       },
+                                       {
+                                           "position":  217,
+                                           "length":  2,
+                                           "time":  13.444999999999999
+                                       },
+                                       {
+                                           "position":  220,
+                                           "length":  8,
+                                           "time":  13.559999999999999
+                                       },
+                                       {
+                                           "position":  229,
+                                           "length":  3,
+                                           "time":  14.024999999999999
+                                       },
+                                       {
+                                           "position":  233,
+                                           "length":  10,
+                                           "time":  14.149999999999999
+                                       },
+                                       {
+                                           "position":  245,
+                                           "length":  2,
+                                           "time":  15.614999999999998
+                                       },
+                                       {
+                                           "position":  248,
+                                           "length":  14,
+                                           "time":  15.825
+                                       },
+                                       {
+                                           "position":  263,
+                                           "length":  8,
+                                           "time":  16.73
+                                       },
+                                       {
+                                           "position":  272,
+                                           "length":  4,
+                                           "time":  17.285
+                                       },
+                                       {
+                                           "position":  277,
+                                           "length":  2,
+                                           "time":  17.425
+                                       },
+                                       {
+                                           "position":  280,
+                                           "length":  5,
+                                           "time":  17.535
+                                       },
+                                       {
+                                           "position":  286,
+                                           "length":  2,
+                                           "time":  17.88
+                                       },
+                                       {
+                                           "position":  289,
+                                           "length":  6,
+                                           "time":  17.994999999999997
+                                       },
+                                       {
+                                           "position":  300,
+                                           "length":  2,
+                                           "time":  18.61
+                                       },
+                                       {
+                                           "position":  303,
+                                           "length":  7,
+                                           "time":  18.8
+                                       },
+                                       {
+                                           "position":  311,
+                                           "length":  6,
+                                           "time":  19.305
+                                       },
+                                       {
+                                           "position":  318,
+                                           "length":  5,
+                                           "time":  19.8
+                                       },
+                                       {
+                                           "position":  324,
+                                           "length":  2,
+                                           "time":  20.035
+                                       },
+                                       {
+                                           "position":  327,
+                                           "length":  9,
+                                           "time":  20.15
+                                       },
+                                       {
+                                           "position":  337,
+                                           "length":  3,
+                                           "time":  20.615
+                                       },
+                                       {
+                                           "position":  341,
+                                           "length":  9,
+                                           "time":  20.73
+                                       },
+                                       {
+                                           "position":  354,
+                                           "length":  2,
+                                           "time":  22.334999999999997
+                                       },
+                                       {
+                                           "position":  357,
+                                           "length":  5,
+                                           "time":  22.544999999999998
+                                       },
+                                       {
+                                           "position":  363,
+                                           "length":  6,
+                                           "time":  22.83
+                                       },
+                                       {
+                                           "position":  370,
+                                           "length":  2,
+                                           "time":  23.175
+                                       },
+                                       {
+                                           "position":  373,
+                                           "length":  5,
+                                           "time":  23.3
+                                       },
+                                       {
+                                           "position":  379,
+                                           "length":  2,
+                                           "time":  23.544999999999998
+                                       },
+                                       {
+                                           "position":  382,
+                                           "length":  7,
+                                           "time":  23.63
+                                       },
+                                       {
+                                           "position":  390,
+                                           "length":  2,
+                                           "time":  24.119999999999997
+                                       },
+                                       {
+                                           "position":  393,
+                                           "length":  8,
+                                           "time":  24.235
+                                       },
+                                       {
+                                           "position":  402,
+                                           "length":  1,
+                                           "time":  24.724999999999998
+                                       },
+                                       {
+                                           "position":  404,
+                                           "length":  3,
+                                           "time":  24.794999999999998
+                                       },
+                                       {
+                                           "position":  408,
+                                           "length":  3,
+                                           "time":  24.99
+                                       },
+                                       {
+                                           "position":  413,
+                                           "length":  6,
+                                           "time":  26.145
+                                       },
+                                       {
+                                           "position":  421,
+                                           "length":  8,
+                                           "time":  26.93
+                                       },
+                                       {
+                                           "position":  430,
+                                           "length":  5,
+                                           "time":  27.485
+                                       },
+                                       {
+                                           "position":  436,
+                                           "length":  3,
+                                           "time":  27.715
+                                       },
+                                       {
+                                           "position":  440,
+                                           "length":  7,
+                                           "time":  27.91
+                                       },
+                                       {
+                                           "position":  448,
+                                           "length":  4,
+                                           "time":  28.404999999999998
+                                       },
+                                       {
+                                           "position":  453,
+                                           "length":  5,
+                                           "time":  28.615
+                                       },
+                                       {
+                                           "position":  459,
+                                           "length":  5,
+                                           "time":  28.82
+                                       },
+                                       {
+                                           "position":  466,
+                                           "length":  2,
+                                           "time":  30.049999999999997
+                                       },
+                                       {
+                                           "position":  469,
+                                           "length":  5,
+                                           "time":  30.27
+                                       },
+                                       {
+                                           "position":  476,
+                                           "length":  3,
+                                           "time":  30.904999999999998
+                                       },
+                                       {
+                                           "position":  481,
+                                           "length":  3,
+                                           "time":  31.474999999999998
+                                       },
+                                       {
+                                           "position":  485,
+                                           "length":  8,
+                                           "time":  31.75
+                                       },
+                                       {
+                                           "position":  494,
+                                           "length":  3,
+                                           "time":  32.36
+                                       },
+                                       {
+                                           "position":  498,
+                                           "length":  2,
+                                           "time":  32.495
+                                       },
+                                       {
+                                           "position":  501,
+                                           "length":  9,
+                                           "time":  32.61
+                                       },
+                                       {
+                                           "position":  512,
+                                           "length":  2,
+                                           "time":  34.04
+                                       },
+                                       {
+                                           "position":  515,
+                                           "length":  12,
+                                           "time":  34.225
+                                       },
+                                       {
+                                           "position":  530,
+                                           "length":  5,
+                                           "time":  35.165
+                                       },
+                                       {
+                                           "position":  536,
+                                           "length":  2,
+                                           "time":  35.46
+                                       },
+                                       {
+                                           "position":  539,
+                                           "length":  2,
+                                           "time":  35.58
+                                       },
+                                       {
+                                           "position":  542,
+                                           "length":  4,
+                                           "time":  35.714999999999996
+                                       },
+                                       {
+                                           "position":  547,
+                                           "length":  8,
+                                           "time":  36.019999999999996
+                                       },
+                                       {
+                                           "position":  556,
+                                           "length":  1,
+                                           "time":  36.46
+                                       },
+                                       {
+                                           "position":  558,
+                                           "length":  6,
+                                           "time":  36.53
+                                       }
+                                   ]
+                     },
+    "fantome":  {
+                    "duration":  43.67,
+                    "bodyOffset":  22,
+                    "words":  [
+                                  {
+                                      "position":  0,
+                                      "length":  2,
+                                      "time":  0.099999999999999992
+                                  },
+                                  {
+                                      "position":  3,
+                                      "length":  7,
+                                      "time":  0.39499999999999996
+                                  },
+                                  {
+                                      "position":  11,
+                                      "length":  2,
+                                      "time":  0.90999999999999992
+                                  },
+                                  {
+                                      "position":  14,
+                                      "length":  6,
+                                      "time":  1
+                                  },
+                                  {
+                                      "position":  22,
+                                      "length":  4,
+                                      "time":  2.475
+                                  },
+                                  {
+                                      "position":  27,
+                                      "length":  5,
+                                      "time":  2.925
+                                  },
+                                  {
+                                      "position":  33,
+                                      "length":  8,
+                                      "time":  3.185
+                                  },
+                                  {
+                                      "position":  42,
+                                      "length":  3,
+                                      "time":  3.8449999999999998
+                                  },
+                                  {
+                                      "position":  46,
+                                      "length":  11,
+                                      "time":  4.015
+                                  },
+                                  {
+                                      "position":  58,
+                                      "length":  4,
+                                      "time":  4.62
+                                  },
+                                  {
+                                      "position":  63,
+                                      "length":  3,
+                                      "time":  4.75
+                                  },
+                                  {
+                                      "position":  67,
+                                      "length":  8,
+                                      "time":  4.865
+                                  },
+                                  {
+                                      "position":  76,
+                                      "length":  7,
+                                      "time":  5.255
+                                  },
+                                  {
+                                      "position":  85,
+                                      "length":  7,
+                                      "time":  6.7299999999999995
+                                  },
+                                  {
+                                      "position":  94,
+                                      "length":  6,
+                                      "time":  7.545
+                                  },
+                                  {
+                                      "position":  102,
+                                      "length":  8,
+                                      "time":  8.24
+                                  },
+                                  {
+                                      "position":  113,
+                                      "length":  4,
+                                      "time":  9.135
+                                  },
+                                  {
+                                      "position":  118,
+                                      "length":  5,
+                                      "time":  9.29
+                                  },
+                                  {
+                                      "position":  124,
+                                      "length":  4,
+                                      "time":  9.615
+                                  },
+                                  {
+                                      "position":  129,
+                                      "length":  6,
+                                      "time":  9.865
+                                  },
+                                  {
+                                      "position":  136,
+                                      "length":  6,
+                                      "time":  10.235
+                                  },
+                                  {
+                                      "position":  143,
+                                      "length":  3,
+                                      "time":  10.594999999999999
+                                  },
+                                  {
+                                      "position":  148,
+                                      "length":  1,
+                                      "time":  11.645
+                                  },
+                                  {
+                                      "position":  150,
+                                      "length":  21,
+                                      "time":  11.77
+                                  },
+                                  {
+                                      "position":  172,
+                                      "length":  3,
+                                      "time":  12.7
+                                  },
+                                  {
+                                      "position":  177,
+                                      "length":  2,
+                                      "time":  13.195
+                                  },
+                                  {
+                                      "position":  180,
+                                      "length":  5,
+                                      "time":  13.354999999999999
+                                  },
+                                  {
+                                      "position":  186,
+                                      "length":  3,
+                                      "time":  13.764999999999999
+                                  },
+                                  {
+                                      "position":  190,
+                                      "length":  6,
+                                      "time":  13.965
+                                  },
+                                  {
+                                      "position":  197,
+                                      "length":  3,
+                                      "time":  14.285
+                                  },
+                                  {
+                                      "position":  201,
+                                      "length":  10,
+                                      "time":  14.405
+                                  },
+                                  {
+                                      "position":  212,
+                                      "length":  1,
+                                      "time":  15.16
+                                  },
+                                  {
+                                      "position":  214,
+                                      "length":  2,
+                                      "time":  15.285
+                                  },
+                                  {
+                                      "position":  217,
+                                      "length":  6,
+                                      "time":  15.455
+                                  },
+                                  {
+                                      "position":  224,
+                                      "length":  9,
+                                      "time":  15.879999999999999
+                                  },
+                                  {
+                                      "position":  235,
+                                      "length":  2,
+                                      "time":  17.47
+                                  },
+                                  {
+                                      "position":  238,
+                                      "length":  1,
+                                      "time":  17.64
+                                  },
+                                  {
+                                      "position":  240,
+                                      "length":  4,
+                                      "time":  17.735
+                                  },
+                                  {
+                                      "position":  246,
+                                      "length":  6,
+                                      "time":  18.25
+                                  },
+                                  {
+                                      "position":  253,
+                                      "length":  2,
+                                      "time":  18.645
+                                  },
+                                  {
+                                      "position":  256,
+                                      "length":  6,
+                                      "time":  18.759999999999998
+                                  },
+                                  {
+                                      "position":  263,
+                                      "length":  9,
+                                      "time":  19.165
+                                  },
+                                  {
+                                      "position":  273,
+                                      "length":  2,
+                                      "time":  19.735
+                                  },
+                                  {
+                                      "position":  276,
+                                      "length":  8,
+                                      "time":  19.875
+                                  },
+                                  {
+                                      "position":  285,
+                                      "length":  4,
+                                      "time":  20.384999999999998
+                                  },
+                                  {
+                                      "position":  290,
+                                      "length":  9,
+                                      "time":  20.58
+                                  },
+                                  {
+                                      "position":  300,
+                                      "length":  9,
+                                      "time":  21.13
+                                  },
+                                  {
+                                      "position":  310,
+                                      "length":  3,
+                                      "time":  21.7
+                                  },
+                                  {
+                                      "position":  314,
+                                      "length":  3,
+                                      "time":  21.88
+                                  },
+                                  {
+                                      "position":  318,
+                                      "length":  5,
+                                      "time":  22.084999999999997
+                                  },
+                                  {
+                                      "position":  325,
+                                      "length":  4,
+                                      "time":  23.544999999999998
+                                  },
+                                  {
+                                      "position":  330,
+                                      "length":  2,
+                                      "time":  23.84
+                                  },
+                                  {
+                                      "position":  333,
+                                      "length":  6,
+                                      "time":  24.08
+                                  },
+                                  {
+                                      "position":  340,
+                                      "length":  4,
+                                      "time":  24.509999999999998
+                                  },
+                                  {
+                                      "position":  345,
+                                      "length":  3,
+                                      "time":  24.689999999999998
+                                  },
+                                  {
+                                      "position":  349,
+                                      "length":  2,
+                                      "time":  24.9
+                                  },
+                                  {
+                                      "position":  352,
+                                      "length":  6,
+                                      "time":  24.985
+                                  },
+                                  {
+                                      "position":  359,
+                                      "length":  4,
+                                      "time":  25.32
+                                  },
+                                  {
+                                      "position":  364,
+                                      "length":  3,
+                                      "time":  25.465
+                                  },
+                                  {
+                                      "position":  368,
+                                      "length":  7,
+                                      "time":  25.665
+                                  },
+                                  {
+                                      "position":  377,
+                                      "length":  2,
+                                      "time":  27.15
+                                  },
+                                  {
+                                      "position":  380,
+                                      "length":  9,
+                                      "time":  27.36
+                                  },
+                                  {
+                                      "position":  391,
+                                      "length":  2,
+                                      "time":  28.105
+                                  },
+                                  {
+                                      "position":  394,
+                                      "length":  4,
+                                      "time":  28.259999999999998
+                                  },
+                                  {
+                                      "position":  399,
+                                      "length":  7,
+                                      "time":  28.605
+                                  },
+                                  {
+                                      "position":  407,
+                                      "length":  4,
+                                      "time":  29.044999999999998
+                                  },
+                                  {
+                                      "position":  412,
+                                      "length":  7,
+                                      "time":  29.31
+                                  },
+                                  {
+                                      "position":  420,
+                                      "length":  11,
+                                      "time":  29.654999999999998
+                                  },
+                                  {
+                                      "position":  433,
+                                      "length":  2,
+                                      "time":  31.349999999999998
+                                  },
+                                  {
+                                      "position":  436,
+                                      "length":  7,
+                                      "time":  31.549999999999997
+                                  },
+                                  {
+                                      "position":  444,
+                                      "length":  4,
+                                      "time":  32
+                                  },
+                                  {
+                                      "position":  449,
+                                      "length":  3,
+                                      "time":  32.345
+                                  },
+                                  {
+                                      "position":  454,
+                                      "length":  4,
+                                      "time":  33.49
+                                  },
+                                  {
+                                      "position":  459,
+                                      "length":  5,
+                                      "time":  33.934999999999995
+                                  },
+                                  {
+                                      "position":  465,
+                                      "length":  4,
+                                      "time":  34.19
+                                  },
+                                  {
+                                      "position":  470,
+                                      "length":  5,
+                                      "time":  34.519999999999996
+                                  },
+                                  {
+                                      "position":  476,
+                                      "length":  2,
+                                      "time":  34.87
+                                  },
+                                  {
+                                      "position":  479,
+                                      "length":  4,
+                                      "time":  35.05
+                                  },
+                                  {
+                                      "position":  485,
+                                      "length":  2,
+                                      "time":  36.43
+                                  },
+                                  {
+                                      "position":  488,
+                                      "length":  8,
+                                      "time":  36.574999999999996
+                                  },
+                                  {
+                                      "position":  497,
+                                      "length":  9,
+                                      "time":  37.155
+                                  },
+                                  {
+                                      "position":  507,
+                                      "length":  2,
+                                      "time":  37.635
+                                  },
+                                  {
+                                      "position":  510,
+                                      "length":  8,
+                                      "time":  37.815
+                                  },
+                                  {
+                                      "position":  519,
+                                      "length":  4,
+                                      "time":  38.309999999999995
+                                  },
+                                  {
+                                      "position":  524,
+                                      "length":  2,
+                                      "time":  38.449999999999996
+                                  },
+                                  {
+                                      "position":  527,
+                                      "length":  8,
+                                      "time":  38.574999999999996
+                                  },
+                                  {
+                                      "position":  540,
+                                      "length":  4,
+                                      "time":  39.434999999999995
+                                  },
+                                  {
+                                      "position":  545,
+                                      "length":  5,
+                                      "time":  39.665
+                                  },
+                                  {
+                                      "position":  551,
+                                      "length":  9,
+                                      "time":  39.9
+                                  },
+                                  {
+                                      "position":  562,
+                                      "length":  2,
+                                      "time":  41.485
+                                  },
+                                  {
+                                      "position":  565,
+                                      "length":  6,
+                                      "time":  41.72
+                                  },
+                                  {
+                                      "position":  572,
+                                      "length":  5,
+                                      "time":  42.155
+                                  },
+                                  {
+                                      "position":  578,
+                                      "length":  4,
+                                      "time":  42.47
+                                  }
+                              ]
+                },
+    "pari":  {
+                 "duration":  37.11,
+                 "bodyOffset":  26,
+                 "words":  [
+                               {
+                                   "position":  0,
+                                   "length":  2,
+                                   "time":  0.099999999999999992
+                               },
+                               {
+                                   "position":  3,
+                                   "length":  13,
+                                   "time":  0.31
+                               },
+                               {
+                                   "position":  17,
+                                   "length":  2,
+                                   "time":  1.15
+                               },
+                               {
+                                   "position":  20,
+                                   "length":  4,
+                                   "time":  1.275
+                               },
+                               {
+                                   "position":  26,
+                                   "length":  2,
+                                   "time":  2.52
+                               },
+                               {
+                                   "position":  29,
+                                   "length":  6,
+                                   "time":  2.6399999999999997
+                               },
+                               {
+                                   "position":  36,
+                                   "length":  6,
+                                   "time":  3.165
+                               },
+                               {
+                                   "position":  43,
+                                   "length":  2,
+                                   "time":  3.5949999999999998
+                               },
+                               {
+                                   "position":  46,
+                                   "length":  5,
+                                   "time":  3.7399999999999998
+                               },
+                               {
+                                   "position":  52,
+                                   "length":  6,
+                                   "time":  3.985
+                               },
+                               {
+                                   "position":  59,
+                                   "length":  2,
+                                   "time":  4.41
+                               },
+                               {
+                                   "position":  62,
+                                   "length":  7,
+                                   "time":  4.5249999999999995
+                               },
+                               {
+                                   "position":  71,
+                                   "length":  2,
+                                   "time":  5.97
+                               },
+                               {
+                                   "position":  74,
+                                   "length":  7,
+                                   "time":  6.205
+                               },
+                               {
+                                   "position":  84,
+                                   "length":  2,
+                                   "time":  6.9399999999999995
+                               },
+                               {
+                                   "position":  87,
+                                   "length":  7,
+                                   "time":  7.1
+                               },
+                               {
+                                   "position":  95,
+                                   "length":  6,
+                                   "time":  7.58
+                               },
+                               {
+                                   "position":  102,
+                                   "length":  2,
+                                   "time":  7.85
+                               },
+                               {
+                                   "position":  105,
+                                   "length":  2,
+                                   "time":  8.04
+                               },
+                               {
+                                   "position":  108,
+                                   "length":  5,
+                                   "time":  8.205
+                               },
+                               {
+                                   "position":  114,
+                                   "length":  6,
+                                   "time":  8.56
+                               },
+                               {
+                                   "position":  121,
+                                   "length":  3,
+                                   "time":  8.975
+                               },
+                               {
+                                   "position":  125,
+                                   "length":  8,
+                                   "time":  9.17
+                               },
+                               {
+                                   "position":  134,
+                                   "length":  2,
+                                   "time":  9.69
+                               },
+                               {
+                                   "position":  137,
+                                   "length":  10,
+                                   "time":  9.83
+                               },
+                               {
+                                   "position":  148,
+                                   "length":  3,
+                                   "time":  10.479999999999999
+                               },
+                               {
+                                   "position":  152,
+                                   "length":  4,
+                                   "time":  10.674999999999999
+                               },
+                               {
+                                   "position":  158,
+                                   "length":  4,
+                                   "time":  12.049999999999999
+                               },
+                               {
+                                   "position":  163,
+                                   "length":  7,
+                                   "time":  12.274999999999999
+                               },
+                               {
+                                   "position":  171,
+                                   "length":  3,
+                                   "time":  12.695
+                               },
+                               {
+                                   "position":  175,
+                                   "length":  2,
+                                   "time":  12.84
+                               },
+                               {
+                                   "position":  178,
+                                   "length":  8,
+                                   "time":  13
+                               },
+                               {
+                                   "position":  187,
+                                   "length":  3,
+                                   "time":  13.674999999999999
+                               },
+                               {
+                                   "position":  191,
+                                   "length":  8,
+                                   "time":  13.78
+                               },
+                               {
+                                   "position":  201,
+                                   "length":  2,
+                                   "time":  14.67
+                               },
+                               {
+                                   "position":  204,
+                                   "length":  4,
+                                   "time":  14.815
+                               },
+                               {
+                                   "position":  209,
+                                   "length":  3,
+                                   "time":  15.014999999999999
+                               },
+                               {
+                                   "position":  213,
+                                   "length":  13,
+                                   "time":  15.174999999999999
+                               },
+                               {
+                                   "position":  227,
+                                   "length":  4,
+                                   "time":  16.055
+                               },
+                               {
+                                   "position":  232,
+                                   "length":  2,
+                                   "time":  16.375
+                               },
+                               {
+                                   "position":  235,
+                                   "length":  8,
+                                   "time":  16.49
+                               },
+                               {
+                                   "position":  244,
+                                   "length":  5,
+                                   "time":  17.015
+                               },
+                               {
+                                   "position":  250,
+                                   "length":  5,
+                                   "time":  17.27
+                               },
+                               {
+                                   "position":  256,
+                                   "length":  8,
+                                   "time":  17.599999999999998
+                               },
+                               {
+                                   "position":  266,
+                                   "length":  2,
+                                   "time":  19.16
+                               },
+                               {
+                                   "position":  269,
+                                   "length":  2,
+                                   "time":  19.345
+                               },
+                               {
+                                   "position":  272,
+                                   "length":  4,
+                                   "time":  19.54
+                               },
+                               {
+                                   "position":  277,
+                                   "length":  16,
+                                   "time":  19.835
+                               },
+                               {
+                                   "position":  294,
+                                   "length":  6,
+                                   "time":  20.65
+                               },
+                               {
+                                   "position":  301,
+                                   "length":  2,
+                                   "time":  21.145
+                               },
+                               {
+                                   "position":  304,
+                                   "length":  5,
+                                   "time":  21.259999999999998
+                               },
+                               {
+                                   "position":  310,
+                                   "length":  2,
+                                   "time":  21.494999999999997
+                               },
+                               {
+                                   "position":  313,
+                                   "length":  2,
+                                   "time":  21.605
+                               },
+                               {
+                                   "position":  316,
+                                   "length":  8,
+                                   "time":  21.785
+                               },
+                               {
+                                   "position":  326,
+                                   "length":  3,
+                                   "time":  23.4
+                               },
+                               {
+                                   "position":  330,
+                                   "length":  6,
+                                   "time":  23.689999999999998
+                               },
+                               {
+                                   "position":  337,
+                                   "length":  3,
+                                   "time":  24.165
+                               },
+                               {
+                                   "position":  341,
+                                   "length":  7,
+                                   "time":  24.305
+                               },
+                               {
+                                   "position":  349,
+                                   "length":  8,
+                                   "time":  24.81
+                               },
+                               {
+                                   "position":  359,
+                                   "length":  8,
+                                   "time":  26.24
+                               },
+                               {
+                                   "position":  368,
+                                   "length":  5,
+                                   "time":  26.83
+                               },
+                               {
+                                   "position":  374,
+                                   "length":  6,
+                                   "time":  27.099999999999998
+                               },
+                               {
+                                   "position":  381,
+                                   "length":  3,
+                                   "time":  27.5
+                               },
+                               {
+                                   "position":  385,
+                                   "length":  2,
+                                   "time":  27.7
+                               },
+                               {
+                                   "position":  388,
+                                   "length":  4,
+                                   "time":  27.82
+                               },
+                               {
+                                   "position":  395,
+                                   "length":  10,
+                                   "time":  28.349999999999998
+                               },
+                               {
+                                   "position":  406,
+                                   "length":  5,
+                                   "time":  28.95
+                               },
+                               {
+                                   "position":  412,
+                                   "length":  8,
+                                   "time":  29.22
+                               },
+                               {
+                                   "position":  422,
+                                   "length":  4,
+                                   "time":  30.81
+                               },
+                               {
+                                   "position":  427,
+                                   "length":  4,
+                                   "time":  31
+                               },
+                               {
+                                   "position":  432,
+                                   "length":  10,
+                                   "time":  31.235
+                               },
+                               {
+                                   "position":  444,
+                                   "length":  2,
+                                   "time":  32.05
+                               },
+                               {
+                                   "position":  447,
+                                   "length":  6,
+                                   "time":  32.21
+                               },
+                               {
+                                   "position":  454,
+                                   "length":  2,
+                                   "time":  32.51
+                               },
+                               {
+                                   "position":  457,
+                                   "length":  7,
+                                   "time":  32.629999999999995
+                               },
+                               {
+                                   "position":  465,
+                                   "length":  3,
+                                   "time":  33.125
+                               },
+                               {
+                                   "position":  469,
+                                   "length":  6,
+                                   "time":  33.275
+                               },
+                               {
+                                   "position":  476,
+                                   "length":  4,
+                                   "time":  33.625
+                               },
+                               {
+                                   "position":  481,
+                                   "length":  2,
+                                   "time":  33.815
+                               },
+                               {
+                                   "position":  484,
+                                   "length":  6,
+                                   "time":  34.055
+                               },
+                               {
+                                   "position":  491,
+                                   "length":  4,
+                                   "time":  34.32
+                               },
+                               {
+                                   "position":  496,
+                                   "length":  10,
+                                   "time":  34.555
+                               },
+                               {
+                                   "position":  507,
+                                   "length":  7,
+                                   "time":  35.11
+                               },
+                               {
+                                   "position":  515,
+                                   "length":  2,
+                                   "time":  35.65
+                               },
+                               {
+                                   "position":  518,
+                                   "length":  6,
+                                   "time":  35.815
+                               }
+                           ]
+             }
+}
