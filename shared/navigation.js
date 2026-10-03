@@ -1,5 +1,9 @@
 import { days } from '../days.js';
 
+export function miniatureVersions(active) {
+  return `<nav class="miniature-versions" aria-label="Versions de Miniature"><a href="/3/1"${active===1?' aria-current="page"':''}><span>01</span> Trouver</a><a href="/3/2"${active===2?' aria-current="page"':''}><span>02</span> Attraper</a></nav>`;
+}
+
 export function navigation(currentDay) {
   return `<nav class="header-nav" aria-label="Navigation principale">
     <button class="concept-link" id="open-concept">Le concept <span>↗</span></button>

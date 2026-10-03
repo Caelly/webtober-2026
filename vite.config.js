@@ -11,7 +11,7 @@ function dayRoutes() {
   const apply = (server) => {
     server.middlewares.use((request, response, next) => {
       const [path, query = ''] = String(request.url || '').split('?');
-      if (!/^\/\d+$/.test(path)) return next();
+      if (!/^\/\d+(?:\/\d+)?$/.test(path)) return next();
       response.statusCode = 302;
       response.setHeader('Location', `${path}/${query ? `?${query}` : ''}`);
       response.end();
@@ -30,6 +30,9 @@ export default defineConfig({
       input: Object.fromEntries([
         ['index', resolve(root, 'index.html')],
         ...days.map((day) => [`day-${day.name}`, resolve(root, day.name, 'index.html')]),
+        ...days.flatMap(day=>readdirSync(resolve(root,day.name),{withFileTypes:true})
+          .filter(entry=>entry.isDirectory()&&/^\d+$/.test(entry.name)&&existsSync(resolve(root,day.name,entry.name,'index.html')))
+          .map(entry=>[`day-${day.name}-${entry.name}`,resolve(root,day.name,entry.name,'index.html')])),
       ]),
       output: {
         manualChunks: { three: ['three'] },

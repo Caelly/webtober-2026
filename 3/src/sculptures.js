@@ -1,0 +1,67 @@
+// Sculpted silhouettes and costume details, authored separately for every character.
+export const p=(d,fill,extra='')=>`<path d="${d}" fill="${fill}" ${extra}/>`;
+export const e=(x,y,rx,ry,fill,extra='')=>`<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="${fill}" ${extra}/>`;
+export const r=(x,y,w,h,rx,fill,extra='')=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" fill="${fill}" ${extra}/>`;
+export const s=(d,color,width=1.5,extra='')=>p(d,'none',`stroke="${color}" stroke-width="${width}" stroke-linecap="round" stroke-linejoin="round" ${extra}`);
+const text=(x,y,value,color,size=9)=>`<text x="${x}" y="${y}" fill="${color}" font-size="${size}" font-family="sans-serif" font-weight="bold" text-anchor="middle">${value}</text>`;
+const star=(x,y,color,scale=1)=>`<g transform="translate(${x} ${y}) scale(${scale})">${p('M0-6 2-2 7-2 3 1 4 6 0 3-4 6-3 1-7-2-2-2Z',color)}</g>`;
+const flower=(x,y,color)=>[0,1,2,3,4].map(i=>e(x+Math.cos(i*1.256)*4,y+Math.sin(i*1.256)*4,3,3,color)).join('')+e(x,y,2,2,'#e8c86d');
+const eyes=(x=24,y=40,spread=32,size=6.2)=>e(x,y,size,8,'#202329')+e(x+spread,y,size,8,'#202329')+e(x-1.8,y-2.5,1.7,2,'#fff')+e(x+spread-1.8,y-2.5,1.7,2,'#fff');
+const muzzle=(color='#ead8b5')=>e(40,53,19,11,color)+e(40,48,6,4,'#303037');
+const head='M10 37Q8 15 25 14H55Q73 15 71 37V50Q70 65 54 67H26Q10 64 10 50Z';
+const femaleHead='M11 37Q10 14 30 13H52Q70 14 70 38L68 53Q63 67 41 68Q17 65 12 53Z';
+const broadHead='M7 37Q6 15 22 14H59Q75 17 74 38L72 58Q68 69 40 69Q10 69 8 57Z';
+const body='M25 70Q40 66 55 70L57 98Q40 104 23 98Z';
+const dress='M27 69Q40 65 53 69L64 105Q39 111 16 104Z';
+const cape=color=>p('M22 67 8 107Q39 116 72 108L58 67Z',color)+s('M21 76 16 105M58 76 64 106','#442f3d',1,'opacity=".25"');
+const cropHair=color=>p('M9 38Q4 13 26 10Q46 4 66 16L73 37 61 28 59 21Q47 29 26 22L18 37Z',color);
+const sweepHair=color=>p('M9 40Q1 19 21 11Q43 2 64 15Q74 23 70 42L62 32 61 22Q37 20 20 34L17 47Z',color);
+const bob=color=>p('M8 35Q5 7 38 8Q75 7 73 39L73 68 58 65 62 29 54 27Q38 30 22 26L19 66 6 67Z',color);
+const longBack=color=>p('M16 28Q12 9 39 7Q66 5 69 32L74 98 59 108 48 73 28 73 15 105 5 91Z',color);
+const braid=(x,y,color)=>Array.from({length:7},(_,i)=>e(x+(i%2?2:-2),y+i*6.2,5,5,color)).join('')+p(`M${x-3} ${y+43}l3 9 4-9Z`,color);
+const tunic=(color,trim='#c7ae66')=>p('M24 70H56V98H24Z',color)+s('M28 71 40 84 51 71M24 92H56',trim,2);
+const boots=(color)=>e(27,108,10,7,color)+e(53,108,10,7,color);
+const suitBadge=(letter,color='#dab743')=>e(40,84,10,8,'#272b31')+text(40,89,letter,color,14);
+const mask=color=>p('M15 33Q28 29 40 35Q54 29 66 34L64 49 48 47 40 42 31 48 16 49Z',color);
+const belt=(color='#b6a169')=>r(23,95,34,4,1,color)+r(36,93,8,7,1,'#dcc278');
+const human=(fields)=>({headShape:head,bodyShape:body,boots:'#373638',hair:'',back:'',costume:'',face:'',underEyes:'',prop:'',...fields});
+const girl=fields=>human({headShape:femaleHead,bodyShape:dress,...fields});
+const animal=(fields)=>({animal:true,headShape:head,bodyShape:body,boots:'#635747',hair:'',back:'',costume:'',face:'',underEyes:'',prop:'',...fields});
+
+export const sculptures = {
+  'Spider-Man':c=>human({masked:true,hair:'',underEyes:s('M40 14V66M12 26Q40 41 69 26M10 44Q40 36 70 44M14 56Q40 45 67 56M22 17 58 62M58 17 22 62','#76232a',1.2),eyeType:'white',costume:p('M25 72 31 77 31 98H23Z','#2556a4')+p('M55 72 49 77 49 98H57Z','#2556a4')+s('M40 72V88M34 77 46 85M46 77 34 85M33 82H47','#272e3c',2),boots:'#c73132'}),
+  'Batman':c=>human({back:cape('#252832'),hair:p('M10 40 8 1 27 17H54L72 1 71 42 61 53 57 34H48L41 43 32 34H23L20 53Z','#272c37'),costume:p('M25 71H55V94H25Z','#65707a')+e(40,83,14,8,'#d1b34a')+p('M28 79 34 81 37 77 41 80 46 77 48 81 54 79 49 88 43 85 40 89 36 85 31 88Z','#252a34')+belt('#c7a74b'),boots:'#272d36'}),
+  'Superman':c=>human({back:cape('#c83b3a'),hair:sweepHair('#19252d')+s('M43 20Q30 18 35 30Q42 36 44 27','#19252d',4),costume:p('M27 77H53L49 87 40 94 31 87Z','#e0bd42')+text(40,88,'S','#bd3237',14)+belt('#c33e3c')+p('M25 98 40 102 55 98V102H25Z','#c33e3c'),boots:'#c83b3b'}),
+  'Wonder Woman':c=>girl({back:longBack('#202029')+s('M14 39 11 85M63 34 68 90','#424249',2),hair:sweepHair('#202029')+p('M16 26 20 19 36 22 40 16 44 22 62 19 65 26 43 30 39 30Z','#d8b24a')+star(40,24,'#ba3436',.55),costume:p('M26 72 40 79 53 72 51 92H29Z','#b6313c')+s('M26 74 33 82 40 76 47 82 54 74M27 85 40 89 53 85','#dfbd4e',3)+p('M25 93H55L59 104H21Z','#315787')+star(30,98,'#edece0',.35)+star(49,100,'#edece0',.35),prop:s('M62 86Q78 93 67 106Q52 116 55 99Q57 90 63 93','#d4b35c',2.5),boots:'#ab3740'}),
+  'Iron Man':c=>human({masked:true,eyeType:'white',underEyes:p('M17 24 29 20 40 25 51 20 64 25 61 52 50 61H30L19 52Z','#d4ad55')+s('M18 32 23 40M62 32 58 40M31 56H49','#785a35',2),costume:p('M25 71 33 76H47L55 71 58 94 51 99H29L22 93Z','#b32e30')+e(40,84,7,7,'#74bed0')+e(40,84,4,4,'#e1f5ed')+s('M28 91H34M47 91H53','#d4ad55',3),prop:e(15,89,3,3,'#a5e9ed')+e(65,89,3,3,'#a5e9ed'),boots:'#a72f30'}),
+  'Captain America':c=>human({hair:p('M10 44Q4 12 39 13Q75 12 71 45L61 54 59 34H49L41 44 32 34H21L20 54Z','#285895')+text(40,28,'A','#eef1e9',12)+p('M9 29 1 26 8 36 16 35M71 29 79 26 72 36 64 35','#e9ece4'),costume:star(40,79,'#e9ebe4',1)+p('M25 88H55V98H25Z','#e6e6d6')+s('M30 89V97M40 89V97M50 89V97','#bc3d3e',4)+belt('#76624b'),prop:e(64,88,17,17,'#be3a3f')+e(64,88,13,13,'#eeede1')+e(64,88,9,9,'#31588e')+star(64,88,'#eef1e7',1),boots:'#6b4b37'}),
+  'Hulk':c=>human({headShape:broadHead,bodyShape:'M20 70Q40 64 60 70L62 96H18Z',hair:p('M7 35 9 15 22 12 24 7 34 15 41 6 48 14 58 8 69 20 73 35 60 28 49 26 32 26 19 29Z','#283c2b'),face:s('M17 29 30 31M49 31 64 29','#274e2e',3)+s('M28 61H52','#376b3c',2),costume:p('M21 91H60L57 105 50 102 45 107 38 103 31 107 25 102Z','#755185')+s('M26 74Q30 82 35 80M54 74Q50 82 45 80','#559856',2),boots:'#6caa50'}),
+  'Thor':c=>human({back:longBack('#d6b275')+cape('#b73839'),hair:p('M13 34 10 18 18 10H60L69 19 67 34 55 22H27Z','#b4c2c7')+p('M16 18 5 8 3 22 16 31M64 18 75 8 77 22 64 31','#d9dfe0'),face:p('M24 52 32 55 40 59 48 55 56 51 51 64 40 68 28 63Z','#ba9159'),costume:p('M24 72H57V99H24Z','#384650')+[27,52].flatMap(x=>[77,89].map(y=>e(x,y,5,5,'#b2c2c7'))).join('')+belt('#77624b'),prop:s('M66 80V109','#775539',4)+r(52,76,27,15,2,'#9eafb5')+s('M56 79H75','#dbe1dd',1),boots:'#444c51'}),
+  'Black Panther':c=>human({masked:true,eyeType:'white',back:p('M12 27 10 5 26 17 54 17 71 5 69 29Z','#222730'),underEyes:s('M40 18V30M17 27 28 33 25 47M63 27 52 33 55 47M22 55 40 62 59 55','#68747e',1.5),costume:s('M25 72 29 81 35 75 40 85 45 75 51 81 55 72','#b1bac0',3)+s('M29 87 35 95M51 87 45 95','#596571',1),boots:'#232a31'}),
+  'Deadpool':c=>human({masked:true,eyeType:'white',back:s('M15 63 67 112M65 63 13 112','#383438',5)+s('M14 64 6 55M66 64 74 55','#726653',5),underEyes:e(24,41,12,18,'#262b2d')+e(56,41,12,18,'#262b2d'),costume:s('M25 70 56 98M55 70 24 98','#41372f',4)+belt('#504132')+e(40,96,4,4,'#a42b36'),boots:'#353131'}),
+  'Wolverine':c=>human({hair:p('M10 43 4 1 29 20 50 20 77 1 70 44 59 54 54 32H28L21 54Z','#263648')+p('M27 18H53V31H27Z','#e4b636'),costume:p('M24 71 32 77 31 98H23M56 71 48 77 49 98H57','#2b5488')+s('M29 78 33 86M51 78 47 86','#8b6532',2)+belt('#a93a36'),prop:s('M8 90 2 69M13 89 9 67M18 89 18 70M62 89 62 70M67 89 71 67M72 90 78 69','#bacbd0',2),boots:'#325786'}),
+  'Flash':c=>human({hair:p('M10 45Q4 12 40 12Q76 12 70 45L60 53 57 34H48L40 43 31 34H22L20 53Z','#b22e32')+p('M8 28 1 40 9 37 6 49 19 34 10 37M72 28 79 40 71 37 74 49 61 34 70 37','#d7b248'),costume:e(40,83,12,12,'#ede8d6')+p('M43 70 31 86H40L36 98 51 80H42Z','#d8b54a')+belt('#d4af42'),boots:'#d7b14c'}),
+  'Joker':c=>human({headShape:'M11 36Q9 13 29 12H52Q70 13 69 38L66 55 52 68H29L13 56Z',hair:p('M10 36Q-1 15 24 12Q41 0 62 10Q72 17 72 32L59 24 52 17Q34 27 20 25Z','#3e804b'),face:s('M16 30 29 33M50 33 65 29','#4e5550',2)+p('M22 54Q40 67 61 53Q54 70 37 66Q27 67 22 54Z','#b63d4b')+s('M28 59Q40 65 55 59','#f1e9d7',2.5),costume:p('M24 71 37 79 28 99H22M56 71 43 79 53 100H60','#784b90')+p('M34 73H46V98H34Z','#d68e47')+p('M30 72 40 78 50 71 46 84 34 84Z','#4d8957')+e(40,89,1.5,2,'#452c56'),prop:r(65,82,10,15,1,'#f1e7d6')+text(70,92,'J','#a64752',8),boots:'#644674'}),
+  'Harley Quinn':c=>girl({bodyShape:body,back:p('M15 22Q-8 12-4 38L0 57 10 56 13 34M65 22Q88 12 85 39L81 58 71 56 68 33Z','#e4c483')+p('M-3 41 9 40 11 58 0 63Z','#438db4')+p('M72 40 84 41 81 63 70 58Z','#cc527b'),hair:p('M10 39Q5 7 41 9Q75 8 70 39L58 24 41 18 21 26Z','#e2c389')+s('M37 14Q22 15 16 30M44 14Q59 16 64 29','#b99b63',1.4)+p('M6 58 15 55 17 74 8 74Z','#438db4')+p('M63 55 72 58 72 74 63 74Z','#cc527b'),face:p('M57 53q-4-5-5-2-1 3 5 6 5-4 5-6-2-3-5 2Z','#483d43')+s('M22 58Q30 61 34 58','#b94555',1.5),costume:p('M24 72H40V98H23Z','#b93851')+p('M40 72H56L57 98H40Z','#4282a2')+p('M30 73H50L47 92H33Z','#f1e9da')+r(25,95,30,6,1,'#292e36'),prop:s('M67 99 71 58','#b68b58',5)+s('M71 58 71 78','#e0c08d',8),boots:'#30343b'}),
+  'Thanos':c=>human({headShape:broadHead,hair:'',face:s('M19 30 31 33M49 33 63 30','#614775',3)+s('M27 58V65M34 59V68M41 60V69M48 59V68M55 58V65','#6b527e',1.4),costume:p('M20 71 31 68 40 78 50 68 60 72 56 99H24Z','#2d405d')+s('M24 72 32 81 40 77 49 81 56 72M30 83 32 97M50 83 48 97','#c1a354',3),prop:e(65,91,10,13,'#c5a148')+r(57,81,16,9,3,'#d3b258')+['#75ad72','#9571ba','#7bb2d4','#d87953','#d4b857','#c1d382'].map((color,i)=>e(59+i%3*5,85+Math.floor(i/3)*7,2.5,3,color)).join(''),boots:'#b89e60'}),
+  'Groot':c=>animal({headShape:'M10 38 12 20 10 8 22 17 26 4 35 15 45 1 49 17 64 8 62 22 71 30 68 58 56 68H23L11 56Z',bodyShape:'M28 70 39 66 51 70 55 104 45 108 40 98 34 110 23 105Z',hair:s('M17 28 19 55M29 19 32 34M55 24 57 54M38 51 41 65','#795537',1.7),face:s('M32 56Q40 60 48 55','#5b4334',1.7),costume:s('M32 72 29 100M44 71 48 101M39 78 37 91','#735235',2),prop:p('M55 23q11-13 12-1-5 7-12 1M20 73q-12-5-12 3 6 7 12-3','#779151'),boots:'#927044'}),
+  'Rocket':c=>animal({back:e(15,22,12,15,'#74716b')+e(65,22,12,15,'#74716b')+p('M56 95Q78 70 79 94Q79 115 57 109Z','#6e685f')+s('M66 90 76 94M60 101 72 104','#383e43',5),underEyes:p('M10 35 21 28 35 35 39 46 44 35 59 28 70 35 62 49 49 46 40 51 30 46 18 50Z','#3f4242'),face:muzzle('#d3d0c4'),costume:tunic('#c67539','#493c35')+r(26,90,30,8,2,'#575d61'),prop:r(49,82,25,9,2,'#616c70')+r(70,83,10,5,1,'#929e9c')+s('M60 88V100','#343c42',4),boots:'#53616b'}),
+  'Gamora':c=>girl({bodyShape:body,back:longBack('#282a32')+p('M8 76 18 68 22 101 11 105M58 66 70 80 68 103 57 101Z','#943a70'),hair:sweepHair('#282a32'),face:s('M17 32 30 32M50 32 64 31','#356d50',2),costume:tunic('#353545','#aeb5b0')+belt('#73615c'),prop:s('M69 104 70 63','#b6c6c7',3)+s('M64 89H75','#64544b',4),boots:'#343543'}),
+  'Doctor Strange':c=>human({back:cape('#a43b3c')+p('M18 72 11 54 26 64 40 70 53 63 69 55 61 77Z','#b94945'),hair:sweepHair('#2b2c31')+p('M12 31 17 23 21 32 17 47 11 42M60 23 67 30 69 43 63 47Z','#bfc5c0'),face:p('M29 51 39 54 51 51 46 59 41 58 39 67 35 61 33 59Z','#453934'),costume:tunic('#356580','#29394e')+belt('#865b3e')+e(40,82,6,6,'#ba9e51')+e(40,82,3,3,'#769577'),prop:e(65,88,11,11,'none','stroke="#d9a851" stroke-width="2"')+star(65,88,'#d9a851',1),boots:'#514439'}),
+  'Scarlet Witch':c=>girl({back:longBack('#9e5336')+cape('#903243'),hair:sweepHair('#a1553b')+p('M14 34 12 9 30 22 40 13 51 22 68 9 65 34 51 28 40 26 29 28Z','#9b3042'),costume:p('M25 70 40 80 55 70 53 99H27Z','#a53445')+s('M28 80 40 86 52 80M31 91 40 95 49 91','#d57675',1.3),prop:e(14,88,7,7,'#e58a97','opacity=".75"')+e(66,88,7,7,'#e58a97','opacity=".75"'),boots:'#683446'}),
+  'Loki':c=>human({back:longBack('#252b2c')+cape('#285944')+p('M21 21Q1 17 6 1Q7 15 28 17M57 18Q75 17 74 1Q84 16 63 24Z','#c3a555'),hair:p('M11 34 13 19 28 16 40 8 53 16 68 19 69 34 57 29 40 24 22 30Z','#c7aa5b'),costume:tunic('#315a43','#c6aa5a')+s('M28 74 40 83 53 74M40 84V99','#d1b66f',2.5),prop:s('M68 107 71 70','#c7ac62',3)+e(71,67,5,6,'#79a6c1'),boots:'#3e4134'}),
+  'Aquaman':c=>human({back:longBack('#4f3427'),hair:sweepHair('#573b2b'),face:p('M21 51 32 54 40 59 51 54 59 51 54 65 40 70 27 65Z','#66442b'),costume:tunic('#d28b33','#bba04d')+s('M29 77q4 4 8 0m3 0q4 4 8 0M25 83q4 4 8 0m3 0q4 4 8 0m3 0q4 4 8 0M29 90q4 4 8 0m3 0q4 4 8 0','#aa702c',1.2)+belt('#c1a255'),prop:s('M69 111V57M60 58V70H78V58M69 53V73','#ccb565',3),boots:'#3c7458'}),
+  'Catwoman':c=>girl({bodyShape:body,back:p('M13 26 11 6 28 19 52 19 70 6 68 28Z','#2e3036'),hair:p('M11 45Q4 14 40 14Q76 14 70 45L63 52 58 31H23L18 51Z','#272c34')+e(24,26,10,5,'#797980')+e(55,26,10,5,'#797980'),costume:tunic('#37313d','#716b7a')+s('M40 72V98','#94979e',1),prop:s('M65 88Q89 88 74 107Q59 125 52 105','#36333b',2.5),boots:'#282b33'}),
+  'Robin':c=>human({back:cape('#b9a342'),hair:p('M8 35 11 20 7 13 23 16 25 5 39 14 49 7 63 14 73 31 61 29 50 25 23 25Z','#27302b'),underEyes:mask('#2c3431'),costume:tunic('#b8393c','#d6ba57')+e(30,79,5,5,'#323a32')+text(30,82,'R','#d5be57',7)+s('M40 78V92','#dac673',2)+belt('#b9a345'),boots:'#48714b'}),
+};
+
+export function sculptureFor(c) {
+  const name=c.baseName||c.name;
+  const sculpt=sculptures[name];
+  if(!sculpt)throw new Error(`Sculpture manquante : ${name}`);
+  return sculpt(c);
+}
+
+// Shared elements used by the individually authored Disney, Pixar and game sculpts.
+export const parts={head,femaleHead,broadHead,body,dress,cape,cropHair,sweepHair,bob,longBack,braid,tunic,boots,suitBadge,mask,belt,human,girl,animal,eyes,muzzle,star,flower,text};
+

@@ -53,12 +53,12 @@ test('les deux catégories sont présentes et seules les histoires vraies révè
   }
 });
 
-test('le calendrier et les menus ouvrent les jours 1 et 2, seul le jour courant est actif',()=>{
-  assert.deepEqual(days.filter(day=>day.unlocked).map(day=>day.number),[1,2]);
-  for(const day of [1,2]) {
+test('le calendrier et les menus ouvrent les jours publiés, seule la page consultée est active',()=>{
+  assert.deepEqual(days.filter(day=>day.unlocked).map(day=>day.number),[1,2,3]);
+  for(const day of [1,2,3]) {
     const menu=navigation(day);
     assert.ok(menu.includes(`href="/${day}" aria-current="page"`));
     assert.equal((menu.match(/aria-current="page"/g)||[]).length,1);
-    assert.ok(menu.includes('Jour 3 : Miniature, verrouillé'));
+    assert.ok(menu.includes('Jour 4 : Cactus, verrouillé'));
   }
 });

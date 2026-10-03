@@ -36,3 +36,9 @@
   .header-divider { display: none; }
   .challenge-badge { font-size: 10px; padding: 8px 10px; gap: 7px; }
 }
+.version-nav { display:flex;align-items:center;gap:26px; }
+.miniature-versions { display:flex;gap:4px;align-items:center;padding:4px;background:#ffffff55;border:1px solid currentColor;border-color:#d9d9cf;border-radius:30px; }
+.miniature-versions a { font-size:9px;padding:7px 11px;border-radius:20px;white-space:nowrap; }
+.miniature-versions a span { opacity:.55;font-size:8px;margin-right:5px; }
+.miniature-versions a[aria-current] { background:#e5e9db;color:#365640; }
+@media(max-width:700px) { .version-nav { gap:8px; }.miniature-versions a { padding:6px;font-size:8px; }.miniature-versions a span { display:none; }.version-nav .concept-link,.version-nav .header-divider { display:none; } }
