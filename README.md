@@ -4,7 +4,7 @@ Un thème, une hero section. Une collection d’expériences interactives pour o
 
 ## Démarrer
 
-Depuis le dossier `inktober` :
+Depuis le dossier du projet `webtober-2026` :
 
 ```sh
 pnpm install --frozen-lockfile
@@ -22,7 +22,7 @@ pnpm preview
 ## Organisation
 
 ```text
-inktober/
+webtober-2026/
 ├── 1/
 │   ├── index.html
 │   ├── public/

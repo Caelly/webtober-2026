@@ -1,5 +1,5 @@
 import {dollArt} from '../../src/doll.js';
-import {sculptureFor} from '../../src/sculptures.js';
+import {sculptureFor,parts,p,e} from '../../src/sculptures.js';
 const cache=new Map();
 const metal={bronze:['#f0c89b','#bc8152','#785034'],silver:['#fafbff','#adbcc9','#71818e'],gold:['#fff0ad','#e1b745','#987025']};
 
@@ -26,12 +26,32 @@ export function plushImage(c,rarity='normal'){
   return cache.get(key);
 }
 
-// The same unique character silhouette becomes a padded, bevelled plush sculpture.
+// Semantic parts let the 3D sculptor wrap clothing and facial details over volumes.
 export function sculptureSvg(c,rarity){
   const sculpt=sculptureFor(c),colors=metal[rarity];
-  const skin=colors?.[1]||sculpt.skin||c.skin,body=colors?.[1]||sculpt.bodyColor||(sculpt.animal?skin:c.outfit);
-  let art=dollArt(c,'sculpt').replace(/<defs>[\s\S]*?<\/defs>/g,'').replace(/<ellipse cx="40" cy="117"[^>]*\/>/,'')
-    .replace(/url\(#[^)]*-head\)/g,skin).replace(/url\(#[^)]*-body\)/g,body);
-  if(colors)art=art.replace(/(fill|stroke)="(#[\da-fA-F]{6})"/g,(m,attr,color)=>Math.max(...color.slice(1).match(/../g).map(v=>parseInt(v,16)))<75?m:`${attr}="${colors[1]}"`);
+  const skin=sculpt.skin||c.skin,body=sculpt.bodyColor||(sculpt.animal?skin:c.outfit);
+  const part=(name,art)=>`<g data-part="${name}">${art}</g>`;
+  let art=part('back',sculpt.back)+part('feet',Object.hasOwn(sculpt,'feet')?sculpt.feet:parts.boots(sculpt.boots));
+  if(sculpt.limbs!==false){
+    const sleeve=sculpt.animal?skin:body;
+    art+=part('arms',p('M25 72Q14 68 10 82L10 92Q16 96 21 90L30 78Z',sleeve)+p('M55 72Q66 68 70 82L70 92Q64 96 59 90L50 78Z',sleeve));
+    art+=part('hands',e(14,92,5.5,6,skin)+e(66,92,5.5,6,skin));
+  }
+  art+=part('body',p(sculpt.bodyShape,body))+part('clothing',sculpt.costume);
+  if(!sculpt.animal&&!sculpt.masked)art+=part('ears',e(9,42,4,6,skin)+e(71,42,4,6,skin));
+  art+=part('head',p(sculpt.headShape,skin))+part('hair',sculpt.hair)+part('face-relief',sculpt.underEyes);
+  let eyes;
+  if(sculpt.customEyes)eyes=sculpt.customEyes;
+  else if(sculpt.eyeType==='white')eyes=p('M16 35 32 39 29 47 21 48Z','#f3f3e8')+p('M64 35 48 39 51 47 59 48Z','#f3f3e8');
+  else eyes=parts.eyes();
+  art+=part('eyes',eyes);
+  if(!sculpt.animal&&!sculpt.masked)art+=part('nose',e(40,49,2.2,1.8,skin));
+  art+=part('face',sculpt.face)+part('accessory',sculpt.prop);
+  // Keep black inlays and small ivory highlights, tint every other physical part.
+  if(colors)art=art.replace(/(fill|stroke)="(#[\da-fA-F]{3,6})"/g,(m,attr,color)=>{
+    const hex=color.length===4?color.slice(1).split('').map(n=>n+n).join(''):color.slice(1),rgb=hex.match(/../g).map(v=>parseInt(v,16));
+    if(Math.max(...rgb)<75)return m;
+    return `${attr}="${colors[1]}"`;
+  });
   return `<svg xmlns="http://www.w3.org/2000/svg" width="120" height="140" fill="none">${art}</svg>`;
 }

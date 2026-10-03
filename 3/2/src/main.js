@@ -5,6 +5,7 @@ import {roster,rarities,drawReward,restoreCollection,serializeCollection,addRewa
 import {plushImage} from './plush.js';
 import {createMachine} from './machine.js';
 import {showPlush} from './reward-scene.js';
+import {createFigurinePortraits} from './figurine-studio.js';
 
 if(location.pathname==='/3/2/')history.replaceState(null,'',`/3/2${location.search}${location.hash}`);
 const icon='<svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M16 2v9m-5 0h10l3 6-4 9m-9-15-3 6 4 9m4-15v14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="16" cy="29" r="5" stroke="currentColor" stroke-width="1.5"/></svg>';
@@ -38,6 +39,20 @@ const $=selector=>document.querySelector(selector),counts=(()=>{try{return resto
 let edition='normal',attempts=0,sessionPrizes=0,machine,disposeReward=null,playingReward=false;
 const status=$('#machine-status'),grab=$('#grab'),rewardDialog=$('#reward-dialog');
 const rarityInfo=id=>rarities.find(r=>r.id===id);
+const portraits=createFigurinePortraits();let portraitObserver=null;
+function updatePortraits(){
+  portraitObserver?.disconnect();
+  const selectedEdition=edition;
+  portraitObserver=new IntersectionObserver(entries=>{
+    for(const entry of entries){
+      if(!entry.isIntersecting)continue;
+      const image=entry.target,character=roster.find(c=>c.id===image.closest('[data-character]').dataset.character);
+      portraitObserver.unobserve(image);
+      portraits.request(character,selectedEdition).then(src=>{if(src&&image.isConnected){image.src=src;image.dataset.render='3d';}});
+    }
+  },{root:$('#collection-grid'),rootMargin:'80px'});
+  for(const image of document.querySelectorAll('.card-image img'))portraitObserver.observe(image);
+}
 function persist(){try{localStorage.setItem(storageKey,serializeCollection(counts));}catch{$('#save-status').textContent='Collection conservée pour cette session';}}
 function refreshCollection(){
   const stats=collectionStats(counts);$('#collected').textContent=stats.characters;$('#mobile-count').textContent=`${stats.characters} / 100`;$('#variants').textContent=stats.variants;$('#duplicates').textContent=stats.duplicates;$('#duplicate-s').textContent=stats.duplicates===1?'':'s';$('#collection-progress').style.width=`${stats.characters}%`;
@@ -46,15 +61,17 @@ function refreshCollection(){
   $('#collection-grid').innerHTML=visible.map(c=>{
     const n=counts[`${c.id}:${edition}`]||0;
     return `<button class="plush-card${n?' is-owned':''}" data-character="${c.id}" aria-label="${c.name}, ${rarityInfo(edition).name}, ${n?n+' exemplaire'+(n>1?'s':''):'à découvrir'}"><div class="card-image"><img src="${plushImage(c,edition)}" alt="" loading="lazy" draggable="false"/>${n?`<span class="card-count">×${n}</span>`:'<span class="card-lock" aria-hidden="true">?</span>'}</div><span class="card-name">${c.name}</span></button>`;
-  }).join('');$('#no-results').hidden=visible.length>0;
+  }).join('');$('#collection-grid').dataset.edition=edition;$('#no-results').hidden=visible.length>0;updatePortraits();
 }
 function openPlush(character,rarity,count,isPrize){
   disposeReward?.();disposeReward=null;playingReward=isPrize;
-  $('#reward-eyebrow').textContent=isPrize?(count>1?'HEUREUSES RETROUVAILLES':'UN NOUVEAU PETIT BONHEUR'):'VOTRE COLLECTION';
+  $('#reward-eyebrow').textContent=isPrize?(count>1?'HEUREUSES RETROUVAILLES':'UN NOUVEAU PETIT BONHEUR'):count?'VOTRE COLLECTION':'À DÉCOUVRIR';
   $('#reward-name').textContent=character.name;$('#reward-edition').textContent=rarityInfo(rarity).name;$('#reward-edition').style.setProperty('--rarity',rarityInfo(rarity).color);
-  $('#reward-copy').textContent=count>1?`${count} exemplaires dans votre collection.`:'Votre première peluche de cette édition.';
+  $('#reward-copy').textContent=count>1?`${count} exemplaires dans votre collection.`:count?'Votre première peluche de cette édition.':'Un petit trésor qui attend sa capsule.';
   $('#continue').innerHTML=isPrize?'Encore un petit bonheur <span aria-hidden="true">↗</span>':'Retour à la collection <span aria-hidden="true">↗</span>';
-  $('#reward-fallback').src=plushImage(character,rarity);$('#reward-canvas').hidden=false;rewardDialog.showModal();
+  // A fresh canvas prevents a disposed WebGL context from being reused on reopen.
+  const canvas=$('#reward-canvas'),freshCanvas=canvas.cloneNode(false);canvas.replaceWith(freshCanvas);
+  $('#reward-fallback').src=plushImage(character,rarity);freshCanvas.hidden=false;rewardDialog.showModal();
   try{disposeReward=showPlush($('#reward-canvas'),character,rarity);$('#reward-fallback').hidden=true;}catch(e){console.error('Aperçu 3D de la peluche :',e);$('#reward-canvas').hidden=true;$('#reward-fallback').hidden=false;}
 }
 function closeReward(){rewardDialog.close();}
@@ -88,7 +105,7 @@ document.addEventListener('keydown',event=>{
 document.addEventListener('keyup',event=>{pressed.delete(event.key);updateDirection();});
 window.addEventListener('blur',()=>{pressed.clear();updateDirection();});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){pressed.clear();updateDirection();}});
-$('#collection-grid').addEventListener('click',event=>{const card=event.target.closest('[data-character]');if(!card)return;const c=roster.find(c=>c.id===card.dataset.character),n=counts[`${c.id}:${edition}`];if(n)openPlush(c,edition,n,false);});
+$('#collection-grid').addEventListener('click',event=>{const card=event.target.closest('[data-character]');if(!card)return;const c=roster.find(c=>c.id===card.dataset.character),n=counts[`${c.id}:${edition}`]||0;openPlush(c,edition,n,false);});
 document.querySelectorAll('[data-rarity]').forEach(button=>button.addEventListener('click',()=>{edition=button.dataset.rarity;document.querySelectorAll('[data-rarity]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));refreshCollection();}));
 $('#search').addEventListener('input',refreshCollection);$('#owned-only').addEventListener('change',refreshCollection);
 $('#open-rates').addEventListener('click',()=>$('#rates-dialog').showModal());$('#open-concept').addEventListener('click',()=>$('#concept-dialog').showModal());
@@ -111,5 +128,5 @@ document.addEventListener('keydown',event=>{
   }
 });
 matchMedia('(min-width: 761px)').addEventListener('change',event=>{if(event.matches&&$('#collection-side').classList.contains('is-open'))toggleCollection(false);});
-window.addEventListener('pagehide',()=>{machine?.dispose();disposeReward?.();},{once:true});
+window.addEventListener('pagehide',()=>{portraitObserver?.disconnect();portraits.dispose();machine?.dispose();disposeReward?.();},{once:true});
 refreshCollection();
