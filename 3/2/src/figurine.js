@@ -8,16 +8,16 @@ export const metalFinishes={
   silver:{color:'#d4dce5',metalness:1,roughness:.14,clearcoat:1,clearcoatRoughness:.08},
   gold:{color:'#e8b83e',metalness:1,roughness:.16,clearcoat:1,clearcoatRoughness:.09},
 };
-const partSettings={head:[34,15,0],body:[25,11,-3],back:[14,5,-15],feet:[21,6,1],arms:[16,5,-2],hands:[16,5,2],ears:[15,5,-4],hair:[7,2,0],'face-relief':[2,1,1],eyes:[3.5,1,2],nose:[6,2,2],face:[2,1,3],clothing:[2.5,1,1],accessory:[12,4,6]};
+export const paddingProfile={head:[2.2,1.15,1],body:[2.2,1,0],back:[1,.3,-2],feet:[1.5,.5,.1],arms:[1.6,.6,0],hands:[1.6,.6,.5],ears:[1.2,.45,.1],hair:[.2,.08,.15],'face-relief':[.15,.04,.5],eyes:[.2,.05,.9],nose:[.3,.1,.7],face:[.12,.03,1.1],clothing:[.12,.03,.12],accessory:[1,.3,4.5]};
 
 function boundsOf(shape){
   const points=shape.getPoints(32),box=new THREE.Box2().setFromPoints(points);
   const size=box.getSize(new THREE.Vector2()),center=box.getCenter(new THREE.Vector2());
   return {cx:center.x,cy:center.y,rx:Math.max(1,size.x/2),ry:Math.max(1,size.y/2),width:size.x,height:size.y};
 }
-// A rounded pillow cap with real interior vertices, not a flat polygon extrusion.
+// A shallow padded drawing: curved fabric caps and a thin stitched edge.
 export function pillowGeometry(shape,depth,bulge){
-  const b=boundsOf(shape),bevel=Math.min(3,Math.max(.3,Math.min(b.width,b.height)*.095));
+  const b=boundsOf(shape),bevel=Math.min(depth*.35,Math.max(.03,Math.min(b.width,b.height)*.025));
   const original=new THREE.ExtrudeGeometry(shape,{depth,steps:1,bevelEnabled:true,bevelSegments:5,bevelSize:bevel,bevelThickness:bevel,curveSegments:24});
   const source=original.getAttribute('position'),positions=[];
   const emit=(a,b,c,level=0)=>{
@@ -58,21 +58,21 @@ export function createFigurine(character,rarity,fleece){
   const core={};
   for(const name of ['head','body']){
     const entry=entries.find(e=>e.part===name&&e.shapes.length);if(!entry)throw new Error(`Volume ${name} absent : ${character.name}`);
-    const [depth,bulge,z]=partSettings[name];core[name]={...pillowGeometry(entry.shapes[0],depth,bulge),z};
+    const [depth,bulge,z]=paddingProfile[name];core[name]={...pillowGeometry(entry.shapes[0],depth,bulge),z};
   }
   const surface=(name,x,y)=>{const volume=core[name];return volume.z+volume.front(x,y);};
   const materialFor=(color,part)=>{
     const dark=new THREE.Color(color);const inlay=dark.r+dark.g+dark.b<.22&&['eyes','face','nose'].includes(part),eye=part==='eyes',key=`${color}:${part}`;
     if(!materials.has(key)){
       const settings=metal&&!inlay?{...metal,color:part==='eyes'?'#fff5df':metal.color,envMapIntensity:1.3,bumpMap:null,map:null}
-        :{color,metalness:0,roughness:eye?.23:.94,clearcoat:eye?.45:0,clearcoatRoughness:.12,map:inlay||eye?null:fleece,bumpMap:inlay||eye?null:fleece,bumpScale:.6};
+        :{color,metalness:0,roughness:eye?.4:.94,clearcoat:eye?.15:0,clearcoatRoughness:.2,map:inlay||eye?null:fleece,bumpMap:inlay||eye?null:fleece,bumpScale:.07};
       const material=new THREE.MeshPhysicalMaterial({...settings,side:THREE.DoubleSide});materials.set(key,material);
     }
     return materials.get(key);
   };
   const counters={};
   for(const {path,part,shapes} of entries){
-    const style=path.userData.style,[depth,bulge,z]=partSettings[part]||partSettings.accessory;
+    const style=path.userData.style,[depth,bulge,z]=paddingProfile[part]||paddingProfile.accessory;
     const order=counters[part]||0;counters[part]=order+1;
     const wrapped=['hair','face-relief','eyes','nose','face','clothing'].includes(part);
     const wrapTo=part==='clothing'?'body':'head';
@@ -80,8 +80,8 @@ export function createFigurine(character,rarity,fleece){
       const positions=geometry.getAttribute('position');
       for(let n=0;n<positions.count;n++){
         const x=positions.getX(n),y=positions.getY(n),originalZ=positions.getZ(n);
-        const front=wrapped?surface(wrapTo,x,y)+depth/2+z+order*.16:z;
-        positions.setZ(n,originalZ+front+(isStroke?depth/2+1:0));
+        const front=wrapped?surface(wrapTo,x,y)+depth/2+z+order*.025:z;
+        positions.setZ(n,originalZ+front+(isStroke?depth/2+bulge+.06:0));
       }
       if(wrapped)geometry.computeVertexNormals();
     };

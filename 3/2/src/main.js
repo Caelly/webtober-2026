@@ -48,7 +48,7 @@ function updatePortraits(){
       if(!entry.isIntersecting)continue;
       const image=entry.target,character=roster.find(c=>c.id===image.closest('[data-character]').dataset.character);
       portraitObserver.unobserve(image);
-      portraits.request(character,selectedEdition).then(src=>{if(src&&image.isConnected){image.src=src;image.dataset.render='3d';}});
+      portraits.request(character,selectedEdition).then(src=>{if(src&&image.isConnected){image.src=src;image.dataset.render='padded';}});
     }
   },{root:$('#collection-grid'),rootMargin:'80px'});
   for(const image of document.querySelectorAll('.card-image img'))portraitObserver.observe(image);

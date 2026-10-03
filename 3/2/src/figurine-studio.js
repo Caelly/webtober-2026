@@ -4,12 +4,12 @@ import {createFigurine,createFleece,disposeFigurine} from './figurine.js';
 
 export function createFigurineStudio(canvas,{portrait=false}={}){
   const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,preserveDrawingBuffer:portrait});
-  renderer.setPixelRatio(portrait?1:Math.min(devicePixelRatio,2));renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.1;
-  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(32,1,.1,30);
+  renderer.setPixelRatio(portrait?1:Math.min(devicePixelRatio,2));renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.95;
+  const scene=new THREE.Scene(),camera=new THREE.OrthographicCamera(-1,1,1,-1,.1,30);
   const room=new RoomEnvironment(),pmrem=new THREE.PMREMGenerator(renderer),environment=pmrem.fromScene(room,.035);scene.environment=environment.texture;room.dispose();pmrem.dispose();
   scene.environmentIntensity=1.15;
-  scene.add(new THREE.HemisphereLight(0xfff7ef,0x9a84a9,1.6));
-  const key=new THREE.DirectionalLight(0xfff1d3,3.4);key.position.set(-3,4,5);scene.add(key);
+  scene.add(new THREE.HemisphereLight(0xfff7ef,0x9a84a9,1.4));
+  const key=new THREE.DirectionalLight(0xfff1d3,2.3);key.position.set(-3,4,5);scene.add(key);
   const rim=new THREE.DirectionalLight(0xe0edff,3);rim.position.set(3,2,-2);scene.add(rim);
   const fill=new THREE.DirectionalLight(0xffffff,.9);fill.position.set(1,-1,5);scene.add(fill);
   // Real bright panels are reflected by the polished metallic surfaces.
@@ -22,21 +22,21 @@ export function createFigurineStudio(canvas,{portrait=false}={}){
   // Remove panels from the display; their reflection remains baked in the environment.
   const panels=scene.children.filter(o=>o.isMesh);for(const panel of panels){scene.remove(panel);panel.geometry.dispose();panel.material.dispose();}
   const shadowCanvas=document.createElement('canvas');shadowCanvas.width=shadowCanvas.height=128;const ctx=shadowCanvas.getContext('2d'),gradient=ctx.createRadialGradient(64,64,5,64,64,61);gradient.addColorStop(0,'rgba(61,42,76,.22)');gradient.addColorStop(1,'rgba(61,42,76,0)');ctx.fillStyle=gradient;ctx.fillRect(0,0,128,128);
-  const shadowTexture=new THREE.CanvasTexture(shadowCanvas),shadow=new THREE.Mesh(new THREE.PlaneGeometry(1.5,1.5),new THREE.MeshBasicMaterial({map:shadowTexture,transparent:true,depthWrite:false}));shadow.rotation.x=-Math.PI/2;scene.add(shadow);
-  const fleece=createFleece();let model=null,width=1,height=1,baseRotation=-.32;
+  const shadowTexture=new THREE.CanvasTexture(shadowCanvas),shadow=new THREE.Mesh(new THREE.PlaneGeometry(1.5,1.5),new THREE.MeshBasicMaterial({map:shadowTexture,transparent:true,depthWrite:false}));scene.add(shadow);
+  const fleece=createFleece();let model=null,width=1,height=1;
   function frameCamera(){
     if(!model)return;
     const bounds=new THREE.Box3().setFromObject(model),size=bounds.getSize(new THREE.Vector3());
-    const distance=Math.max(size.y,size.x/camera.aspect)/Math.tan(THREE.MathUtils.degToRad(16))*.63;
-    camera.position.set(0,size.y*.035,Math.max(2.6,distance));camera.lookAt(0,0,0);camera.updateProjectionMatrix();
-    shadow.position.set(0,bounds.min.y-.055,0);shadow.scale.setScalar(Math.max(.7,size.x*.68));
+    const aspect=width/height,halfHeight=Math.max(size.y,size.x/aspect)*.57;
+    camera.left=-halfHeight*aspect;camera.right=halfHeight*aspect;camera.top=halfHeight;camera.bottom=-halfHeight;
+    camera.position.set(0,0,5);camera.lookAt(0,0,0);camera.updateProjectionMatrix();
+    shadow.position.set(0,bounds.min.y+.025,bounds.min.z-.025);shadow.scale.set(Math.max(.7,size.x*.72),.12,1);
   }
-  function resize(w,h){width=Math.max(1,w);height=Math.max(1,h);renderer.setSize(width,height,false);camera.aspect=width/height;frameCamera();}
-  function setModel(character,rarity){if(model){scene.remove(model);disposeFigurine(model);}model=createFigurine(character,rarity,fleece);model.rotation.y=baseRotation;scene.add(model);frameCamera();return model;}
-  function rotate(yaw,pitch=0){if(model){model.rotation.y=yaw;model.rotation.x=pitch;}}
+  function resize(w,h){width=Math.max(1,w);height=Math.max(1,h);renderer.setSize(width,height,false);frameCamera();}
+  function setModel(character,rarity){if(model){scene.remove(model);disposeFigurine(model);}model=createFigurine(character,rarity,fleece);scene.add(model);frameCamera();return model;}
   function render(){renderer.render(scene,camera);}
   function dispose(){if(model)disposeFigurine(model);shadow.geometry.dispose();shadow.material.dispose();shadowTexture.dispose();fleece.dispose();reflection.dispose();renderer.dispose();renderer.forceContextLoss();}
-  return {resize,setModel,rotate,render,dispose,get canvas(){return canvas;},get model(){return model;},get angle(){return baseRotation;}};
+  return {resize,setModel,render,dispose,get canvas(){return canvas;},get model(){return model;}};
 }
 
 // One offscreen WebGL renderer serves the entire collection, never one per card.
@@ -51,7 +51,7 @@ export function createFigurinePortraits(){
       if(!studio){studio=createFigurineStudio(document.createElement('canvas'),{portrait:true});studio.resize(160,192);}
       studio.setModel(task.character,task.rarity);studio.render();
       const image=studio.canvas.toDataURL('image/png');cache.set(task.key,image);task.resolve(image);
-    }catch(error){failed=true;studio?.dispose();studio=null;task.resolve(null);for(const item of queue.splice(0))item.resolve(null);console.warn('Aperçus 3D indisponibles :',error);}
+    }catch(error){failed=true;studio?.dispose();studio=null;task.resolve(null);for(const item of queue.splice(0))item.resolve(null);console.warn('Aperçus rembourrés indisponibles :',error);}
     pending.delete(task.key);if(queue.length&&!failed)raf=requestAnimationFrame(tick);
   }
   function request(character,rarity){
