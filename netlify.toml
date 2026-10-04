@@ -6,6 +6,18 @@
   NODE_VERSION = "22"
 
 [[redirects]]
+  from = "/4"
+  to = "/4/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/4/"
+  to = "/4/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/3/1"
   to = "/3/1/index.html"
   status = 200
