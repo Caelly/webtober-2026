@@ -7,3 +7,4 @@ dist/
 .DS_Store
 Thumbs.db
 preview*.jpg
+1/public/gifle/wasm/

@@ -39,11 +39,11 @@ webtober-2026/
 
 La configuration et les dépendances sont partagées à la racine. Chaque jour possède son dossier numéroté et son point d’entrée HTML. Vite détecte ces dossiers au démarrage et les compile ensemble dans `dist/`, en conservant les chemins `/1/`, `/2/`, etc.
 
-`days.js` contient les 31 thèmes en français et leur disponibilité dans le calendrier. Passez `unlocked` à `true` lorsqu’une page est prête à publier : la case du jour affiche alors un aperçu en direct de l’expérience. Les jours 1, 2, 3 et 4 sont actuellement accessibles.
+`days.js` contient les 31 thèmes en français et leur disponibilité dans le calendrier. Passez `unlocked` à `true` lorsqu’une page est prête à publier : la case du jour affiche alors un aperçu en direct de l’expérience. Les jours 1, 2, 3, 4 et 5 sont actuellement accessibles.
 
 ## Netlify
 
-Le dépôt se publie tel quel : `pnpm build` produit `dist`. La racine sert le calendrier, `/1` le jour Pomme, `/2` le jour Relique, `/3` le jour Miniature et `/4` le jour Cactus.
+Le dépôt se publie tel quel : `pnpm build` produit `dist`. La racine sert le calendrier, `/1` le jour Pomme, `/2` le jour Relique, `/3` le jour Miniature, `/4` le jour Cactus et `/5` le jour Gifle.
 
 La page du jour 1 tient dans la hauteur de l’écran sans défilement. Le bouton Vertical / Horizontal change la disposition des outils et mémorise le choix. Sur les écrans en paysage de faible hauteur, les outils passent à côté de la scène. Les recettes et le menu peuvent défiler à l’intérieur de leur panneau si nécessaire.
 
@@ -64,3 +64,7 @@ La page `/3` propose deux versions. Sur `/3/1`, mille poupées de la pop culture
 ## Jour 4 — Cactus
 
 Un cactus 3D texturé en pot dont on retire les 43 épines une à une, y compris à l’arrière. La rotation est libre sur les trois axes. Le compteur accompagne la progression, puis une fleur apparaît à la dernière épine. Les retraits peuvent être annulés et la partie recommencée. Le jour est accessible dans le calendrier et le menu partagé. Voir [le jour 4](4/README.md).
+
+## Jour 5 — Gifle
+
+Une battle de barbichette au micro. Un grand bouton rouge PLAY lance un duel d’expressions à dire sans rire. La liste est mélangée à chaque partie. Un rire détecté arrête le micro et déclenche l’arrivée d’un personnage qui donne une gifle animée. La parole et les rires sont analysés sur l’appareil avec MediaPipe / YAMNet, sans enregistrement ni envoi du son. Voir [le jour 5](5/README.md).

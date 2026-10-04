@@ -1,0 +1,3612 @@
+[
+  {
+    "file": "1-1791-A-26.wav",
+    "gain": 1,
+    "expected": true,
+    "frames": [
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.26171875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.26171875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.26171875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.33203125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.05859375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.4140625
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.5
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.4140625
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.26171875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.109375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.01953125
+        }
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "file": "1-1791-A-26.wav",
+    "gain": 0.12,
+    "expected": true,
+    "frames": [
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.26171875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Baby laughter",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.33203125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Baby laughter",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.05859375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.33203125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.26171875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.19921875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        }
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "file": "2-60791-A-26.wav",
+    "gain": 1,
+    "expected": true,
+    "frames": [
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.80078125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.015625
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.73828125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.80078125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.8515625
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.73828125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.109375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.73828125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.73828125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.015625
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.05859375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.73828125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.015625
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.80078125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Conversation",
+          "score": 0.015625
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.73828125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.80078125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Conversation",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.80078125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.80078125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.80078125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.73828125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.73828125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.80078125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.08203125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.5859375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.109375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.26171875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.19921875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.1484375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.1484375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.1484375
+        }
+      ]
+    ]
+  },
+  {
+    "file": "2-60791-A-26.wav",
+    "gain": 0.12,
+    "expected": true,
+    "frames": [
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.08203125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.05859375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.80078125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.109375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.5859375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.5859375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.5
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.109375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.5859375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.73828125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.5859375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.08203125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.73828125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.05859375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.5859375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.109375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.5
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.26171875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.1484375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.5
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.26171875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.1484375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.5
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.26171875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.109375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.5
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.26171875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.1484375
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.4140625
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.4140625
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.26171875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.19921875
+        }
+      ]
+    ]
+  },
+  {
+    "file": "3-126113-A-26.wav",
+    "gain": 1,
+    "expected": true,
+    "frames": [
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Baby cry, infant cry",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.015625
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.015625
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Snicker",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.109375
+        }
+      ]
+    ]
+  },
+  {
+    "file": "4-167571-A-26.wav",
+    "gain": 1,
+    "expected": true,
+    "frames": [
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.1484375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        }
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "file": "4-167571-A-26.wav",
+    "gain": 0.12,
+    "expected": true,
+    "frames": [
+      [],
+      [
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Laughter",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Chuckle, chortle",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.015625
+        }
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "file": "1-19111-A-24.wav",
+    "gain": 1,
+    "expected": false,
+    "frames": [
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.33203125
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.26171875
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.33203125
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.73828125
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.33203125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.66796875
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.4140625
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Giggle",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Snicker",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.26171875
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        }
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "file": "1-18631-A-23.wav",
+    "gain": 1,
+    "expected": false,
+    "frames": [
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.015625
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.015625
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.33203125
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.015625
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.26171875
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.03125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.26171875
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.05859375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.26171875
+        },
+        {
+          "categoryName": "Crying, sobbing",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.01953125
+        }
+      ]
+    ]
+  },
+  {
+    "file": "1-26143-A-21.wav",
+    "gain": 1,
+    "expected": false,
+    "frames": [
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.26171875
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.109375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Laughter",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.5859375
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        }
+      ],
+      [
+        {
+          "categoryName": "Cough",
+          "score": 0.19921875
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.1484375
+        },
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.05859375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        },
+        {
+          "categoryName": "Cough",
+          "score": 0.04296875
+        },
+        {
+          "categoryName": "Throat clearing",
+          "score": 0.01953125
+        },
+        {
+          "categoryName": "Sneeze",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.1484375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        }
+      ],
+      [],
+      [],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.015625
+        }
+      ],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "file": "1-104089-A-22.wav",
+    "gain": 1,
+    "expected": false,
+    "frames": [
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.08203125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.05859375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.03125
+        }
+      ]
+    ]
+  },
+  {
+    "file": "narration-française",
+    "gain": 1,
+    "expected": false,
+    "frames": [
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.99609375
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.99609375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.98828125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.99609375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.9921875
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.99609375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.99609375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.98828125
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.98828125
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.94140625
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.890625
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.80078125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.4140625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.91796875
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.05859375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.96875
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.109375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.9921875
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.08203125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.9921875
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.08203125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.99609375
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.9921875
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.984375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.984375
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.98828125
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.98828125
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.98046875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.98828125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.984375
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.9921875
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.9921875
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.99609375
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.98828125
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.9921875
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.98046875
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.98046875
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.984375
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.95703125
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.98046875
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.984375
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.98046875
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.015625
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.98046875
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.01953125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.96875
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.95703125
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.890625
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.03125
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.8515625
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.04296875
+        }
+      ],
+      [
+        {
+          "categoryName": "Speech",
+          "score": 0.8515625
+        },
+        {
+          "categoryName": "Speech synthesizer",
+          "score": 0.03125
+        }
+      ]
+    ]
+  },
+  {
+    "file": "silence",
+    "gain": 1,
+    "expected": false,
+    "frames": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  }
+]

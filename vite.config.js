@@ -1,9 +1,18 @@
 import { defineConfig } from 'vite';
-import { readdirSync, existsSync } from 'node:fs';
+import { readdirSync, existsSync, mkdirSync, copyFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = dirname(fileURLToPath(import.meta.url));
+function audioRuntime() {
+  return { name: 'local-audio-runtime', buildStart() {
+    const source = resolve(dirname(createRequire(import.meta.url).resolve('@mediapipe/tasks-audio')), 'wasm');
+    const target = resolve(root, '1/public/gifle/wasm');
+    mkdirSync(target, { recursive: true });
+    for (const name of ['audio_wasm_module_internal.js', 'audio_wasm_module_internal.wasm']) copyFileSync(resolve(source, name), resolve(target, name));
+  } };
+}
 const days = readdirSync(root, { withFileTypes: true })
   .filter((entry) => entry.isDirectory() && /^\d+$/.test(entry.name) && existsSync(resolve(root, entry.name, 'index.html')));
 
@@ -23,7 +32,7 @@ function dayRoutes() {
 export default defineConfig({
   root,
   publicDir: resolve(root, '1/public'),
-  plugins: [dayRoutes()],
+  plugins: [dayRoutes(), audioRuntime()],
   server: { host: '127.0.0.1', port: 5173, strictPort: true },
   build: {
     rollupOptions: {
