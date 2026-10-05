@@ -39,9 +39,9 @@ export function createLaughGate(){
     // YAMNet's overlapping labels are independent scores, not a probability sum.
     // Agreement between laugh labels catches quiet chuckles, even during speech.
     const evidence=laughter+support*.6,conflicting=otherVocalization>=.2&&otherVocalization>evidence*2;
-    const plausible=!conflicting&&laughter>=.075&&(support>=.02||laughter>=.22);
+    const plausible=!conflicting&&laughter>=.05&&(support>=.015||laughter>=.18);
     recent.push(plausible);if(recent.length>3)recent.shift();
-    const strong=!conflicting&&(laughter>=.3||(laughter>=.1&&support>=.035&&evidence>=.14));
+    const strong=!conflicting&&(laughter>=.22||(laughter>=.075&&support>=.025&&evidence>=.1));
     return {laugh:strong||recent.filter(Boolean).length>=2,laughter,speech};
   },reset(){recent.length=0;}};
 }

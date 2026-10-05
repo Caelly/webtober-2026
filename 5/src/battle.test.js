@@ -51,6 +51,19 @@ test('laughter classification requires convincing evidence, not ordinary speech,
   assert.equal(gate.sample([category('Speech',.96),category('Laughter',.17)]).laugh,false);
   assert.equal(gate.sample([category('Speech',.95),category('Laughter',.12),category('Chuckle, chortle',.08)]).laugh,true);
 });
+test('quieter chuckles trigger with repeated evidence while isolated weak scores and coughs do not',()=>{
+  const gate=createLaughGate();const category=(categoryName,score)=>({categoryName,score});
+  const quiet=[category('Speech',.96),category('Laughter',.055),category('Snicker',.018)];
+  assert.equal(gate.sample(quiet).laugh,false);
+  assert.equal(gate.sample([category('Silence',.9)]).laugh,false);
+  assert.equal(gate.sample(quiet).laugh,true);
+  gate.reset();assert.equal(gate.sample([category('Giggle',.23)]).laugh,true);
+  gate.reset();assert.equal(gate.sample([category('Laughter',.08),category('Chuckle, chortle',.04)]).laugh,true);
+  gate.reset();
+  const cough=[...quiet,category('Cough',.7)];
+  assert.equal(gate.sample(cough).laugh,false);
+  assert.equal(gate.sample(cough).laugh,false);
+});
 test('real YAMNet scores trigger on normal and quiet laughs, including speech mixed with laughter, without triggering on control recordings',()=>{
   const fixtures=JSON.parse(readFileSync(new URL('./laugh-regression.json',import.meta.url)));
   for(const fixture of fixtures){
