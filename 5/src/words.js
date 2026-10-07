@@ -1,4 +1,4 @@
-// The supplied expressions, without list markers. Repeated expressions appear once.
+// Expressions without list markers. Repeated expressions appear once.
 const supplied = `
 Inoxtagada
 Joyca Cola
@@ -251,6 +251,65 @@ Spider-Mâne
 Ant-Man de bain
 Guardians of the Gland
 Thanos de toilette
+Broute mon prout
+Canoë kakayak
+Pascal Dupont d'Aligot-merde
+Wikikipedia
+Bouffe moi le cul comme une feuille de laitue
+Titi et robinet
+Ta mère à planète rap
+Caca prout
+Avion de chiasse
+Prout de France
+Le Petit Prout
+La Casa de Papet
+Les proutiques de Narnia
+Prout Fiction
+Prout Actually
+Les dents de ta mère
+Le Seigneur des Agneaux
+La Reine des pets
+Mission Impossi-prout
+La Belle et le bidet
+Blanche-Neige et les sept nains de jardin public
+Alice au pays des merdouilles
+La Petite Sirène de chasse d’eau
+Raiponce à la porte des toilettes
+Les Aristochiasse
+Lilo et Slip
+Monstres et bidets
+Le Monde de Némo-rroïdes
+Vice et versa ton slip
+Toy Story de PQ
+Ratatouille mon derrière
+Shrek ton caleçon
+Kung Fu Panda de toilette
+Bob l’éponge à récurer les fesses
+Tintin au pays du PQ
+Astérix et Obélaxatif
+Lucky Puke
+Scooby-Doo dans le trou
+Inspecteur Gadjet de douche
+Michel Sardouille
+Jean-Jacques Glandman
+Céline Dion de chasse d’eau
+Édith Piaf dans le lavabo
+Johnny Halitoilette
+Claude François du bidet
+Aya Nakamorue
+Stromae-lle aux fesses
+Booba au rhum
+Snoop Douche
+Taylor Slip
+Justin Bidet
+Ariana Grande commission
+Lady Caca
+Bruno Marsouin du slip
+Billie Aïoli
+Kendrick Laxatif
+Le slip est dans le pré
+Questions pour un champignon
+Qui veut gagner des millions de prouts
 `;
 export const words = Object.freeze([...new Set(supplied.trim().split('\n').map(word=>word.trim()))]);
 export function shuffleWords(source=words, random=Math.random) {
