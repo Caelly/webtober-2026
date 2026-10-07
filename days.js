@@ -10,6 +10,6 @@ const themes = [
 export const days = themes.map((theme, index) => ({
   number: index + 1,
   theme,
-  unlocked: index < 6,
-  description: index === 0 ? 'Une pomme, mille façons' : index === 1 ? 'Vraies ou inventées : des fins improbables' : index === 2 ? 'Deux petits mondes à explorer' : index === 3 ? 'Un piquant de douceur' : index === 4 ? 'Le premier qui rit a perdu' : index === 5 ? 'Deux héros face au chaos' : '',
+  unlocked: index < 7,
+  description: index === 0 ? 'Une pomme, mille façons' : index === 1 ? 'Vraies ou inventées : des fins improbables' : index === 2 ? 'Deux petits mondes à explorer' : index === 3 ? 'Un piquant de douceur' : index === 4 ? 'Le premier qui rit a perdu' : index === 5 ? 'Deux héros face au chaos' : index === 6 ? 'Dix verrous. Une minute.' : '',
 }));

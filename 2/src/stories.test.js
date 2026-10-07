@@ -54,11 +54,11 @@ test('les deux catégories sont présentes et seules les histoires vraies révè
 });
 
 test('le calendrier et les menus ouvrent les jours publiés, seule la page consultée est active',()=>{
-  assert.deepEqual(days.filter(day=>day.unlocked).map(day=>day.number),[1,2,3,4,5,6]);
-  for(const day of [1,2,3,4,5,6]) {
+  assert.deepEqual(days.filter(day=>day.unlocked).map(day=>day.number),[1,2,3,4,5,6,7]);
+  for(const day of [1,2,3,4,5,6,7]) {
     const menu=navigation(day);
     assert.ok(menu.includes(`href="/${day}" aria-current="page"`));
     assert.equal((menu.match(/aria-current="page"/g)||[]).length,1);
-    assert.ok(menu.includes('Jour 7 : Panique, verrouillé'));
+    assert.ok(menu.includes('Jour 8 : Puant, verrouillé'));
   }
 });

@@ -72,3 +72,6 @@ Une battle de barbichette au micro. Un grand bouton rouge PLAY lance un duel d�
 ## Jour 6 · Ogre
 
 Ogrest affronte Tristepin et Yugo dans un combat au tour par tour. Le joueur contrôle les deux héros : attaque, esquive ou boost. L’ordre est mélangé à chaque round ; le personnage actif passe au centre de l’arène et les actions sont sur le côté. Ogrest choisit et révèle son action uniquement à son tour. Voir [le jour 6](6/README.md) pour les mécaniques, simulations d’équilibrage et crédits des illustrations.
+## Jour 7 · Panique
+
+`/7` : dix épreuves à résoudre en une minute, avec pénalités de trois secondes, halo rouge et ambiance sonore synthétisée. Le calendrier débloque les sept premiers jours. Voir [le détail du jour 7](7/README.md).
