@@ -1,7 +1,7 @@
 export const fighters = {
   tristepin: {name:'Tristepin',maxHp:144,damage:24},
   yugo: {name:'Yugo',maxHp:120,damage:20},
-  ogrest: {name:'Ogrest',maxHp:330,damage:34},
+  ogrest: {name:'Ogrest',maxHp:380,damage:26},
 };
 export function shuffle(source,random=Math.random){
   const result=[...source];
@@ -14,10 +14,10 @@ export function createCombat(random=Math.random){
   function plan(){
     const roll=random(),targets=living();
     const target=targets[Math.min(targets.length-1,Math.floor(random()*targets.length))];
-    const rage=Math.max(0,state.round-8)*3;
+    const rage=Math.max(0,state.round-10)*2;
     if(roll<.27&&state.lastBossAction!=='guard')return {action:'guard',targets:[],damage:0};
-    if(roll<.5)return {action:'sweep',targets:[...targets],damage:23+rage};
-    return {action:roll>.82?'heavy':'strike',targets:[target],damage:(roll>.82?46:34)+rage};
+    if(roll<.5)return {action:'sweep',targets:[...targets],damage:18+rage};
+    return {action:roll>.82?'heavy':'strike',targets:[target],damage:(roll>.82?38:26)+rage};
   }
   function round(){
     state.round++;state.order=shuffle([...living(),'ogrest'],random);state.cursor=0;
@@ -28,10 +28,12 @@ export function createCombat(random=Math.random){
     else if(!living().length)state.phase='lost';
   }
   function advance(){
-    finish();if(state.phase!=='playing')return;
+    finish();if(state.phase!=='playing'){state.intent=null;return;}
     state.cursor++;
     while(state.cursor<state.order.length&&state.units[state.order[state.cursor]].hp<=0)state.cursor++;
     if(state.cursor===state.order.length)round();
+    // No future action is selected or exposed during a hero's turn.
+    state.intent=state.order[state.cursor]==='ogrest'?plan():null;
   }
   function act(action){
     if(state.phase!=='playing')return null;
@@ -39,6 +41,7 @@ export function createCombat(random=Math.random){
     const event={actor,action,hits:[]};
     if(actor==='ogrest'){
       if(action!==state.intent.action)return null;
+      event.intent=structuredClone(state.intent);
       unit.guard=0;
       if(action==='guard'){
         // Two incoming hits, independent of shuffled round boundaries.
@@ -75,7 +78,6 @@ export function createCombat(random=Math.random){
       }
     }
     state.lastEvent=event;advance();
-    if(actor==='ogrest'&&state.phase==='playing')state.intent=plan();
     if(state.phase==='won')log('Ogrest est vaincu. La Confrérie a tenu bon !');
     if(state.phase==='lost')log('La Confrérie est tombée. Le chaos continue…');
     return event;
@@ -85,7 +87,7 @@ export function createCombat(random=Math.random){
     get active(){return state.phase==='playing'?state.order[state.cursor]:null;},
     reset(){
       state={phase:'playing',round:0,order:[],cursor:0,intent:null,lastBossAction:null,lastEvent:null,log:[],units:Object.fromEntries(Object.entries(fighters).map(([id,f])=>[id,{hp:f.maxHp,boost:false,dodge:false,dodgeCooldown:0,guard:0}]))};
-      round();state.intent=plan();log('Le sommet du Zinit tremble. Le combat commence.');return this;
+      round();state.intent=this.active==='ogrest'?plan():null;log('Le sommet du Zinit tremble. Le combat commence.');return this;
     },
     act,
     bossTurn(){return this.active==='ogrest'?act(state.intent.action):null;},

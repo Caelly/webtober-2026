@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createCombat,fighters} from './combat.js';
 import {simulateBalance} from './balance.js';
+import {presentTurn} from './presentation.js';
 function seed(value){return ()=>{value=(Math.imul(value,1664525)+1013904223)>>>0;return value/4294967296;};}
 function stepTo(game,id){
  for(let i=0;game.active!==id&&game.state.phase==='playing'&&i<50;i++)game.active==='ogrest'?game.bossTurn():game.act('attack');
@@ -27,7 +28,7 @@ test('dodge persists through boss defense, evades the next offensive and cannot 
  // Force hero / hero / boss order and an initial guard followed by a sweep.
  const draws=[.99,.99,.1,.1,.99,.99,.4,.1];const game=createCombat(()=>draws.length?draws.shift():.99);
  game.act('dodge');assert.equal(game.state.units.tristepin.dodge,true);game.act('attack');game.bossTurn();
- assert.equal(game.state.units.tristepin.dodge,true);assert.equal(game.state.intent.action,'sweep');
+ assert.equal(game.state.units.tristepin.dodge,true);assert.equal(game.state.intent,null);
  stepTo(game,'tristepin');const before=game.state;assert.equal(game.act('dodge'),null);assert.deepEqual(game.state,before);
  game.act('boost');let dodgeEvent;
  for(let i=0;i<6&&!dodgeEvent;i++){
@@ -53,22 +54,41 @@ test('fallen heroes are skipped immediately, only living targets are planned, an
  const game=createCombat(()=>.99);let fallen=false;
  for(let i=0;i<100&&game.state.phase==='playing';i++){
   game.active==='ogrest'?game.bossTurn():game.act('attack');const s=game.state;
-  if(s.units.yugo.hp===0){fallen=true;if(s.phase==='playing'){assert.notEqual(game.active,'yugo');assert.ok(s.intent.targets.every(id=>s.units[id].hp>0));}}
+  if(s.units.yugo.hp===0){fallen=true;if(s.phase==='playing'){assert.notEqual(game.active,'yugo');assert.ok((s.intent?.targets??[]).every(id=>s.units[id].hp>0));}}
   for(const unit of Object.values(s.units))assert.ok(unit.hp>=0);
  }
  assert.ok(fallen);
 });
 test('snapshots cannot mutate the combat and the boss never guards twice in a row',()=>{
- const game=createCombat(seed(125));const copy=game.state;copy.units.ogrest.hp=0;assert.equal(game.state.units.ogrest.hp,330);
+ const game=createCombat(seed(125));const copy=game.state;copy.units.ogrest.hp=0;assert.equal(game.state.units.ogrest.hp,380);
  let last;
  for(let i=0;i<90&&game.state.phase==='playing';i++){
   if(game.active==='ogrest'){const action=game.state.intent.action;assert.ok(!(last==='guard'&&action==='guard'));game.bossTurn();last=action;}else game.act('attack');
  }
 });
-test('reading the announced intentions gives a meaningful advantage over attacking blindly or choosing at random',()=>{
+test('using visible guard and current HP remains effective without knowing future boss actions',()=>{
  const result=simulateBalance();
- assert.ok(result.tactical.wins>550&&result.tactical.wins<800);
- assert.ok(result.attack.wins<400);
- assert.ok(result.tactical.wins>result.attack.wins*1.7);
+ assert.ok(result.tactical.wins>550&&result.tactical.wins<850);
+ assert.ok(result.attack.wins<650);
+ assert.ok(result.tactical.wins>result.attack.wins+100);
  assert.ok(result.random.wins<result.attack.wins);
+});
+test('Ogrest chooses no future action before his turn and reveals no intent during hero turns',()=>{
+ let draws=0;const game=createCombat(()=>{draws++;return .99;});
+ assert.equal(draws,2);assert.equal(game.active,'tristepin');assert.equal(game.state.intent,null);
+ game.act('attack');assert.equal(draws,2);assert.equal(game.active,'yugo');assert.equal(game.state.intent,null);
+ game.act('attack');assert.equal(game.active,'ogrest');assert.equal(draws,4);assert.equal(game.state.intent.action,'heavy');
+ const event=game.bossTurn();assert.equal(event.intent.action,'heavy');assert.equal(game.state.intent,null);
+ assert.equal(game.active,'tristepin');assert.equal(draws,6);
+});
+test('the active fighter stays centered during the animation, with no boss information leaked before its displayed turn',()=>{
+ const game=createCombat(()=>.99);game.act('attack');
+ assert.deepEqual(presentTurn(game.state,game.active,true),{focus:'tristepin',bossMove:null});
+ game.act('attack');
+ assert.equal(game.active,'ogrest');assert.deepEqual(presentTurn(game.state,game.active,true),{focus:'yugo',bossMove:null});
+ assert.equal(presentTurn(game.state,game.active,false).bossMove.action,'heavy');
+ game.bossTurn();assert.equal(game.active,'tristepin');
+ assert.equal(presentTurn(game.state,game.active,true).focus,'ogrest');
+ assert.equal(presentTurn(game.state,game.active,true).bossMove.action,'heavy');
+ assert.deepEqual(presentTurn(game.state,game.active,false),{focus:'tristepin',bossMove:null});
 });

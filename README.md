@@ -71,4 +71,4 @@ Une battle de barbichette au micro. Un grand bouton rouge PLAY lance un duel d�
 
 ## Jour 6 · Ogre
 
-Ogrest affronte Tristepin et Yugo dans un combat au tour par tour. Le joueur contrôle les deux héros : attaque, esquive ou boost. L’ordre est mélangé à chaque round et Ogrest annonce sa prochaine attaque ou sa garde. Voir [le jour 6](6/README.md) pour les mécaniques, simulations d’équilibrage et crédits des illustrations.
+Ogrest affronte Tristepin et Yugo dans un combat au tour par tour. Le joueur contrôle les deux héros : attaque, esquive ou boost. L’ordre est mélangé à chaque round ; le personnage actif passe au centre de l’arène et les actions sont sur le côté. Ogrest choisit et révèle son action uniquement à son tour. Voir [le jour 6](6/README.md) pour les mécaniques, simulations d’équilibrage et crédits des illustrations.

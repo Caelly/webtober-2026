@@ -11,8 +11,8 @@ export function simulateBalance(count=1000){
     const s=game.state,unit=s.units[game.active];let action='attack';
     if(policy==='tactical'){
      const bossPending=s.order.indexOf('ogrest')>=s.cursor;
-     if(!unit.boost&&s.intent.targets.includes(game.active)&&!unit.dodge&&!unit.dodgeCooldown&&(bossPending||unit.hp<=s.intent.damage))action='dodge';
-     else if(!unit.boost&&(s.units.ogrest.guard>0||s.intent.action==='guard'))action='boost';
+     if(!unit.boost&&unit.hp<=60&&!unit.dodge&&!unit.dodgeCooldown&&bossPending)action='dodge';
+     else if(!unit.boost&&s.units.ogrest.guard>0)action='boost';
     }else if(policy==='random'){
      const options=['attack'];if(!unit.boost)options.push('boost');if(!unit.dodge&&!unit.dodgeCooldown)options.push('dodge');action=options[Math.floor(random()*options.length)];
     }
