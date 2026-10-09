@@ -13,13 +13,11 @@ const arrow='<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3
 $('#app').innerHTML=`<div class="atelier-shell">
   <header class="site-header"><a href="/" class="brand" aria-label="Puant, revenir au calendrier">${perfumeIcon}<span>puant<span class="brand-dot">.</span></span></a>${navigation(8)}</header>
   <main class="workspace">
-    <section class="introduction"><div class="eyebrow"><i></i> L’ATELIER OLFACTIF <span>08 / 31</span></div><h1>Une goutte.<br/><em>Votre signature.</em></h1><p class="intro-copy">Un peu de vous dans chaque note.<br/>Composez un accord, découvrez son sillage.</p>
-      <div class="composition"><div class="section-heading"><span>VOTRE COMPOSITION</span><button id="reset" aria-label="Vider le flacon et recommencer"><span aria-hidden="true">↺</span> Recommencer</button></div>
+    <section class="composition" aria-labelledby="composition-title"><div class="section-heading"><span id="composition-title">VOTRE COMPOSITION <span class="composition-count"><b id="note-count">00</b> notes</span></span><button id="reset" aria-label="Vider le flacon et recommencer"><span aria-hidden="true">↺</span> Recommencer</button></div>
         <div class="pyramid">${layers.map(layer=>`<section class="pyramid-layer" data-layer="${layer.id}"><span class="layer-number">${layer.number}</span><div><h2>Notes de ${layer.name.toLowerCase()}</h2><div class="selected-notes" id="selected-${layer.id}"></div></div><i class="layer-check" aria-hidden="true"></i></section>`).join('')}</div>
-      </div>
     </section>
-    <section class="bottle-stage" aria-label="Votre flacon"><span class="bottle-caption">UNE CRÉATION PERSONNELLE</span><div class="bottle-art">${bottle}<div class="drop-area" aria-hidden="true"></div></div><div class="bottle-footnote"><span id="note-count">00</span><span>notes dans le flacon</span><i></i><span>100 ml d’imagination</span></div><div class="botanical-decoration" aria-hidden="true">${botanical(byId.get('patchouli'))}</div></section>
-    <section class="fragrance-lab" aria-labelledby="palette-title"><div class="lab-heading"><div><span class="eyebrow">LA PALETTE DU PARFUMEUR</span><h2 id="palette-title">L’essence des choses.</h2></div><span class="palette-count">${notes.length}<small>notes</small></span></div>
+    <section class="bottle-stage" aria-label="Votre flacon"><div class="bottle-art">${bottle}<div class="drop-area" aria-hidden="true"></div></div><div class="botanical-decoration" aria-hidden="true">${botanical(byId.get('patchouli'))}</div></section>
+    <section class="fragrance-lab" aria-labelledby="palette-title"><div class="lab-heading"><div><span class="eyebrow">LA PALETTE DU PARFUMEUR</span><h1 id="palette-title">L’essence des choses.</h1></div><span class="palette-count">${notes.length}<small>notes</small></span></div>
       <div class="layer-tabs" role="tablist" aria-label="Étages de la pyramide olfactive">${layers.map(layer=>`<button id="tab-${layer.id}" role="tab" aria-controls="note-panel" aria-selected="${layer.id===activeLayer}" tabindex="${layer.id===activeLayer?0:-1}" data-tab="${layer.id}"><span>${layer.number}</span>${layer.name}<i></i></button>`).join('')}</div>
       <div id="note-panel" role="tabpanel" aria-labelledby="tab-head" tabindex="0"><div class="layer-description"><span id="layer-subtitle"></span><p id="layer-description"></p></div><div class="note-grid" id="note-grid"></div></div>
       <div class="lab-bottom"><p class="accord-hint">Les notes grisées ne partagent pas cet accord dans notre collection.</p><button class="reveal-button" id="reveal" disabled>Révéler mon parfum ${arrow}</button><span class="readiness" id="readiness">Une note de tête, de cœur et de fond.</span></div>
@@ -51,7 +49,7 @@ function render(){
   for(const layer of layers){
     const chosen=selection.filter(id=>byId.get(id).layer===layer.id);
     $(`[data-layer="${layer.id}"]`).classList.toggle('filled',chosen.length>0);
-    $(`#selected-${layer.id}`).innerHTML=chosen.length?chosen.map(id=>`<button data-remove="${id}" aria-label="Retirer ${byId.get(id).name}">${byId.get(id).name}<span aria-hidden="true">×</span></button>`).join(''):'<span class="empty-note">Encore une page blanche</span>';
+    $(`#selected-${layer.id}`).innerHTML=chosen.length?chosen.map(id=>`<button data-remove="${id}" aria-label="Retirer ${byId.get(id).name}">${byId.get(id).name}<span aria-hidden="true">×</span></button>`).join(''):'<span class="empty-note">Aucune note</span>';
   }
   document.documentElement.style.setProperty('--juice',bottleColor(selection));
   const level=470-Math.min(selection.length,9)*28;
