@@ -39,11 +39,11 @@ webtober-2026/
 
 La configuration et les dépendances sont partagées à la racine. Chaque jour possède son dossier numéroté et son point d’entrée HTML. Vite détecte ces dossiers au démarrage et les compile ensemble dans `dist/`, en conservant les chemins `/1/`, `/2/`, etc.
 
-`days.js` contient les 31 thèmes en français et leur disponibilité dans le calendrier. Passez `unlocked` à `true` lorsqu’une page est prête à publier : la case du jour affiche alors un aperçu en direct de l’expérience. Les jours 1 à 6 sont actuellement accessibles.
+`days.js` contient les 31 thèmes en français et leur disponibilité dans le calendrier. Le seuil `unlocked` débloque les pages prêtes : leur case affiche alors un aperçu en direct de l’expérience. Les jours 1 à 8 sont actuellement accessibles.
 
 ## Netlify
 
-Le dépôt se publie tel quel : `pnpm build` produit `dist`. La racine sert le calendrier, `/1` le jour Pomme, `/2` le jour Relique, `/3` le jour Miniature, `/4` le jour Cactus, `/5` le jour Gifle et `/6` le jour Ogre.
+Le dépôt se publie tel quel : `pnpm build` produit `dist`. La racine sert le calendrier, `/1` le jour Pomme, `/2` le jour Relique, `/3` le jour Miniature, `/4` le jour Cactus, `/5` le jour Gifle, `/6` le jour Ogre, `/7` le jour Panique et `/8` le jour Puant.
 
 La page du jour 1 tient dans la hauteur de l’écran sans défilement. Le bouton Vertical / Horizontal change la disposition des outils et mémorise le choix. Sur les écrans en paysage de faible hauteur, les outils passent à côté de la scène. Les recettes et le menu peuvent défiler à l’intérieur de leur panneau si nécessaire.
 
@@ -74,4 +74,8 @@ Une battle de barbichette au micro. Un grand bouton rouge PLAY lance un duel d�
 Ogrest affronte Tristepin et Yugo dans un combat au tour par tour. Le joueur contrôle les deux héros : attaque, esquive ou boost. L’ordre est mélangé à chaque round ; le personnage actif passe au centre de l’arène et les actions sont sur le côté. Ogrest choisit et révèle son action uniquement à son tour. Voir [le jour 6](6/README.md) pour les mécaniques, simulations d’équilibrage et crédits des illustrations.
 ## Jour 7 · Panique
 
-`/7` : dix épreuves à résoudre en une minute, avec pénalités de trois secondes, halo rouge et ambiance sonore synthétisée. Le calendrier débloque les sept premiers jours. Voir [le détail du jour 7](7/README.md).
+`/7` : dix épreuves à résoudre en une minute, avec pénalités de trois secondes, halo rouge et ambiance sonore synthétisée. Voir [le détail du jour 7](7/README.md).
+
+## Jour 8 · Puant
+
+`/8` : un atelier de parfum avec 34 notes réparties en tête, cœur et fond. Le flacon en verre se remplit et change de couleur. Les accords proposés restent compatibles avec au moins l’un des 12 parfums connus de la collection. Une note de chaque étage débloque la révélation, accompagnée de la composition officielle. Voir [le détail du jour 8](8/README.md).
