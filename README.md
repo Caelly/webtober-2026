@@ -39,11 +39,11 @@ webtober-2026/
 
 La configuration et les dépendances sont partagées à la racine. Chaque jour possède son dossier numéroté et son point d’entrée HTML. Vite détecte ces dossiers au démarrage et les compile ensemble dans `dist/`, en conservant les chemins `/1/`, `/2/`, etc.
 
-`days.js` contient les 31 thèmes en français et leur disponibilité dans le calendrier. Le seuil `unlocked` débloque les pages prêtes : leur case affiche alors un aperçu en direct de l’expérience. Les jours 1 à 8 sont actuellement accessibles.
+`days.js` contient les 31 thèmes en français et leur disponibilité dans le calendrier. Le seuil `unlocked` débloque les pages prêtes : leur case affiche alors un aperçu en direct de l’expérience. Les jours 1 à 9 sont actuellement accessibles.
 
 ## Netlify
 
-Le dépôt se publie tel quel : `pnpm build` produit `dist`. La racine sert le calendrier, `/1` le jour Pomme, `/2` le jour Relique, `/3` le jour Miniature, `/4` le jour Cactus, `/5` le jour Gifle, `/6` le jour Ogre, `/7` le jour Panique et `/8` le jour Puant.
+Le dépôt se publie tel quel : `pnpm build` produit `dist`. La racine sert le calendrier, `/1` le jour Pomme, `/2` le jour Relique, `/3` le jour Miniature, `/4` le jour Cactus, `/5` le jour Gifle, `/6` le jour Ogre, `/7` le jour Panique, `/8` le jour Puant et `/9` le jour Bélier.
 
 La page du jour 1 tient dans la hauteur de l’écran sans défilement. Le bouton Vertical / Horizontal change la disposition des outils et mémorise le choix. Sur les écrans en paysage de faible hauteur, les outils passent à côté de la scène. Les recettes et le menu peuvent défiler à l’intérieur de leur panneau si nécessaire.
 
@@ -79,3 +79,7 @@ Ogrest affronte Tristepin et Yugo dans un combat au tour par tour. Le joueur con
 ## Jour 8 · Puant
 
 `/8` : un atelier de parfum avec 34 notes réparties en tête, cœur et fond. Le flacon en verre se remplit et change de couleur. Les accords proposés restent compatibles avec au moins l’un des 12 parfums connus de la collection. Une note de chaque étage débloque la révélation, accompagnée de la composition officielle. Voir [le détail du jour 8](8/README.md).
+
+## Jour 9 · Bélier
+
+`/9` : quatre porteurs et un bélier face à une porte de château de 200 PV. Charger endommage une porte fermée ; une ouverture pendant la charge précipite toute l’équipe dans le fossé. Attendre garde les porteurs à l’abri sans bonus. La décision des défenseurs reste cachée jusqu’à la résolution. La scène 3D, les textures et les sons sont créés en code. Voir [le détail du jour 9](9/README.md).

@@ -1,0 +1,6 @@
+export function createSound(){
+ let context,master,muted=false;
+ function init(){if(muted)return false;if(!context){context=new AudioContext();master=context.createGain();master.gain.value=.16;master.connect(context.destination);}context.resume().catch(()=>{});return true;}
+ function tone(frequency,duration,volume=.3,type='triangle',end=frequency){try{if(!init())return;const t=context.currentTime,osc=context.createOscillator(),gain=context.createGain();osc.type=type;osc.frequency.setValueAtTime(frequency,t);osc.frequency.exponentialRampToValueAtTime(Math.max(20,end),t+duration);gain.gain.setValueAtTime(volume,t);gain.gain.exponentialRampToValueAtTime(.001,t+duration);osc.connect(gain).connect(master);osc.start(t);osc.stop(t+duration);osc.onended=()=>{osc.disconnect();gain.disconnect();};}catch{}}
+ return {move(choice){tone(choice==='charge'?95:140,.35,.25,'triangle',choice==='charge'?65:100);},resolve(result,hp){if(result.fatal){tone(340,.95,.5,'sawtooth',35);tone(65,.65,.7,'sine',25);}else if(result.opened){tone(150,.65,.35,'sawtooth',70);}else if(result.damage){tone(58,.45,.9,'triangle',22);tone(520,.18,.35,'square',90);if(hp===0)tone(700,.75,.3,'triangle',1000);}else tone(170,.25,.15);},toggle(){muted=!muted;if(master)master.gain.value=muted?0:.16;return muted;},close(){context?.close().catch(()=>{});}};
+}
