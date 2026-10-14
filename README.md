@@ -39,11 +39,11 @@ webtober-2026/
 
 La configuration et les dépendances sont partagées à la racine. Chaque jour possède son dossier numéroté et son point d’entrée HTML. Vite détecte ces dossiers au démarrage et les compile ensemble dans `dist/`, en conservant les chemins `/1/`, `/2/`, etc.
 
-`days.js` contient les 31 thèmes en français et leur disponibilité dans le calendrier. Le seuil `unlocked` débloque les pages prêtes : leur case affiche alors un aperçu en direct de l’expérience. Les jours 1 à 10 sont actuellement accessibles.
+`days.js` contient les 31 thèmes en français et leur disponibilité dans le calendrier. Le seuil `unlocked` débloque les pages prêtes : leur case affiche alors un aperçu en direct de l’expérience. Les jours 1 à 11 sont actuellement accessibles.
 
 ## Netlify
 
-Le dépôt se publie tel quel : `pnpm build` produit `dist`. La racine sert le calendrier, `/1` le jour Pomme, `/2` le jour Relique, `/3` le jour Miniature, `/4` le jour Cactus, `/5` le jour Gifle, `/6` le jour Ogre, `/7` le jour Panique, `/8` le jour Puant, `/9` le jour Bélier et `/10` le jour Mystique.
+Le dépôt se publie tel quel : `pnpm build` produit `dist`. La racine sert le calendrier, `/1` le jour Pomme, `/2` le jour Relique, `/3` le jour Miniature, `/4` le jour Cactus, `/5` le jour Gifle, `/6` le jour Ogre, `/7` le jour Panique, `/8` le jour Puant, `/9` le jour Bélier, `/10` le jour Mystique et `/11` le jour Sauvetage.
 
 La page du jour 1 tient dans la hauteur de l’écran sans défilement. Le bouton Vertical / Horizontal change la disposition des outils et mémorise le choix. Sur les écrans en paysage de faible hauteur, les outils passent à côté de la scène. Les recettes et le menu peuvent défiler à l’intérieur de leur panneau si nécessaire.
 
@@ -87,3 +87,7 @@ Ogrest affronte Tristepin et Yugo dans un combat au tour par tour. Le joueur con
 ## Jour 10 · Mystique
 
 `/10` : une boule de cristal lumineuse qui révèle une réponse aléatoire à la question du visiteur. Brume, cristal et socle sont dessinés en 3D ; les consultations restent locales. Voir [le détail du jour 10](10/README.md).
+
+## Jour 11 · Sauvetage
+
+`/11` : deux pistolets pilotés avec les mains devant la caméra pour protéger un convoi contre cinq vagues de drones. Les destructions remplissent une réserve : un cercle pouce-index lance un laser à 25 %, deux cercles lancent un double laser à 50 %. Le suivi des mains reste local, avec pause et coupure de caméra, et un mode souris de secours. Voir [le détail du jour 11](11/README.md).

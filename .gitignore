@@ -8,3 +8,5 @@ dist/
 Thumbs.db
 preview*.jpg
 1/public/gifle/wasm/
+
+1/public/sauvetage/wasm/

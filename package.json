@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@mediapipe/tasks-audio": "1.0.1",
+    "@mediapipe/tasks-vision": "1.1.0",
     "three": "0.180.0"
   },
   "devDependencies": {

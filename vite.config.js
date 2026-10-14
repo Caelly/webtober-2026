@@ -13,6 +13,14 @@ function audioRuntime() {
     for (const name of ['audio_wasm_module_internal.js', 'audio_wasm_module_internal.wasm']) copyFileSync(resolve(source, name), resolve(target, name));
   } };
 }
+function visionRuntime() {
+  return { name: 'local-hand-runtime', buildStart() {
+    const source = resolve(dirname(createRequire(import.meta.url).resolve('@mediapipe/tasks-vision')), 'wasm');
+    const target = resolve(root, '1/public/sauvetage/wasm');
+    mkdirSync(target, { recursive: true });
+    for (const name of readdirSync(source).filter(name => /\.(?:js|wasm)$/.test(name))) copyFileSync(resolve(source, name), resolve(target, name));
+  } };
+}
 const days = readdirSync(root, { withFileTypes: true })
   .filter((entry) => entry.isDirectory() && /^\d+$/.test(entry.name) && existsSync(resolve(root, entry.name, 'index.html')));
 
@@ -32,7 +40,7 @@ function dayRoutes() {
 export default defineConfig({
   root,
   publicDir: resolve(root, '1/public'),
-  plugins: [dayRoutes(), audioRuntime()],
+  plugins: [dayRoutes(), audioRuntime(), visionRuntime()],
   server: { host: '127.0.0.1', port: 5173, strictPort: true },
   build: {
     rollupOptions: {
