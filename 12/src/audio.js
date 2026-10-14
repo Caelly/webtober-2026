@@ -1,0 +1,6 @@
+export function createAudio(){
+ let context,muted=false;
+ function wake(){if(muted)return;try{context??=new (window.AudioContext||window.webkitAudioContext)();context.resume().catch(()=>{});}catch{}}
+ function tone(frequency,duration,type='sine',volume=.035,end=frequency){if(!context||muted||context.state!=='running')return;const now=context.currentTime,osc=context.createOscillator(),gain=context.createGain();osc.type=type;osc.frequency.setValueAtTime(frequency,now);osc.frequency.exponentialRampToValueAtTime(Math.max(1,end),now+duration);gain.gain.setValueAtTime(volume,now);gain.gain.exponentialRampToValueAtTime(.0001,now+duration);osc.connect(gain);gain.connect(context.destination);osc.start();osc.stop(now+duration);}
+ return {wake,event(e){if(e.type==='step')tone(100,.045,'triangle',.025,45);if(e.type==='launch')tone(280,.25,'sine',.035,1200);if(e.type==='hit'){tone(500+e.score*100,.12,'triangle',.045);setTimeout(()=>tone(850+e.score*100,.15,'sine',.025),45);}if(e.type==='result')tone(e.outcome==='foul'?150:650,.35,'triangle',.04,e.outcome==='foul'?60:420);},toggle(){muted=!muted;if(muted)context?.suspend().catch(()=>{});else wake();return muted;},close(){context?.close().catch(()=>{});}};
+}

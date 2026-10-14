@@ -39,11 +39,11 @@ webtober-2026/
 
 La configuration et les dépendances sont partagées à la racine. Chaque jour possède son dossier numéroté et son point d’entrée HTML. Vite détecte ces dossiers au démarrage et les compile ensemble dans `dist/`, en conservant les chemins `/1/`, `/2/`, etc.
 
-`days.js` contient les 31 thèmes en français et leur disponibilité dans le calendrier. Le seuil `unlocked` débloque les pages prêtes : leur case affiche alors un aperçu en direct de l’expérience. Les jours 1 à 11 sont actuellement accessibles.
+`days.js` contient les 31 thèmes en français et leur disponibilité dans le calendrier. Le seuil `unlocked` débloque les pages prêtes : leur case affiche alors un aperçu en direct de l’expérience. Les jours 1 à 13 sont actuellement accessibles.
 
 ## Netlify
 
-Le dépôt se publie tel quel : `pnpm build` produit `dist`. La racine sert le calendrier, `/1` le jour Pomme, `/2` le jour Relique, `/3` le jour Miniature, `/4` le jour Cactus, `/5` le jour Gifle, `/6` le jour Ogre, `/7` le jour Panique, `/8` le jour Puant, `/9` le jour Bélier, `/10` le jour Mystique et `/11` le jour Sauvetage.
+Le dépôt se publie tel quel : `pnpm build` produit `dist`. La racine sert le calendrier, `/1` le jour Pomme, `/2` le jour Relique, `/3` le jour Miniature, `/4` le jour Cactus, `/5` le jour Gifle, `/6` le jour Ogre, `/7` le jour Panique, `/8` le jour Puant, `/9` le jour Bélier, `/10` le jour Mystique, `/11` le jour Sauvetage, `/12` le jour Lancer et `/13` le jour Fragile.
 
 La page du jour 1 tient dans la hauteur de l’écran sans défilement. Le bouton Vertical / Horizontal change la disposition des outils et mémorise le choix. Sur les écrans en paysage de faible hauteur, les outils passent à côté de la scène. Les recettes et le menu peuvent défiler à l’intérieur de leur panneau si nécessaire.
 
@@ -74,7 +74,7 @@ Une battle de barbichette au micro. Un grand bouton rouge PLAY lance un duel d�
 Ogrest affronte Tristepin et Yugo dans un combat au tour par tour. Le joueur contrôle les deux héros : attaque, esquive ou boost. L’ordre est mélangé à chaque round ; le personnage actif passe au centre de l’arène et les actions sont sur le côté. Ogrest choisit et révèle son action uniquement à son tour. Voir [le jour 6](6/README.md) pour les mécaniques, simulations d’équilibrage et crédits des illustrations.
 ## Jour 7 · Panique
 
-`/7` : dix épreuves à résoudre en une minute, avec pénalités de trois secondes, halo rouge et ambiance sonore synthétisée. Voir [le détail du jour 7](7/README.md).
+`/7` : dix épreuves à résoudre en une minute trente, avec pénalités de trois secondes, halo rouge et ambiance sonore synthétisée. Voir [le détail du jour 7](7/README.md).
 
 ## Jour 8 · Puant
 
@@ -91,3 +91,11 @@ Ogrest affronte Tristepin et Yugo dans un combat au tour par tour. Le joueur con
 ## Jour 11 · Sauvetage
 
 `/11` : deux pistolets pilotés avec les mains devant la caméra pour protéger un convoi contre cinq vagues de drones. Les destructions remplissent une réserve : un cercle pouce-index lance un laser à 25 %, deux cercles lancent un double laser à 50 %. Le suivi des mains reste local, avec pause et coupure de caméra, et un mode souris de secours. Voir [le détail du jour 11](11/README.md).
+
+## Jour 12 · Lancer
+
+`/12` : une course de javelot avec des pigeons en mouvement dans le ciel. Alterner les flèches haut et bas augmente la vitesse ; Espace lance avant la ligne blanche. Chaque pigeon accroché rapporte un point, avec trois lancers par partie, commandes tactiles, pause et record local. Voir [le détail du jour 12](12/README.md).
+
+## Jour 13 · Fragile
+
+`/13` : un serveur garde un plateau en équilibre pendant 45 secondes. Les verres s’empilent toutes les cinq secondes jusqu’à neuf ; les flèches gauche et droite permettent de rattraper la pile avant la chute. Les commandes tactiles, la pause et le meilleur service local sont intégrés. Voir [le détail du jour 13](13/README.md).

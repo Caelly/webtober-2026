@@ -1,0 +1,59 @@
+import '../../shared/navigation.css';
+import './style.css';
+import {navigation,bindNavigation} from '../../shared/navigation.js';
+import {createJavelin,RULES} from './game.js';
+import {createStadium} from './view.js';
+import {createAudio} from './audio.js';
+if(location.pathname==='/12/')history.replaceState(null,'',`/12${location.search}`);
+const preview=new URLSearchParams(location.search).has('apercu');if(preview)document.documentElement.classList.add('is-apercu');
+const $=s=>document.querySelector(s);
+const spear='<svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="m5 27 20-20m-4 0 7-3-3 7M11 21l3 3m-1-5 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 18c-1-4 1-8 5-10m8 20c4-1 7-4 8-8" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>';
+const pigeon='<svg viewBox="0 0 28 24" fill="none" aria-hidden="true"><path d="m4 14-3-2 5-1c2-4 8-4 11-1l2-4c1-3 6-2 6 1l2 2-3 1c-1 7-6 9-11 9-5 0-8-2-9-5Z" fill="currentColor"/><path d="M9 11c-1-4-4-7-6-8 0 6 2 10 8 11m2 5-2 3m6-3-1 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+$('#app').innerHTML=`<div class="lancer-shell"><header class="site-header"><a class="brand" href="/" aria-label="Lancer, revenir au calendrier">${spear}<span>lancer<span class="brand-dot">.</span></span></a>${navigation(12)}</header>
+<main><section class="stadium" aria-label="Le stade et les pigeons"><canvas id="scene" tabindex="0" aria-label="Jeu de javelot. Alternez les flèches haut et bas pour courir, puis Espace pour lancer avant la ligne."></canvas><div class="hud"><div class="score"><span>PIGEONS EMBROCHÉS</span><strong>${pigeon}<b id="score">00</b></strong></div><div class="throw-count"><span>JAVELOTS</span><div id="spears" aria-label="Premier lancer sur trois">${[1,2,3].map(n=>`<i data-throw="${n}">${spear}</i>`).join('')}</div></div><div class="record"><span>RECORD PERSONNEL</span><strong id="best">00</strong></div><div class="scene-tools"><button id="sound" aria-label="Couper le son" aria-pressed="false">♪</button><button id="pause" aria-label="Mettre en pause" hidden>Ⅱ</button></div></div>
+<div class="overlay" id="overlay"><span class="eyebrow" id="kicker">JOUR 12 · LANCER</span><h1 id="title">Drôles<br/><em>d’oiseaux.</em></h1><p id="copy">Un peu d’élan.<br/>Beaucoup de pigeons.<br/>Trois chances de viser juste.</p><div class="result-stat" id="result-stat" hidden></div><button id="start" class="start-button">Prendre son élan <span>↗</span></button><span class="start-hint" id="start-hint">ESPACE POUR COMMENCER</span></div>
+<div class="flight-note" id="flight-note" role="status" hidden></div><div class="stadium-bottom"><span>CLUB D’ATHLÉTISME WEBTOBER</span><span id="phase-label">LE SCORE SE JOUE DANS LE CIEL.</span></div></section>
+<section class="console" aria-label="Commandes du lancer"><div class="running-controls"><div class="control-heading"><span>01 / PRENDRE DE L’ÉLAN</span><small>Alternez rapidement</small></div><div class="step-buttons"><button id="up" aria-label="Pas de course, flèche haut" aria-keyshortcuts="ArrowUp" disabled>↑</button><button id="down" aria-label="Pas de course, flèche bas" aria-keyshortcuts="ArrowDown" disabled>↓</button><span>HAUT<br/>BAS</span></div></div><div class="speed-meter"><div class="control-heading"><span>VITESSE</span><strong id="speed-label">À VOTRE RYTHME</strong></div><div class="speed-track" role="progressbar" aria-label="Élan de la course" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="speed-fill"></i></div><div class="runway"><span>DÉPART</span><div class="runway-track"><i id="runner-dot"></i><b></b></div><span>LIGNE</span></div></div><div class="launch-controls"><div class="control-heading"><span>02 / VISER LE CIEL</span><small>Avant la ligne</small></div><button id="launch" aria-keyshortcuts="Space" disabled>Lancer <kbd>ESPACE</kbd><span>↗</span></button></div></section></main>
+<footer><span>WEBTOBER 2026</span><span>UNE DISCIPLINE TRÈS PEU OLYMPIQUE.</span><a href="/">Tous les thèmes ↖</a></footer></div>
+<dialog id="concept" aria-labelledby="concept-title"><button id="close-concept" aria-label="Fermer">×</button><span class="eyebrow">UN THÈME, UNE HERO SECTION</span><h2 id="concept-title">Un lancer.<br/>Plusieurs oiseaux.</h2><p>Alternez rapidement les flèches ↑ et ↓ pour accélérer. Garder une touche appuyée ne compte pas : chaque pas demande un nouvel appui sur l’autre flèche.</p><p>Appuyez sur Espace avant de dépasser la ligne blanche. L’angle est fixe ; votre vitesse et votre moment de lancer changent la trajectoire. Les pigeons volent de gauche à droite et restent accrochés au javelot quand vous les touchez.</p><p>Vous avez trois lancers. Chaque pigeon vaut un point, quelle que soit la distance. Dépasser la ligne annule le lancer. Les boutons à l’écran permettent aussi de jouer au doigt. Échap met la partie en pause.</p></dialog><p class="sr-only" id="announcement" aria-live="polite" role="status"></p>`;
+bindNavigation();
+const game=createJavelin(),view=createStadium($('#scene')),audio=createAudio(),reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let best=0,raf=0,last=0,lastHud=0,disposed=false,flashUntil=0;
+try{const saved=Number(localStorage.getItem('webtober-j12-best'));if(Number.isInteger(saved)&&saved>=0&&saved<=66)best=saved;}catch{}
+const pad=n=>String(n).padStart(2,'0');
+function hud(){const s=game.snapshot(),running=s.phase==='running',active=['running','flying'].includes(s.phase);document.body.dataset.phase=s.phase;
+ $('#score').textContent=preview?'02':pad(s.total+(active||s.phase==='paused'?s.score:0));$('#best').textContent=pad(best);$('#spears').setAttribute('aria-label',`Lancer ${s.throw} sur trois`);document.querySelectorAll('[data-throw]').forEach(el=>{const n=Number(el.dataset.throw);el.classList.toggle('used',n<s.throw);el.classList.toggle('current',n===s.throw);});
+ $('#speed-fill').style.width=`${s.power*100}%`;$('.speed-track').setAttribute('aria-valuenow',Math.round(s.power*100));$('#runner-dot').style.left=`${s.progress*100}%`;$('#speed-label').textContent=s.phase==='ready'?'À VOTRE RYTHME':running?s.progress>.75?'LANCEZ MAINTENANT !':s.power>.7?'PLEIN ÉLAN':s.power>.35?'ÇA ACCÉLÈRE':'ALTERNEZ ↑ ET ↓':s.phase==='flying'?'EN PLEIN VOL':s.phase==='paused'?'EN PAUSE':'LANCER TERMINÉ';$('.speed-meter').classList.toggle('danger',running&&s.progress>.75);
+ for(const id of ['up','down','launch'])$('#'+id).disabled=!running;$('#pause').hidden=!active;$('#phase-label').textContent=running?'NE DÉPASSEZ PAS LA LIGNE BLANCHE.':s.phase==='flying'?'GARDONS UN ŒIL SUR LES OISEAUX.':'LE SCORE SE JOUE DANS LE CIEL.';
+}
+function begin(){const s=game.snapshot();audio.wake();if(s.phase==='paused')game.resume();else if(s.phase==='result')game.next();else game.start();if(s.phase!=='paused')view.reset();$('#overlay').hidden=true;$('#flight-note').hidden=true;$('#scene').focus({preventScroll:true});last=performance.now();hud();wake();}
+function pulse(direction){if(!game.step(direction))return;const button=$('#'+direction);button.classList.remove('tap');void button.offsetWidth;button.classList.add('tap');hud();}
+function launch(){if(game.launch()){$('#flight-note').textContent='EN PLEIN VOL';$('#flight-note').hidden=false;flashUntil=performance.now()+1100;hud();}}
+function pause(){if(!game.pause())return;$('#overlay').hidden=false;$('#kicker').textContent='ON SOUFFLE UN INSTANT';$('#title').innerHTML='Temps<br/><em>mort.</em>';$('#copy').textContent='Le ciel peut attendre.';$('#result-stat').hidden=true;$('#start').innerHTML='Reprendre <span>↗</span>';$('#start-hint').textContent='ESPACE POUR REPRENDRE';$('#flight-note').hidden=true;hud();}
+function result(e){const s=game.snapshot();if(e.final&&s.total>best){best=s.total;try{localStorage.setItem('webtober-j12-best',String(best));}catch{}}
+ $('#overlay').hidden=false;$('#kicker').textContent=e.final?'LES COMPTES SONT FAITS':`LANCER ${s.throw} / 3`;
+ $('#title').innerHTML=e.outcome==='foul'?'Un pas<br/><em>de trop.</em>':s.score>0?'Bien<br/><em>embrochés.</em>':'Un grand<br/><em>courant d’air.</em>';
+ $('#copy').textContent=e.outcome==='foul'?'La ligne a été franchie. Ce lancer ne compte pas.':s.score>0?`${s.score} ${s.score===1?'pigeon accroché':'pigeons accrochés'} sur ce javelot.`:'Les pigeons ont eu le dernier mot. Pour cette fois.';
+ $('#result-stat').hidden=false;$('#result-stat').innerHTML=`<strong>${pad(s.total)}</strong><span>${s.total===1?'PIGEON':'PIGEONS'}<br/>${e.final?'EN TROIS LANCERS':'AU TOTAL'}</span>`;$('#start').innerHTML=e.final?'Rejouer <span>↗</span>':'Javelot suivant <span>↗</span>';$('#start-hint').textContent='ESPACE POUR CONTINUER';$('#flight-note').hidden=true;$('#announcement').textContent=`${e.outcome==='foul'?'Lancer annulé.':`${s.score} pigeons touchés.`} Total : ${s.total}.${e.final?' Partie terminée.':''}`;$('#start').focus({preventScroll:true});hud();
+}
+function frame(now){raf=0;if(disposed||document.hidden)return;const dt=Math.min(.1,Math.max(0,(now-last)/1000));last=now;game.update(dt);const s=game.snapshot(),events=game.drain();view.push(events,s);for(const e of events){audio.event(e);if(e.type==='hit'){$('#flight-note').textContent=`+1 · ${s.score} ${s.score===1?'PIGEON':'PIGEONS'}`;$('#flight-note').hidden=false;flashUntil=now+950;}if(e.type==='result')result(e);}
+ if(flashUntil&&now>flashUntil){$('#flight-note').hidden=true;flashUntil=0;}
+ if(preview){s.phase='flying';s.x=31;s.javelin={x:70,y:25,angle:.3,caught:[{id:97,kind:0},{id:98,kind:2}],trail:[{x:49,y:16},{x:54,y:20},{x:60,y:23},{x:66,y:24.5}]};}view.draw(s,{preview,reduced});if(now-lastHud>60){hud();lastHud=now;}if(!preview)raf=requestAnimationFrame(frame);
+}
+function wake(){if(!preview&&!disposed&&!document.hidden&&!raf){last=performance.now();raf=requestAnimationFrame(frame);}}
+if(!preview){
+ $('#day-picker').addEventListener('toggle',()=>{if($('#day-picker').open)pause();});
+ $('#start').addEventListener('click',begin);$('#pause').addEventListener('click',pause);$('#launch').addEventListener('click',launch);
+ for(const direction of ['up','down']){const button=$('#'+direction);button.addEventListener('pointerdown',e=>{if(button.disabled)return;e.preventDefault();pulse(direction);});button.addEventListener('click',e=>{if(e.detail===0)pulse(direction);});}
+ window.addEventListener('keydown',e=>{
+  if($('#concept').open||$('#day-picker').open||e.target.closest('a,summary'))return;
+  if(e.key==='Escape'){pause();return;}
+  const s=game.snapshot();if(['ArrowUp','ArrowDown'].includes(e.key)&&s.phase==='running'){e.preventDefault();if(!e.repeat)pulse(e.key==='ArrowUp'?'up':'down');}
+  if(e.code==='Space'&&!e.repeat){if(s.phase==='running'){e.preventDefault();launch();}else if(['ready','result','over','paused'].includes(s.phase)&&e.target.tagName!=='BUTTON'){e.preventDefault();begin();}}
+ });
+ window.addEventListener('blur',pause);document.addEventListener('visibilitychange',()=>{if(document.hidden){pause();cancelAnimationFrame(raf);raf=0;}else wake();});
+ $('#sound').addEventListener('click',()=>{const muted=audio.toggle();$('#sound').textContent=muted?'♫':'♪';$('#sound').setAttribute('aria-pressed',muted);$('#sound').setAttribute('aria-label',muted?'Activer le son':'Couper le son');});
+ $('#open-concept').addEventListener('click',()=>{pause();$('#concept').showModal();});$('#close-concept').addEventListener('click',()=>$('#concept').close());$('#concept').addEventListener('click',e=>{if(e.target===$('#concept')){const r=$('#concept').getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)$('#concept').close();}});wake();
+}else requestAnimationFrame(frame);
+window.addEventListener('resize',()=>{if(preview)requestAnimationFrame(frame);});
+window.addEventListener('pagehide',()=>{disposed=true;cancelAnimationFrame(raf);view.dispose();audio.close();},{once:true});hud();
