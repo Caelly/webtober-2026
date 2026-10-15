@@ -39,11 +39,11 @@ webtober-2026/
 
 La configuration et les dépendances sont partagées à la racine. Chaque jour possède son dossier numéroté et son point d’entrée HTML. Vite détecte ces dossiers au démarrage et les compile ensemble dans `dist/`, en conservant les chemins `/1/`, `/2/`, etc.
 
-`days.js` contient les 31 thèmes en français et leur disponibilité dans le calendrier. Le seuil `unlocked` débloque les pages prêtes : leur case affiche alors un aperçu en direct de l’expérience. Les jours 1 à 14 sont actuellement accessibles.
+`days.js` contient les 31 thèmes en français et leur disponibilité dans le calendrier. Le seuil `unlocked` débloque les pages prêtes : leur case affiche alors un aperçu en direct de l’expérience. Les jours 1 à 15 sont actuellement accessibles.
 
 ## Netlify
 
-Le dépôt se publie tel quel : `pnpm build` produit `dist`. La racine sert le calendrier, `/1` le jour Pomme, `/2` le jour Relique, `/3` le jour Miniature, `/4` le jour Cactus, `/5` le jour Gifle, `/6` le jour Ogre, `/7` le jour Panique, `/8` le jour Puant, `/9` le jour Bélier, `/10` le jour Mystique, `/11` le jour Sauvetage, `/12` le jour Lancer, `/13` le jour Fragile et `/14` le jour Dame.
+Le dépôt se publie tel quel : `pnpm build` produit `dist`. La racine sert le calendrier, `/1` le jour Pomme, `/2` le jour Relique, `/3` le jour Miniature, `/4` le jour Cactus, `/5` le jour Gifle, `/6` le jour Ogre, `/7` le jour Panique, `/8` le jour Puant, `/9` le jour Bélier, `/10` le jour Mystique, `/11` le jour Sauvetage, `/12` le jour Lancer, `/13` le jour Fragile, `/14` le jour Dame et `/15` le jour Hourra.
 
 La page du jour 1 tient dans la hauteur de l’écran sans défilement. Le bouton Vertical / Horizontal change la disposition des outils et mémorise le choix. Sur les écrans en paysage de faible hauteur, les outils passent à côté de la scène. Les recettes et le menu peuvent défiler à l’intérieur de leur panneau si nécessaire.
 
@@ -103,3 +103,7 @@ Ogrest affronte Tristepin et Yugo dans un combat au tour par tour. Le joueur con
 ## Jour 14 · Dame
 
 `/14` : trouvez le mot de passe de la Grosse Dame, gardienne du portrait, en cinq tentatives. Chaque erreur dévoile un indice supplémentaire. Soixante mots du quotidien, de la nature et des objets composent la première pioche. Le tableau s’ouvre en cas de succès ; après cinq erreurs, le mot est révélé. Voir [le détail du jour 14](14/README.md).
+
+## Jour 15 · Hourra
+
+`/15` : une bombe de soixante confettis explose à l’arrivée. Les morceaux retombent lentement et restent récupérables au sol. Il faut les glisser individuellement dans la poubelle, ou les sélectionner puis les jeter. Le compteur suit le nettoyage et le dernier confetti termine la fête. Voir [le détail du jour 15](15/README.md).
